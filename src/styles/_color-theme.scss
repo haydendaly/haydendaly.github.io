@@ -1,0 +1,48 @@
+// Reguler color scheme
+$bg-reg: #ffffff;
+$highlight-reg: #00204a;
+$hover-highlight-reg: #0000ff;
+$text-reg: #77abb7;
+$dark-text-reg: #393e46;
+
+// Dark color scheme
+$bg-dark: #00204a;
+$highlight-dark: #fafafa;
+$hover-highlight-dark:#aa96da;
+$text-dark: #77abb7;
+$dark-text-dark: #dddddd;
+
+$themes: (
+    default: (
+        bg: $bg-reg,
+        highlight: $highlight-reg,
+        hover-highlight: $hover-highlight-reg,
+        text: $text-reg,
+        dark-text: $dark-text-reg
+    ),
+    dark: (
+        bg: $bg-dark,
+        highlight: $highlight-dark,
+        hover-highlight: $hover-highlight-dark,
+        text: $text-dark,
+        dark-text: $dark-text-dark
+    )
+);
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+      .theme--#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+  @function t($key) {
+    @return map-get($theme-map, $key);
+  }
