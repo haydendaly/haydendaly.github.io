@@ -47,7 +47,7 @@ function Home() {
         <div style={{ marginBottom: 20, minHeight: '100%', marginTop: 50 }}>
             <div style={{ height: height - 160, marginBottom: 110, width: '100%' }}>
                 <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div className="current" style={{ fontFamily: 'Haas', fontSize: isMobile ? 28 : width * .95 < 600 ? 34 : width * .95 > 1000 ? 48 : 40, width: isMobile ? '100%' : '75%', textAlign: 'center' }}>
+                    <div className="current unselectable" style={{ fontFamily: 'Haas', fontSize: isMobile ? 28 : width * .95 < 600 ? 34 : width * .95 > 1000 ? 48 : 40, width: isMobile ? '100%' : '75%', textAlign: 'center' }}>
                         Hello! I'm Hayden, a software engineering student who enjoys tackling hard problems.
                 </div>
                 </div>

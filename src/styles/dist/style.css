@@ -1,0 +1,272 @@
+@font-face {
+  font-family: "Haas";
+  src: url("../static/fonts/NeueHaasGroteskRegular.otf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HaasMd";
+  src: url("../static/fonts/NeueHaasGroteskMedium.otf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.theme--default ::selection {
+  color: #ffffff;
+  background: #00204a;
+  opacity: 1;
+}
+.theme--dark ::selection {
+  color: #00204a;
+  background: #fafafa;
+  opacity: 1;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.cursor {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 150ms ease;
+  transition-property: background-color, opacity, transform, mix-blend-mode;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+.theme--default .cursor {
+  border: 3px solid #393e46;
+}
+.theme--dark .cursor {
+  border: 3px solid #dddddd;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}
+
+.cursor--link-hovered {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+.theme--default .cursor--link-hovered {
+  background-color: #393e46;
+}
+.theme--dark .cursor--link-hovered {
+  background-color: #dddddd;
+}
+
+.cursor--clicked {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.theme--default .cursor--clicked {
+  background-color: #393e46;
+}
+.theme--dark .cursor--clicked {
+  background-color: #dddddd;
+}
+
+html, body {
+  cursor: none;
+  scroll-behavior: smooth;
+  background-color: "bg";
+  position: relative;
+  min-height: 100vh;
+  font-family: "Haas", "Helvetica Neue", "Arial", "sans-serif";
+}
+.theme--default html, .theme--default body {
+  color: #393e46;
+}
+.theme--dark html, .theme--dark body {
+  color: #dddddd;
+}
+
+html *,
+body * {
+  cursor: none;
+}
+
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  zIndex: 1;
+}
+
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+
+.name {
+  padding-left: 20;
+  font-weight: 500;
+  font-family: "HaasMd", "Helvetica Neue", "Arial", "sans-serif";
+}
+
+.header-text {
+  padding-left: 20;
+}
+.theme--default .header-text {
+  color: #77abb7;
+}
+.theme--dark .header-text {
+  color: #77abb7;
+}
+
+.header-text:current {
+  padding-left: 20;
+}
+.theme--default .header-text:current {
+  color: #00204a;
+}
+.theme--dark .header-text:current {
+  color: #fafafa;
+}
+
+.header-text:hover {
+  padding-left: 20;
+}
+.theme--default .header-text:hover {
+  color: #0000ff;
+}
+.theme--dark .header-text:hover {
+  color: #aa96da;
+}
+
+.theme--default a {
+  color: #77abb7;
+}
+.theme--dark a {
+  color: #77abb7;
+}
+
+a:hover {
+  text-decoration: none;
+}
+.theme--default a:hover {
+  color: #0000ff;
+}
+.theme--dark a:hover {
+  color: #aa96da;
+}
+
+.theme--default .section {
+  color: #393e46;
+}
+.theme--dark .section {
+  color: #dddddd;
+}
+
+.theme--default .category {
+  color: #77abb7;
+}
+.theme--dark .category {
+  color: #77abb7;
+}
+
+.theme--default .current {
+  color: #00204a;
+}
+.theme--dark .current {
+  color: #fafafa;
+}
+
+.theme--default .category:hover, .theme--default a.category:active {
+  color: #0000ff;
+}
+.theme--dark .category:hover, .theme--dark a.category:active {
+  color: #aa96da;
+}
+
+.theme--default .project {
+  color: #393e46;
+}
+.theme--dark .project {
+  color: #dddddd;
+}
+
+.theme--default .project-link {
+  color: #393e46;
+}
+.theme--dark .project-link {
+  color: #dddddd;
+}
+
+.theme--default .project-italics {
+  color: #77abb7;
+}
+.theme--dark .project-italics {
+  color: #77abb7;
+}
+
+.theme--default .project-container {
+  background-color: #77abb7;
+}
+.theme--dark .project-container {
+  background-color: #77abb7;
+}
+
+.theme--default .project-container:hover {
+  background-color: #77abb7;
+  margin: 10;
+}
+.theme--dark .project-container:hover {
+  background-color: #77abb7;
+  margin: 10;
+}
+
+.display-text {
+  font-size: 24;
+  font-family: "HaasMd";
+}
+.theme--default .display-text {
+  color: #fff;
+}
+.theme--dark .display-text {
+  color: #fff;
+}
+
+.theme--default .shadow-reg {
+  box-shadow: 0px 0px 3px #393e46;
+}
+.theme--dark .shadow-reg {
+  box-shadow: 0px 0px 3px #dddddd;
+}
+
+.shadow-dark {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+}
+
+.sk-spinner {
+  width: 75px;
+  height: 75px;
+}
+.theme--default .sk-spinner {
+  color: #00204a;
+}
+.theme--dark .sk-spinner {
+  color: #fafafa;
+}

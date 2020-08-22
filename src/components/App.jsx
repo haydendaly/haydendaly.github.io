@@ -10,7 +10,7 @@ import _ from 'lodash';
 import Loading from './Global/Loading';
 import Header from './Global/Header';
 import Cursor from './Global/Cursor';
-import { BubblesBg } from './Global/Particles';
+import { BubblesBg, LinksBg } from './Global/Particles';
 import { useWindowDimensions } from '../functions/helper';
 import FD from './Global/FormattedDiv';
 import '../styles/style.scss';
@@ -64,7 +64,7 @@ function App() {
     return (
         <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')} id="main">
             <Cursor />
-            {page === '/' && <BubblesBg dark={dark} />}
+            {page === '/' && <LinksBg dark={dark} />}
             <Router
                 basename={PUBLIC_URL + '/'}
             >

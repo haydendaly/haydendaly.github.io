@@ -1,7 +1,7 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 
-function NightBg() {
+function NightBg({ dark }) {
     return <Particles
         params={{
             "particles": {
@@ -29,7 +29,10 @@ function NightBg() {
                         "speed": 1,
                         "opacity_min": 0.05
                     }
-                }
+                },
+                "color" : {
+                    "value" : dark ? "#eeeeee" : "#393e46"
+                },
             },
             "interactivity": {
                 "events": {
@@ -55,7 +58,7 @@ function NightBg() {
     />
 }
 
-function LinksBg() {
+function LinksBg({ dark }) {
     return <Particles
         params={{
             "particles": {
@@ -64,7 +67,15 @@ function LinksBg() {
                 },
                 "size": {
                     "value": 3
-                }
+                },
+                "color" : {
+                    "value" : dark ? "#dddddd" : "#393e46"
+                },
+                "line_linked" : {
+                    "color" : {
+                        "value" : dark ? "#77abb7" : "#77abb7"
+                    },
+                },
             },
             "interactivity": {
                 "events": {

@@ -25,9 +25,18 @@ $dark-text: 'dark-text';
 // Default Styling
 ::selection {
     @include themed() {
-        background: t($highlight);
         color: t($bg);
+        background: t($highlight);
+        opacity: 1;
     }
+}
+
+.unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .cursor {
@@ -191,13 +200,13 @@ a:hover {
 
 .project-container {
     @include themed() {
-        background-color: t($highlight);
+        background-color: t($text);
     }
 }
 
 .project-container:hover {
     @include themed() {
-        background-color: t($hover-highlight);
+        background-color: t($text);
         margin: 10;
     }
 }

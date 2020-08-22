@@ -21,20 +21,22 @@ const projects = [
         key: 'exire',
         name: 'Exire.ai',
         role: 'Chief Executive Officer',
-        dates: 'June 2019 - Present',
+        dates: 'June 2019 - Now',
         category: ['Mobile', 'ML/AI', 'Backend', 'DevOps'],
         text: 'Working on an AI-concierge app startup. \n',
-        description: 'Building mobile app for iOS/Android that helps groups make plans. Rised out of irritation in making plans and incorporated to a C-Corp. Currently developing in small sprints focused around a private beta. \n',
-        stack: ['AWS/GCP', 'Node', 'React', 'React Native', 'Swift', 'MongoDB', 'Python', 'TensorFlow'],
+        description: 'Building mobile app for iOS/Android that helps groups make plans with conversational AI. Rised out of irritation in making plans and incorporated to a C-Corp. Currently developing in small sprints focused around a private beta. \n',
+        stack: ['Node', 'React (Native)', 'Swift', 'MongoDB', 'TensorFlow'],
         link: 'https://exire.ai',
         color: '#007aff'
     },
     {
         key: 'codeforhoboken',
         name: 'Code for Hoboken',
+        role: 'Co-founder',
+        dates: 'May 2020 - Now',
         category: ['Hardware'],
         text: 'Starting nonprofit for local environmental focused tech initiatives.\n',
-        description: '',
+        description: 'Starting sustainability focused 501(c)(3) organization with support of local government to bring open-sourced, smart city technology to Hoboken. \n',
         stack: ['React Native'],
         link: '',
         color: '#007aff'
@@ -42,8 +44,10 @@ const projects = [
     {
         key: 'testbed',
         name: 'Testbed Simulation Infrastructure',
+        dates: 'April 2020 - Now',
         category: ['Web', 'Backend', 'DevOps'],
         text: 'Creating infrastructure for distributed trade-space simulations.\n',
+        description: 'Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Developed orchestration with service mesh and gathered requirements from DOD, NASA, and USGS. \n',
         stack: ['React', 'Docker', 'Flask', 'MQTT', 'Python', 'Nginx'],
         link: 'https://github.com/haydendaly/testbed-architecture',
         color: '#007aff'
@@ -51,8 +55,10 @@ const projects = [
     {
         key: 'babbio',
         name: 'Babb.io',
+        dates: 'May 2020 - Now',
         category: ['Mobile'],
         text: 'Building an app for university-oriented group chats.\n',
+        description: 'Deployed platform for university-oriented group chats currently pilot in use at Stevens with active group chats for over 500 courses. \n',
         stack: ['React Native', 'Node', 'Firebase'],
         link: 'https://babb.io',
         color: '#007aff'
@@ -68,16 +74,18 @@ const projects = [
         role: 'Software Developer Intern',
         dates: 'June 2020 - August 2020',
         text: 'Interned at Disney Television Animation. \n',
-        description: 'Developed full-stack to be used internally within the production of animated content. Restructured GitLab pipelines for automated testing of multiple environments.',
-        stack: ['React', 'Django', 'Docker', 'Nginx', 'Ruby'],
+        description: 'Developed full-stack to be used internally within the production of animated content. Restructured GitLab pipelines for automated testing of multiple environments. \n',
+        stack: ['React', 'Django', 'Docker', 'SQL', 'Nginx', 'Ruby'],
         link: '',
         color: '#007aff'
     },
     {
         key: 'securemeeting',
         name: 'SecureMeeting',
-        category: ['Web'],
+        category: ['Web', 'Backend', 'Mobile'],
+        dates: 'April 2020 - July 2020',
         text: 'Developed a few features for video-chat platform. \n',
+        description: 'Worked with fullstack WebRTC platform to improve backend performance, develop frontend features, and start/lead development on a mobile application. \n',
         stack: ['React', 'WebRTC', 'React Native'],
         link: 'https://securemeeting.org',
         color: '#007aff'
@@ -95,7 +103,9 @@ const projects = [
         key: 'atticus',
         name: 'Atticus',
         category: ['Mobile', 'Backend'],
+        dates: 'February 2020 - June 2020',
         text: 'Lead a team to build full-stack mobile book club app. \n',
+        description: 'Created full-stack mobile app for iOS/Android that for people to orchestrate reading in groups available on TestFlight. \n',
         stack: ['React Native', 'Node', 'MongoDB'],
         link: 'https://github.com/haydendaly/bookClub',
         color: '#007aff'
@@ -111,7 +121,7 @@ const projects = [
     },
     {
         key: 'stopthespread',
-        name: 'StopTheSpread.info',
+        name: 'stopthespread.info',
         category: ['Web'],
         text: 'Worked on an open-source Coronavirus info site. \n',
         stack: ['Gatsby', 'Node'],
@@ -163,7 +173,7 @@ const projects = [
         name: 'Tradespace Analysis Tool for Constellations Knowledge Base',
         category: ['Backend'],
         text: 'Developed backend for model-based satellite information system. \n',
-        stack: ['Node', 'JavaScript', 'Docker'],
+        stack: ['Node', 'JavaScript', 'Docker', 'MongoDB'],
         link: 'https://tatckb.org/',        
         color: '#007aff'
     },
@@ -237,13 +247,38 @@ const projects = [
         stack: ['Swift'],
         color: '#007aff'
     },
+    // data just for resume
+    {
+        key: 'svc',
+        name: 'Stevens Venture Center',
+        role: 'Co-director of Hackathons',
+    dates: 'May 2019 - Now',
+        category: ['Hackathons'],
+        description: 'Setup, manage, and operate multiple Hackathons annually with a budget of \$45k+ from sponsors at the UN, J\&J, IBM, and more. Recently hosted the 2020 COVID-19 Hackathon with 600+ global participants to address post-COVID life.\n',
+        stack: [],
+        link: 'https://covidhealthhack.com',
+        color: '#007aff',
+        isResume: true
+    },
+    {
+        key: 'codelab',
+        name: 'Collective Design Lab',
+        role: 'Software Developer Researcher',
+        dates: 'May 2019 - Now',
+        category: ['Backend', 'DevOps', 'Web'],
+        description: 'Developed research-focused projects in the domain of distributed authority, aerospace engineering, and software architecture. Published the paper “A Reference Software Architecture for Model-centric Engineering Information Systems”. \n',
+        stack: ['React', 'Docker', 'Node', 'Flask'],
+        link: 'https://covidhealthhack.com',
+        color: '#007aff',
+        isResume: true
+    },
 ]
 
 const about = [
     {
         key: "Info",
         component: (
-        <p style={{ whiteSpace: 'pre-wrap' }}>
+        <p className='section' style={{ whiteSpace: 'pre-wrap' }}>
             {`I'm a software engineering student at Stevens Institute in Hoboken, NJ in the iSTEM program. Most of my free time I spend either running, reading, cooking, or coding. I compete on the varsity cross country and track teams at my university and want to pursue ultra running after graduation.
             I'm currently a full-time student but engaged in a handful of fun side projects. Some notable ones are `}
             <Link
@@ -277,11 +312,11 @@ DevOps / Scalability`
         key: "Social",
         text: '',
         component: (
-            <p style={{ whiteSpace: 'pre-wrap' }}>
-GitHub: <a className="current" href="https://github.com/haydendaly">haydendaly</a><br />
-LinkedIn: <a className="current" href="https://www.linkedin.com/in/haydendaly/">haydendaly</a><br />
-Strava: <a className="current" href="https://www.strava.com/athletes/54285809">Hayden Daly</a><br />
-Email: <a className="current" href="mailto:hdaly1@stevens.edu">hdaly1@stevens.edu</a>
+            <p className='section' style={{ whiteSpace: 'pre-wrap' }}>
+GitHub: <a target='_blank' className="current" href="https://github.com/haydendaly">haydendaly</a><br />
+LinkedIn: <a target='_blank' className="current" href="https://www.linkedin.com/in/haydendaly/">haydendaly</a><br />
+Strava: <a target='_blank' className="current" href="https://www.strava.com/athletes/54285809">Hayden Daly</a><br />
+Email: <a target='_blank' className="current" href="mailto:hdaly1@stevens.edu">hdaly1@stevens.edu</a>
             </p>
         )
     },
@@ -290,12 +325,12 @@ Email: <a className="current" href="mailto:hdaly1@stevens.edu">hdaly1@stevens.ed
         text: '',
         component: (
             <p>
-                <a className="current" href="https://www.goodreads.com/book/show/6751.Consider_the_Lobster_and_Other_Essays"><i>Consider the Lobster by David Foster Wallace</i></a><br />
-                <a className="current" href="https://www.goodreads.com/book/show/22822858-a-little-life"><i>A Little Life by Hanya Yanagihara</i></a><br />
-                <a className="current" href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"><i>Kafka and the Shore by Haruki Murikami</i></a><br />
-                <a className="current" href="https://www.goodreads.com/book/show/166997.Stoner"><i>Stoner by John Williams</i></a><br />
-                <a className="current" href="https://www.goodreads.com/book/show/21480734-dataclysm"><i>Dataclysm by Christian Rudder</i></a><br />
-                <a className="current" href="https://www.goodreads.com/book/show/9915.Less_Than_Zero"><i>Less Than Zero by Bret Easton Ellis</i></a><br />
+                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/6751.Consider_the_Lobster_and_Other_Essays"><i>Consider the Lobster by David Foster Wallace</i></a><br />
+                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/22822858-a-little-life"><i>A Little Life by Hanya Yanagihara</i></a><br />
+                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"><i>Kafka and the Shore by Haruki Murikami</i></a><br />
+                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/166997.Stoner"><i>Stoner by John Williams</i></a><br />
+                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/21480734-dataclysm"><i>Dataclysm by Christian Rudder</i></a><br />
+                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/9915.Less_Than_Zero"><i>Less Than Zero by Bret Easton Ellis</i></a><br />
             </p>
         )
     },

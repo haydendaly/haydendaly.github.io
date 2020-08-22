@@ -17,7 +17,7 @@ function Header({ page, setPage, dark, setMode }) {
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'row',
-                    paddingTop: 15,
+                    paddingTop: 20,
                     paddingBottom: 15,
                 }}>
                     <div style={{ width: isMobile ? '35%' : '20%' }}>
@@ -53,8 +53,8 @@ function Header({ page, setPage, dark, setMode }) {
                                 {page === '/resume' ? 'Resume' : 'Resume'}
                             </Link>
                         </div>
-                        <a style={{ fontSize: 20 }} onClick={setMode}>
-                            {dark ? '🌤' : '🌖'}
+                        <a className='unselectable' style={{ fontSize: 20 }} onClick={setMode}>
+                            {dark ? '☀️' : '🌖'}
                         </a>
                     </div>
                 </div>

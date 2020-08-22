@@ -8,9 +8,9 @@ function TextRow({ data }) {
     if (isMobile) {
         return (
             <div key={data.key} style={{ paddingBottom: 5 }}>
-                <p style={{ marginBottom: 5 }}>{data.key}</p>
+                <p className='section' style={{ marginBottom: 5 }}>{data.key}</p>
                 <div style={{ fontSize: 15, whiteSpace: 'pre-wrap' }}>
-                    {_.has(data, 'component') ? data.component : <p>{data.text}</p>}
+                    {_.has(data, 'component') ? data.component : <p className='section'>{data.text}</p>}
                 </div>
             </div>
         );
@@ -20,7 +20,7 @@ function TextRow({ data }) {
                 <p style={{ width: '20%', minWidth: 150 }}>
                     {data.key}
                 </p>
-                <p style={{ width: '80%', whiteSpace: 'pre-wrap' }} className='section'>
+                <p style={{ width: '80%', whiteSpace: 'pre-wrap' }} className='section about'>
                     {_.has(data, 'component') ? data.component : data.text}
                 </p>
             </div>
@@ -75,10 +75,15 @@ function ProjectRow({ categories, data }) {
 }
 
 function ProjectDescription({ data }) {
+    let link = data.link !== '' && data.link;
     if (isMobile) {
         return (
             <div key={data.key} style={{ paddingBottom: 15 }}>
-                <p style={{ marginBottom: 5 }}>{data.name}</p>
+                { link ? (
+                    <a target='_blank' className='current' href={link} style={{ marginBottom: 5 }}>{data.name}</a>
+                ) : (
+                    <p className='project' style={{ marginBottom: 5 }}>{data.name}</p>
+                )}
                 <div className="project" style={{ fontSize: 15, whiteSpace: 'pre-wrap' }}>
                     {_.has(data, 'description') ? data.description : data.text}
                     {data.stack && data.stack.length > 0 && (
@@ -94,7 +99,11 @@ function ProjectDescription({ data }) {
         return (
             <div key={data.key} style={{ display: 'flex', flexDirection: 'row', paddingBottom: 15 }}>
                 <div className="project" style={{ width: '20%' }}>
-                    {data.name}
+                    { link ? (
+                        <a target='_blank' className='current' href={link}>{data.name}</a>
+                    ) : (
+                        <p className='project'>{data.name}</p>
+                    )}
                 </div>
                 <div className="project" style={{ width: '80%', whiteSpace: 'pre-wrap' }}>
                     {_.has(data, 'description') ? data.description : data.text}
