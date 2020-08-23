@@ -3,15 +3,12 @@ import _ from "lodash";
 import { isMobile } from 'react-device-detect';
 import { useLocation } from 'react-router-dom';
 import { LazyLoadImage as Image } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { projects } from './Global/Data';
+import Loading from './Global/Loading';
 import { ProjectDescription } from './Global/TextComponents';
 import { useWindowDimensions } from '../functions/helper';
-import temp1 from '../static/temp1.png'
-import temp2 from '../static/temp2.png'
-import monet from '../static/monet1.png'
-
-const images = [temp1, temp2, monet];
 
 function Project() {
     const { width } = useWindowDimensions();
@@ -28,15 +25,14 @@ function Project() {
 
     return (
         <div style={{ width: '100%', paddingTop: isMobile ? 10 : 15, marginTop: 125, height: '100%' }}>
-            <div className='project-container' style={{ width: '100%', height: width * .95 > 1000 ? 1000 * .95 * .7 : width * .95 * .7, marginBottom: 10 }}>
-            <Suspense fallback={<div>Loading</div>}>
+            <div style={{ width: '100%', minHeight: width * .95 > 1000 ? 1000 * .95 * .5 : width * .95 * .5, marginBottom: 10 }}>
+            <Suspense fallback={<Loading height='100%' width='100%' />}>
             <Image
-                height={'100%'}
-                src={
-                    images[Math.floor(Math.random() * 3)]
-                }
-                width={'100%'} 
+                width={'100%' }
+                alt={`https://hayden-portfolio.s3.us-east-2.amazonaws.com/${data.key}_thumb.png`}
+                src={`https://hayden-portfolio.s3.us-east-2.amazonaws.com/${data.key}.png`}
                 className='unselectable'
+                effect="blur"
             />
             </Suspense>
             </div>

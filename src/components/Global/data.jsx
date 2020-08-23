@@ -38,7 +38,7 @@ const projects = [
         text: 'Starting nonprofit for local environmental focused tech initiatives.\n',
         description: 'Starting sustainability focused 501(c)(3) organization with support of local government to bring open-sourced, smart city technology to Hoboken. \n',
         stack: ['React Native'],
-        link: '',
+        thumbnailURL: '',
         color: '#007aff'
     },
     {
@@ -124,7 +124,7 @@ const projects = [
         name: 'stopthespread.info',
         category: ['Web'],
         text: 'Worked on an open-source Coronavirus info site. \n',
-        stack: ['Gatsby', 'Node'],
+        stack: ['Gatsby', 'Node', 'GraphQL'],
         link: 'https://stopthespread.info',
         color: '#007aff'
     },
@@ -183,6 +183,8 @@ const projects = [
         category: ['Backend'],
         text: 'Built a GEDCOM parser with varying agile practices.\n',
         stack: ['Python'],
+        thumbnailURL: '',
+        imageURL: '',
         link: 'https://github.com/haydendaly/GEDCOM-Parser',
         color: '#007aff'
     },

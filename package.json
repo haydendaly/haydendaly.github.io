@@ -22,6 +22,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "bootstrap": "^4.5.0",
     "cname-webpack-plugin": "^2.0.1",
+    "copy-webpack-plugin": "^6.0.3",
     "create-react-class": "^15.6.3",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",

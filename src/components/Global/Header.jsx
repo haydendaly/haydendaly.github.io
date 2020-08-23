@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { isMobile } from 'react-device-detect';
 import FD from './FormattedDiv';
 import { Link } from "react-router-dom";
@@ -37,21 +37,29 @@ function Header({ page, setPage, dark, setMode }) {
                                 className={`header-text${page === '/projects' ? ' current' : ''}`}
                                 style={{ ...mobileStyles, paddingLeft: 0 }}>
                                 Projects
-                    </Link>
+                            </Link>
                             <Link
                                 onClick={() => setPage("/about")}
                                 to="/about"
                                 className={`header-text${page === '/about' ? ' current' : ''}`}
                                 style={mobileStyles}>
                                 About
-                    </Link>
+                            </Link>
                             <Link
                                 onClick={() => setPage("/resume")}
                                 to="/resume"
                                 className={`header-text${page === '/resume' ? ' current' : ''}`}
                                 style={mobileStyles}>
-                                {page === '/resume' ? 'Resume' : 'Resume'}
+                                Resume
                             </Link>
+                            {page === '/resume' && (
+                                    <a
+                                        href={'s3URL'}
+                                        className='header-text'
+                                        style={mobileStyles}>
+                                        PDF Resume
+                                    </a>
+                            )}
                         </div>
                         <a className='unselectable' style={{ fontSize: 20 }} onClick={setMode}>
                             {dark ? '☀️' : '🌖'}

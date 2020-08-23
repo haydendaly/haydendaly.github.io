@@ -6,7 +6,6 @@ const webpack = require('webpack');
 
 module.exports = (env, argv) => {
     const devtool = argv.mode === "production" ? "eval-source-map" : "inline-source-map";
-    // const BASE_URL = argv.mode === "production" ? "https://haydendaly.github.io" : "http://0.0.0.0:8000";
     const BASE_URL = "";
 
     return {
@@ -46,18 +45,27 @@ module.exports = (env, argv) => {
                     ],
                 },
                 {
-                    test: /\.(jpg|jpeg|png)$/,
+                    test: /\.(jpg|jpeg|png|gif)$/,
                     use: {
-                      loader: 'url-loader',
+                        loader: 'url-loader',
                     },
-                  },
+                },
                 {
                     test: /\.(ttf|eot|woff|woff2|otf)$/,
                     use: {
-                      loader: "file-loader",
-                      options: {
-                        name: "fonts/[name].[ext]",
-                      },
+                        loader: "file-loader",
+                        options: {
+                            name: "fonts/[name].[ext]",
+                        },
+                    },
+                },
+                {
+                    test: /\.(pdf)$/,
+                    use: {
+                        loader: "file-loader",
+                        options: {
+                            name: "static/[name].[ext]",
+                        },
                     },
                 },
             ]

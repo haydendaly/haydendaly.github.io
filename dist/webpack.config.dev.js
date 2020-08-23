@@ -12,8 +12,7 @@ var CnameWebpackPlugin = require('cname-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = function (env, argv) {
-  var devtool = argv.mode === "production" ? "eval-source-map" : "inline-source-map"; // const BASE_URL = argv.mode === "production" ? "https://haydendaly.github.io" : "http://0.0.0.0:8000";
-
+  var devtool = argv.mode === "production" ? "eval-source-map" : "inline-source-map";
   var BASE_URL = "";
   return {
     entry: {
@@ -41,7 +40,7 @@ module.exports = function (env, argv) {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader']
       }, {
-        test: /\.(jpg|jpeg|png)$/,
+        test: /\.(jpg|jpeg|png|gif)$/,
         use: {
           loader: 'url-loader'
         }
@@ -51,6 +50,14 @@ module.exports = function (env, argv) {
           loader: "file-loader",
           options: {
             name: "fonts/[name].[ext]"
+          }
+        }
+      }, {
+        test: /\.(pdf)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "static/[name].[ext]"
           }
         }
       }]

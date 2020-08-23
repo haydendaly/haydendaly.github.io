@@ -115,7 +115,7 @@ const RotatedText = ({ text }) => {
 }
 
 function Resume() {
-    const { height, width } = useWindowDimensions();
+    const { width } = useWindowDimensions();
 
     return (
         <div style={{ width: '100%', marginTop: 125, paddingTop: isMobile ? 10 : 15, minHeight: '100%', display: 'flex', flexDirection: isMobile || width * .95 < 750 ? 'column' : 'row' }}>

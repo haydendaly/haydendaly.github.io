@@ -10,7 +10,7 @@ import _ from 'lodash';
 import Loading from './Global/Loading';
 import Header from './Global/Header';
 import Cursor from './Global/Cursor';
-import { BubblesBg, LinksBg } from './Global/Particles';
+import { LinksBg } from './Global/Particles';
 import { useWindowDimensions } from '../functions/helper';
 import FD from './Global/FormattedDiv';
 import '../styles/style.scss';
