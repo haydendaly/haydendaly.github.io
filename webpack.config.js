@@ -3,10 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CnameWebpackPlugin = require('cname-webpack-plugin');
 const webpack = require('webpack');
+const { EnvironmentPlugin, DefinePlugin } = require('webpack');
 
 module.exports = (env, argv) => {
     const devtool = argv.mode === "production" ? "eval-source-map" : "inline-source-map";
-    const BASE_URL = "";
 
     return {
         entry: {
@@ -78,16 +78,12 @@ module.exports = (env, argv) => {
             new CleanWebpackPlugin(),
             new CnameWebpackPlugin({
                 domain: 'hcdaly.dev',
-            }),
-            new webpack.EnvironmentPlugin({
-                BASE_URL
             })
         ],
         devServer: {
             inline: true,
             port: 8000,
-            historyApiFallback: true,
-            writeToDisk: true
+            historyApiFallback: true
         },
         resolve: {
             extensions: ['.js', '.jsx'],

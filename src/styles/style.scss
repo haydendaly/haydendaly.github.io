@@ -39,10 +39,15 @@ $dark-text: 'dark-text';
     -webkit-user-drag: none;
 }
 
+.selectable {
+    -webkit-user-drag: none;
+}
+
 .cursor {
     @include themed() {
         border: 3px solid t($dark-text);
     }
+
     width: 30px;
     height: 30px;
     border-radius: 100%;
@@ -50,7 +55,10 @@ $dark-text: 'dark-text';
     transform: translate(-50%, -50%);
     pointer-events: none;
     transition: all 150ms ease;
-    transition-property: background-color, opacity, transform, mix-blend-mode;
+    transition-property: background-color,
+    opacity,
+    transform,
+    mix-blend-mode;
     z-index: 9999;
     mix-blend-mode: difference;
 }
@@ -61,6 +69,7 @@ $dark-text: 'dark-text';
 
 .cursor--link-hovered {
     transform: translate(-50%, -50%) scale(1.25);
+
     @include themed() {
         background-color: t($dark-text);
     }
@@ -68,21 +77,28 @@ $dark-text: 'dark-text';
 
 .cursor--clicked {
     transform: translate(-50%, -50%) scale(0.9);
+
     @include themed() {
         background-color: t($dark-text);
     }
 }
 
-html, body {
+html,
+body {
     cursor: none;
     scroll-behavior: smooth;
     background-color: $bg;
     position: relative;
     min-height: 100vh;
+
     @include themed() {
         color: t($dark-text);
     }
-    font-family: 'Haas', 'Helvetica Neue', 'Arial', 'sans-serif';
+
+    font-family: 'Haas',
+    'Helvetica Neue',
+    'Arial',
+    'sans-serif';
 }
 
 html *,
@@ -102,13 +118,16 @@ body * {
     position: relative;
     transform: translateY(0);
 }
+
 .headroom--scrolled {
     transition: transform 200ms ease-in-out;
 }
+
 .headroom--unpinned {
     position: fixed;
     transform: translateY(-100%);
 }
+
 .headroom--pinned {
     position: fixed;
     transform: translateY(0%);
@@ -124,6 +143,7 @@ body * {
     @include themed() {
         color: t($text);
     }
+
     padding-left: 20;
 }
 
@@ -131,6 +151,7 @@ body * {
     @include themed() {
         color: t($highlight);
     }
+
     padding-left: 20;
 }
 
@@ -138,6 +159,7 @@ body * {
     @include themed() {
         color: t($hover-highlight);
     }
+
     padding-left: 20;
 }
 
@@ -152,6 +174,7 @@ a:hover {
     @include themed() {
         color: t($hover-highlight);
     }
+
     text-decoration: none;
 }
 
@@ -173,7 +196,8 @@ a:hover {
     }
 }
 
-.category:hover, a.category:active {
+.category:hover,
+a.category:active {
     @include themed() {
         color: t($hover-highlight);
     }
@@ -204,17 +228,12 @@ a:hover {
     }
 }
 
-.project-container:hover {
-    @include themed() {
-        background-color: t($text);
-        margin: 10;
-    }
-}
 
 .display-text {
     @include themed() {
         color: #fff;
     }
+
     font-size: 24;
     font-family: 'HaasMd';
 }
@@ -227,13 +246,14 @@ a:hover {
 }
 
 .shadow-dark {
-    box-shadow: 0px 0px 3px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
 }
 
 // Centering Loading Component
 .sk-spinner {
     width: 75px;
     height: 75px;
+
     @include themed() {
         color: t($highlight);
     }

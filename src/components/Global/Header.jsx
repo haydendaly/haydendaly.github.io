@@ -1,8 +1,10 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
 import FD from './FormattedDiv';
 import { Link } from "react-router-dom";
 import Headroom from 'react-headroom';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import mixpanel from 'mixpanel-browser';
 
 function Header({ page, setPage, dark, setMode }) {
     const [show, setShow] = useState(false);
@@ -45,25 +47,38 @@ function Header({ page, setPage, dark, setMode }) {
                                 style={mobileStyles}>
                                 About
                             </Link>
-                            <Link
+                            {/* <Link
                                 onClick={() => setPage("/resume")}
                                 to="/resume"
                                 className={`header-text${page === '/resume' ? ' current' : ''}`}
                                 style={mobileStyles}>
                                 Resume
-                            </Link>
-                            {page === '/resume' && (
-                                    <a
-                                        href={'s3URL'}
-                                        className='header-text'
-                                        style={mobileStyles}>
-                                        PDF Resume
-                                    </a>
-                            )}
+                            </Link> */}
+                            {/* {page === '/resume' && ( */}
+                                <a
+                                    target='_blank'
+                                    href={'https://hayden-portfolio.s3.us-east-2.amazonaws.com/HaydenDaly_Resume.pdf'}
+                                    className='header-text'
+                                    onClick={() => {
+                                        mixpanel.track('Resume PDF');
+                                    }}
+                                    style={mobileStyles}>
+                                    Resume
+                                </a>
+                            {/* )} */}
                         </div>
-                        <a className='unselectable' style={{ fontSize: 20 }} onClick={setMode}>
-                            {dark ? '☀️' : '🌖'}
-                        </a>
+                        <OverlayTrigger
+                            placement='bottom'
+                            overlay={
+                                <Tooltip>
+                                    {dark ? 'Light Mode' : 'Dark Mode'}
+                                </Tooltip>
+                            }
+                        >
+                            <a className='unselectable' style={{ fontSize: 20 }} onClick={setMode}>
+                                {dark ? '☀️' : '🌖'}
+                            </a>
+                        </OverlayTrigger>
                     </div>
                 </div>
             </FD>

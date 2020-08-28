@@ -6,6 +6,7 @@ import {
     Redirect
 } from "react-router-dom";
 import _ from 'lodash';
+import mixpanel from 'mixpanel-browser';
 
 import Loading from './Global/Loading';
 import Header from './Global/Header';
@@ -15,20 +16,22 @@ import { useWindowDimensions } from '../functions/helper';
 import FD from './Global/FormattedDiv';
 import '../styles/style.scss';
 
+mixpanel.init("5a38064353748fc70f226574b814d85d");
+
 console.log(`%c
 ${' '.repeat(33)}
 ${' '.repeat(7)}Made by Hayden Daly${' '.repeat(7)}
 ${' '.repeat(33)}
 ${' '.repeat(2)}Want to see the source code?${' '.repeat(3)}
 ${' '.repeat(33)}\n`,
-'background: #007aff; color: white'
+    'background: #007aff; color: white'
 );
 console.log('\nhttps://github.com/haydendaly/haydendaly.github.io\n ')
 
 const Home = lazy(() => import('./Home'));
 const Projects = lazy(() => import('./Projects'));
 const About = lazy(() => import('./About'));
-const Resume = lazy(() => import('./Resume'));
+// const Resume = lazy(() => import('./Resume'));
 const Project = lazy(() => import('./Project'));
 
 const titles = {
@@ -43,9 +46,19 @@ function App() {
     const { height, width } = useWindowDimensions();
 
     useEffect(() => {
-        if (page.includes('projects/')) {
-            document.title = page.substr(10) + ' - Hayden Daly'
-        } else {
+        fetch("https://api.ipify.org?format=json")
+        .then(response => {
+            return response.json();
+        }, "jsonp")
+        .then(async res => {
+            mixpanel.identify(res.ip);
+            mixpanel.track("Home");
+        })
+        .catch(err => console.log(err))
+    }, [])
+
+    useEffect(() => {
+        if (!page.includes('projects/')) {
             document.title = _.get(titles, page, '') + 'Hayden Daly'
         }
     }, [page])
@@ -75,15 +88,16 @@ function App() {
                         top: 0,
                         left: '50%',
                         transform: 'translate(-50%, 0)',
-                        height: '100%',
                         width: '100%',
-                        minHeight: height
+                        minHeight: height - 160,
+                        display: 'flex',
+                        justifyContent: 'flex-start'
                     }
                     }>
                     <Suspense fallback={<Loading height={height} width={width} />}>
                         <Switch>
                             <Route path={PUBLIC_URL + "/projects/:project"}>
-                                <FD height={height}><Project /></FD>
+                                <FD height={height}><Project setPage={setPage} /></FD>
                             </Route>
                             <Route path={PUBLIC_URL + "/projects"}>
                                 <FD height={height}><Projects /></FD>
@@ -91,11 +105,11 @@ function App() {
                             <Route path={PUBLIC_URL + "/about"}>
                                 <FD height={height}><About /></FD>
                             </Route>
-                            <Route path={PUBLIC_URL + "/resume"}>
+                            {/* <Route path={PUBLIC_URL + "/resume"}>
                                 <FD height={height}><Resume /></FD>
-                            </Route>
+                            </Route> */}
                             <Route exact path="/">
-                                <Home />
+                                <Home height={height}/>
                             </Route>
                             <Route path="/">
                                 <Redirect to="/" />

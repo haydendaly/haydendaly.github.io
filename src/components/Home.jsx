@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import StackGrid, { transitions } from "react-stack-grid";
 import { isMobile } from 'react-device-detect';
+import mixpanel from 'mixpanel-browser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,11 +9,13 @@ import { projects, home } from './Global/data';
 import FD from './Global/FormattedDiv';
 import { useWindowDimensions } from '../functions/helper';
 import '../styles/style.scss';
+import { contextTypes } from 'react-spinkit';
 
 const { scaleDown } = transitions;
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 function Display({ data, width }) {
+
     return (
         <div key={data.key}
             className='shadow-reg'
@@ -43,23 +46,24 @@ function Home() {
     const data = projects.filter(o => home.includes(o.key));
     const workRef = useRef(null);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        mixpanel.track('Home');
+    }, [])
+
     return (
-        <div style={{ marginBottom: 20, minHeight: '100%', marginTop: 50 }}>
-            <div style={{ height: height - 160, marginBottom: 110, width: '100%' }}>
-                <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div className="current unselectable" style={{ fontFamily: 'Haas', fontSize: isMobile ? 28 : width * .95 < 600 ? 34 : width * .95 > 1000 ? 48 : 40, width: isMobile ? '100%' : '75%', textAlign: 'center' }}>
-                        Hello! I'm Hayden, a software engineering student who enjoys building things.
+        <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <div className="current unselectable" style={{ fontFamily: 'Haas', fontSize: isMobile || width < 750 ? 28 : width * .95 > 1000 ? 48 : 40, width: isMobile || width < 900 ? '90%' : '75%', paddingTop: 40, textAlign: 'center' }}>
+                    Hello! I'm Hayden, a software engineering student who enjoys building things.
                 </div>
-                </div>
-                <a 
-                    className='current' 
-                    style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-                    onClick={() => scrollToRef(workRef)}
-                >
-                    <FontAwesomeIcon icon={faArrowDown} size='lg' />
-                </a>
-            </div>
-            <div ref={workRef}>
+        </div>
+    );
+};
+
+export default Home;
+
+// initial multi-display container
+/* <div ref={workRef}>
             <FD styles={{backgroundColor: 'red' }}>
                 <StackGrid
                     appear={scaleDown.appear}
@@ -73,9 +77,13 @@ function Home() {
                     {data.map(o => <Display data={o} width={width} />)}
                 </StackGrid>
             </FD>
-            </div>
-        </div>
-    );
-};
+            </div> */
 
-export default Home;
+// down button
+/* <a
+    className='current'
+    style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+    onClick={() => scrollToRef(workRef)}
+>
+    <FontAwesomeIcon icon={faArrowDown} size='lg' />
+</a> */
