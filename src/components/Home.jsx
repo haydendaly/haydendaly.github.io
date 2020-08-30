@@ -21,7 +21,6 @@ function Display({ data, width }) {
             className='shadow-reg'
             style={{
                 width: '100%',
-                height: width * .95 > 1000 ? 1000 * .95 * .47 - 7.5 : isMobile ? width * .95 : width * .95 < 600 ? width * .90 : width * .95 * .47,
                 backgroundColor: data.color,
                 marginTop: isMobile ? 3 : 10,
                 display: 'flex',
@@ -42,7 +41,7 @@ function Display({ data, width }) {
 }
 
 function Home() {
-    const { height, width } = useWindowDimensions();
+    const { width } = useWindowDimensions();
     const data = projects.filter(o => home.includes(o.key));
     const workRef = useRef(null);
 
@@ -52,11 +51,15 @@ function Home() {
     }, [])
 
     return (
-        <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <div className="current unselectable" style={{ fontFamily: 'Haas', fontSize: isMobile || width < 750 ? 28 : width * .95 > 1000 ? 48 : 40, width: isMobile || width < 900 ? '90%' : '75%', paddingTop: 40, textAlign: 'center' }}>
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+                <div className="current unselectable" style={{ fontFamily: 'Haas', fontSize: isMobile || width < 750 ? 28 : width * .95 > 1000 ? 48 : 40, width: isMobile || width < 800 ? '90%' : '75%', textAlign: 'center', paddingBottom: 120 }}>
                     Hello! I'm Hayden, a software engineering student who enjoys building things.
                 </div>
-        </div>
+            </div>
     );
 };
 

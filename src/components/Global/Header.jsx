@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Headroom from 'react-headroom';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import mixpanel from 'mixpanel-browser';
+import { FaMoon } from 'react-icons/fa';
+import { FiSun } from 'react-icons/fi';
 
 function Header({ page, setPage, dark, setMode }) {
     const [show, setShow] = useState(false);
@@ -75,8 +77,9 @@ function Header({ page, setPage, dark, setMode }) {
                                 </Tooltip>
                             }
                         >
-                            <a className='unselectable' style={{ fontSize: 20 }} onClick={setMode}>
-                                {dark ? '☀️' : '🌖'}
+                            <a className='unselectable current' style={{ fontSize: 20 }} onClick={setMode}>
+                                {/* {dark ? '☀️' : '🌖'} */}
+                                {dark ? <FiSun /> : <FaMoon />}
                             </a>
                         </OverlayTrigger>
                     </div>

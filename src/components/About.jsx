@@ -15,7 +15,7 @@ function About({ height }) {
 
     const items = about.map(o => <TextRow data={o} />)
     return (
-        <div style={{ width: '100%', marginTop: 125, paddingTop: isMobile ? 10 : 15, minHeight: '100%' }}>
+        <div style={{ width: '100%', paddingTop: isMobile ? 10 : 15 }}>
             {items}
         </div>
     );

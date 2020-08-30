@@ -116,7 +116,7 @@ const projects = [
         name: 'stopthespread.info',
         category: ['Web'],
         text: 'Worked on an open-source Coronavirus info site. \n',
-        description: 'Worked with a global team consiting of faculty/students from University of Cambridge, Carnegie Mellon, nad more institutions to construct an open-source site to provide medical doctor-validated COVID-19 related information. Worked on frontend development and a backend notification/update system. Site was eventually taken down due to inability to keep up with constantly changing US policy and information.'
+        description: 'Worked with a global team consiting of faculty/students from University of Cambridge, Carnegie Mellon, nad more institutions to construct an open-source site to provide medical doctor-validated COVID-19 related information. Worked on frontend development and a backend notification/update system. Site was eventually taken down due to inability to keep up with constantly changing US policy and information. \n',
         stack: ['Gatsby', 'Node', 'GraphQL'],
         link: 'https://stopthespread.info'
     },

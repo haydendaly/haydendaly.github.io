@@ -2,8 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CnameWebpackPlugin = require('cname-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const RobotstxtPlugin = require("robotstxt-webpack-plugin");
 const webpack = require('webpack');
-const { EnvironmentPlugin, DefinePlugin } = require('webpack');
 
 module.exports = (env, argv) => {
     const devtool = argv.mode === "production" ? "eval-source-map" : "inline-source-map";
@@ -78,7 +79,9 @@ module.exports = (env, argv) => {
             new CleanWebpackPlugin(),
             new CnameWebpackPlugin({
                 domain: 'hcdaly.dev',
-            })
+            }),
+            new CompressionWebpackPlugin(),
+            new RobotstxtPlugin({ filePath: './src/static/robots.txt' }),
         ],
         devServer: {
             inline: true,

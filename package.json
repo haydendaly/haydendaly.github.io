@@ -22,6 +22,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "bootstrap": "^4.5.0",
     "cname-webpack-plugin": "^2.0.1",
+    "compression-webpack-plugin": "^5.0.1",
     "copy-webpack-plugin": "^6.0.3",
     "create-react-class": "^15.6.3",
     "iplocation": "^7.2.0",
@@ -31,6 +32,7 @@
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.13.1",
     "react-headroom": "^3.0.0",
+    "react-icons": "^3.11.0",
     "react-lazy-load-image-component": "^1.5.0",
     "react-loading": "^2.0.3",
     "react-particles-js": "^3.3.0",
@@ -38,6 +40,7 @@
     "react-spinkit": "^3.0.0",
     "react-stack-grid": "^0.7.1",
     "react-waypoint": "^9.0.3",
+    "robotstxt-webpack-plugin": "^7.0.0",
     "url-loader": "^4.1.0",
     "utils": "^0.3.1"
   },

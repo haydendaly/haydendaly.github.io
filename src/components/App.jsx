@@ -37,7 +37,7 @@ const Project = lazy(() => import('./Project'));
 const titles = {
     '/projects': 'Projects - ',
     '/about': 'About - ',
-    '/resume': 'Resume - ',
+    '/resume': 'Resume - '
 }
 
 function App() {
@@ -75,38 +75,27 @@ function App() {
     const PUBLIC_URL = process.env.PUBLIC_URL || '';
 
     return (
-        <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')} id="main">
+        <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')} id="main" style={{ height, width }}>
             <Cursor />
             {page === '/' && <LinksBg dark={dark} />}
             <Router
                 basename={PUBLIC_URL + '/'}
             >
                 <Header page={page} setPage={setPage} dark={dark} setMode={setMode} />
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: '50%',
-                        transform: 'translate(-50%, 0)',
-                        width: '100%',
-                        minHeight: height - 160,
-                        display: 'flex',
-                        justifyContent: 'flex-start'
-                    }
-                    }>
                     <Suspense fallback={<Loading height={height} width={width} />}>
+                    <FD height={height}>
                         <Switch>
                             <Route path={PUBLIC_URL + "/projects/:project"}>
-                                <FD height={height}><Project setPage={setPage} /></FD>
+                                <Project setPage={setPage} />
                             </Route>
                             <Route path={PUBLIC_URL + "/projects"}>
-                                <FD height={height}><Projects /></FD>
+                                <Projects />
                             </Route>
                             <Route path={PUBLIC_URL + "/about"}>
-                                <FD height={height}><About /></FD>
+                                <About />
                             </Route>
                             {/* <Route path={PUBLIC_URL + "/resume"}>
-                                <FD height={height}><Resume /></FD>
+                                <Resume />
                             </Route> */}
                             <Route exact path="/">
                                 <Home height={height}/>
@@ -115,8 +104,8 @@ function App() {
                                 <Redirect to="/" />
                             </Route>
                         </Switch>
+                    </FD>
                     </Suspense>
-                </div>
             </Router>
         </div>
     );
