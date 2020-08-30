@@ -55,7 +55,7 @@ function Project({ setPage }) {
                                     src={`https://hayden-portfolio.s3.us-east-2.amazonaws.com/${image}.png`}
                                     placeholderSrc={`https://hayden-portfolio.s3.us-east-2.amazonaws.com/${image}_thumb.png`}
                                     className='selectable'
-                                    style={hover ? { opacity: '75%', maxHeight: height * .75 } : { maxHeight: height * .75 }}
+                                    style={hover ? { opacity: '75%', maxHeight: height * .9 } : { maxHeight: height * .9 }}
                                     onMouseOut={() => link && link !== '' && setHover(false)}
                                     onMouseOver={() => link && link !== '' && setHover(true)}
                                     effect='blur'

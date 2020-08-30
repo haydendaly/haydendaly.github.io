@@ -55,7 +55,7 @@ const projects = [
         dates: 'May 2020 - Now',
         category: ['Mobile'],
         text: 'Building an app for university-oriented group chats.\n',
-        description: 'Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 1000 courses. \n',
+        description: 'Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 1,000 courses. \n',
         stack: ['React Native', 'Node', 'Firebase'],
         link: 'https://babb.io'
     },
@@ -174,8 +174,6 @@ const projects = [
         category: ['Backend'],
         text: 'Built a GEDCOM parser with varying agile practices.\n',
         stack: ['Python'],
-        thumbnailURL: '',
-        imageURL: '',
         link: 'https://github.com/haydendaly/GEDCOM-Parser'
     },
     {
