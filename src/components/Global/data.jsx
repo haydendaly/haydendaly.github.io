@@ -47,7 +47,7 @@ const projects = [
         text: 'Creating infrastructure for distributed trade-space simulations.\n',
         description: 'Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Developed orchestration with service mesh and gathered requirements from DOD, NASA, and USGS. \n',
         stack: ['React', 'Docker', 'Flask', 'MQTT', 'Python', 'Nginx'],
-        link: 'https://github.com/haydendaly/testbed-architecture'
+        link: 'https://github.com/haydendaly/nos-t-infrastructure'
     },
     {
         key: 'babbio',
@@ -264,7 +264,7 @@ const about = [
         component: (
         <p className='section' style={{ whiteSpace: 'pre-wrap' }}>
             {`I'm a software engineering student at Stevens Institute in Hoboken, NJ in the iSTEM program. Most of my free time I spend either running, reading, cooking, or coding. I compete on the varsity cross country and track teams at my university and plan to pursue ultra running after graduation.
-            I'm currently a full-time student but engaged in a several interesting side projects. Some notable projects I'm working on are `}
+            I'm currently a full-time student but engaged in several interesting side projects. Some notable projects I'm working on are `}
             <Link
                             className="current"
                             to={"/projects/exire"}    

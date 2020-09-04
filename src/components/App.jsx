@@ -54,7 +54,6 @@ function App() {
             mixpanel.identify(res.ip);
             mixpanel.track("Home");
         })
-        .catch(err => console.log(err))
     }, [])
 
     useEffect(() => {

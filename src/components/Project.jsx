@@ -64,7 +64,6 @@ function Project({ setPage }) {
                                         e.target.src = 'https://hayden-portfolio.s3.us-east-2.amazonaws.com/fallback_image.png';
                                         setImage('fallback_image');
                                         setLoaded(false);
-                                        console.log(e)
                                     }}
                                 />
                             </a>

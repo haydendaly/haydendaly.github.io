@@ -24,7 +24,6 @@ const request = (url, type="GET", send, body=null, defaultValue={}, format='json
             send(response);
         })
         .catch(err => {
-            console.log(JSON.stringify(err));
             send(defaultValue);
         });
 };

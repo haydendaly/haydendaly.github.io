@@ -44,7 +44,6 @@ var request = function request(url) {
   }).then(function (response) {
     send(response);
   })["catch"](function (err) {
-    console.log(JSON.stringify(err));
     send(defaultValue);
   });
 };
