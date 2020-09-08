@@ -13,7 +13,7 @@ import { useWindowDimensions } from '../functions/helper';
 
 function Project({ setPage }) {
     let location = useLocation();
-    const { height } = useWindowDimensions();
+    const { height, width } = useWindowDimensions();
     const [loaded, setLoaded] = useState(true);
     const [data, setData] = useState({ key: '', text: '', component: '', name: '' });
     const [hover, setHover] = useState(false);
@@ -55,7 +55,7 @@ function Project({ setPage }) {
                                     src={`https://hayden-portfolio.s3.us-east-2.amazonaws.com/${image}.png`}
                                     placeholderSrc={`https://hayden-portfolio.s3.us-east-2.amazonaws.com/${image}_thumb.png`}
                                     className='selectable'
-                                    style={hover ? { opacity: '75%', maxHeight: height * .9 } : { maxHeight: height * .9 }}
+                                    style={hover ? { opacity: '75%', maxHeight: height * .9, minHeight: _.has(data, 'aspect_ratio') ? (width * .95 > 1000 ? 1000 : width * .95) / data.aspect_ratio : height *.5 } : { maxHeight: height * .9, minHeight: _.has(data, 'aspect_ratio') ? (width * .95 > 1000 ? 1000 : width * .95) / data.aspect_ratio : height * .5 }}
                                     onMouseOut={() => link && link !== '' && setHover(false)}
                                     onMouseOver={() => link && link !== '' && setHover(true)}
                                     effect='blur'

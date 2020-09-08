@@ -20,13 +20,14 @@ const projects = [
     {
         key: 'exire',
         name: 'Exire.ai',
-        role: 'Chief Executive Officer',
+        role: 'Co-Founder/CEO',
         dates: 'June 2019 - Now',
         category: ['Mobile', 'ML/AI', 'Backend', 'DevOps'],
         text: 'Working on an AI-concierge app startup. \n',
         description: 'Building mobile app for iOS/Android that helps groups make plans with conversational AI. Rised out of irritation in making plans and incorporated to a C-Corp. Currently developing in small sprints focused around a private beta. \n',
         stack: ['Node', 'React (Native)', 'Swift', 'MongoDB', 'TensorFlow'],
-        link: 'https://exire.ai'
+        link: 'https://exire.ai',
+        aspect_ratio: 1500/771
     },
     {
         key: 'codeforhoboken',
@@ -36,8 +37,7 @@ const projects = [
         category: ['Hardware', 'Mobile', 'Hackathons', 'Backend'],
         text: 'Starting nonprofit for local environmental focused tech initiatives.\n',
         description: 'Starting sustainability focused 501(c)(3) organization with support of local government to bring open-sourced, smart city technology to Hoboken. \n',
-        stack: ['React Native'],
-        thumbnailURL: ''
+        stack: ['React Native']
     },
     {
         key: 'testbed',
@@ -47,7 +47,8 @@ const projects = [
         text: 'Creating infrastructure for distributed trade-space simulations.\n',
         description: 'Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Developed orchestration with service mesh and gathered requirements from DOD, NASA, and USGS. \n',
         stack: ['React', 'Docker', 'Flask', 'MQTT', 'Python', 'Nginx'],
-        link: 'https://github.com/haydendaly/nos-t-infrastructure'
+        link: 'https://github.com/haydendaly/nos-t-infrastructure',
+        aspect_ratio: 1500/887
     },
     {
         key: 'babbio',
@@ -57,7 +58,8 @@ const projects = [
         text: 'Building an app for university-oriented group chats.\n',
         description: 'Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 1,000 courses. \n',
         stack: ['React Native', 'Node', 'Firebase'],
-        link: 'https://babb.io'
+        link: 'https://babb.io',
+        aspect_ratio: 1500/825
     },
     {
         key: '2020',
@@ -72,7 +74,8 @@ const projects = [
         text: 'Interned at Disney Television Animation. \n',
         description: 'Developed full-stack to be used internally within the production of animated content. Restructured GitLab pipelines for automated testing of multiple environments. \n',
         stack: ['React', 'Django', 'Docker', 'SQL', 'Nginx', 'Ruby'],
-        link: ''
+        link: '',
+        aspect_ratio: 1280/720
     },
     {
         key: 'securemeeting',
@@ -82,7 +85,8 @@ const projects = [
         text: 'Developed features for video-chat platform. \n',
         description: 'Worked with fullstack WebRTC platform to improve backend performance, develop frontend features, and start/lead development on a mobile application. \n',
         stack: ['React', 'WebRTC', 'React Native'],
-        link: 'https://securemeeting.org'
+        link: 'https://securemeeting.org',
+        aspect_ratio: 1500/937
     },
     {
         key: 'covidhealthhack',
@@ -90,7 +94,8 @@ const projects = [
         category: ['Hackathons'],
         text: 'Organized two global Hackathons focused on Coronavirus. \n',
         stack: [],
-        link: 'https://covidhealthhack.com'    
+        link: 'https://covidhealthhack.com',
+        aspect_ratio: 1500/1086   
     },
     {
         key: 'atticus',
@@ -100,7 +105,8 @@ const projects = [
         text: 'Lead a team to build full-stack mobile book club app. \n',
         description: 'Created full-stack mobile app for iOS/Android that for people to orchestrate reading in groups available on TestFlight. \n',
         stack: ['React Native', 'Node', 'MongoDB'],
-        link: 'https://github.com/haydendaly/bookClub'
+        link: 'https://github.com/haydendaly/bookClub',
+        aspect_ratio: 1500/813
     },
     {
         key: '2&20',
@@ -118,7 +124,8 @@ const projects = [
         text: 'Worked on an open-source Coronavirus info site. \n',
         description: 'Worked with a global team consiting of faculty/students from University of Cambridge, Carnegie Mellon, nad more institutions to construct an open-source site to provide medical doctor-validated COVID-19 related information. Worked on frontend development and a backend notification/update system. Site was eventually taken down due to inability to keep up with constantly changing US policy and information. \n',
         stack: ['Gatsby', 'Node', 'GraphQL'],
-        link: 'https://stopthespread.info'
+        link: 'https://stopthespread.info',
+        aspect_ratio: 1500/829
     },
     {
         key: '533',
@@ -127,7 +134,8 @@ const projects = [
         text: 'Built a package/library recommendation system for software projects.\n',
         description: 'Used a basic, tensor-based recommendation system for NPM modules based off a project description with data collected using the GitHub API for open-source JavaScript projects.',
         stack: ['Python', 'Sci-kit Learn', 'Pandas'],
-        link: 'https://docs.google.com/document/d/1gyOCGEa7lazRmGwWWK1io5ym2EargMAka0fpsVf9F8M/edit?usp=sharing'
+        link: 'https://docs.google.com/document/d/1gyOCGEa7lazRmGwWWK1io5ym2EargMAka0fpsVf9F8M/edit?usp=sharing',
+        aspect_ratio: 1346/730
     },
     {
         key: 'finbot',
@@ -149,7 +157,8 @@ const projects = [
         text: 'Hosted a Hackathon focused on Melanoma survivors and living with RA. \n',
         description: 'Hosted a Hackathon focused on Melanoma survivors and millenials managing Rheumatoid Arthiritus. Fundraised over $45k in sponsorship from Bristol-Meyers Squibb, Quest Diagnostics, Greenberg Traurig, Johnson & Johnson, and many more organizations. Event was successful as many projects were continued after the event and some students receieved internship and full time offers with the sponsoring companies.\n',
         stack: [],
-        link: 'https://www.stevens.edu/news/stevens-annual-healthtech-hackathon-inspires-student-innovators'
+        link: 'https://www.stevens.edu/news/stevens-annual-healthtech-hackathon-inspires-student-innovators',
+        aspect_ratio: 1500/1000
     },
     {
         key: 'refarch',
@@ -158,7 +167,8 @@ const projects = [
         text: 'Published first paper on Reference Architectures. \n',
         description: 'Published a paper reference architectures being used to represent systems engineering, model-based information systems and evaluated an example architecture on a tradespace analytics tool. \n',
         stack: [],
-        link: 'https://code-lab.org'
+        link: 'https://code-lab.org',
+        aspect_ratio: 2000/1344
     },
     {
         key: 'tatckb',
@@ -166,7 +176,8 @@ const projects = [
         category: ['Backend', 'DevOps'],
         text: 'Developed backend for model-based satellite information system. \n',
         stack: ['Node', 'JavaScript', 'Docker', 'MongoDB'],
-        link: 'https://tatckb.org/'        
+        link: 'https://tatckb.org/',
+        aspect_ratio: 1500/809      
     },
     {
         key: 'gedcom',
@@ -174,14 +185,16 @@ const projects = [
         category: ['Backend'],
         text: 'Built a GEDCOM parser with varying agile practices.\n',
         stack: ['Python'],
-        link: 'https://github.com/haydendaly/GEDCOM-Parser'
+        link: 'https://github.com/haydendaly/GEDCOM-Parser',
+        aspect_ratio: 1500/811
     },
     {
         key: 'butterworth',
         name: 'Butterworth Second-Order Cross-over Frequency Filter',
         category: ['Hardware'],
         text: 'Built crossover frequency filter for AUX to Speaker. \n',
-        stack: ['MatLab']        
+        stack: ['MatLab'],
+        aspect_ratio: 1500/1122       
     },
     {
         key: 'iot',
@@ -189,7 +202,8 @@ const projects = [
         category: ['Hardware'],
         text: 'Built IoT weather station to collect local data. \n',
         stack: ['C/C++', 'Arduino', 'MQTT'],
-        link: 'https://docs.google.com/document/d/1d9J_OK-EI_-PonLnMO0rbKbBFXkRxm4bvkkc8Gl63_E/edit?usp=sharing'
+        link: 'https://docs.google.com/document/d/1d9J_OK-EI_-PonLnMO0rbKbBFXkRxm4bvkkc8Gl63_E/edit?usp=sharing',
+        aspect_ratio: 1500/1122
     },
     {
         key: 'bluehack',
@@ -198,7 +212,8 @@ const projects = [
         text: 'Won a human-trafficking Hackathon and attended an IBM Conference. \n',
         description: 'Competed in a Hackathon to develop solutions to problems surrounding human trafficking. Interviewed stakeholders from the Manhattan DA Office to learn about how they solve cases and put together a tool to parse social media data for insights regarding human trafficking victims. Ended up winning first and attending the IBM AI New Horizons Conference at their research center in Yorktown Heights, NY. \n',
         stack: ['Python', 'HTML/CSS'],
-        link: 'https://www.stevens.edu/news/stevens-students-develop-technologies-fight-human-trafficking'
+        link: 'https://www.stevens.edu/news/stevens-students-develop-technologies-fight-human-trafficking',
+        aspect_ratio: 852/480
     },
     {
         key: 'quickdraw',
@@ -217,21 +232,24 @@ const projects = [
         name: 'Autonomously Navigating Arduino Robt',
         category: ['Hardware'],
         text: 'Built Arduino autonomous navigation bot to go through course. \n',
-        stack: ['C/C++', 'Arduino']
+        stack: ['C/C++', 'Arduino'],
+        aspect_ratio: 1500/1125
     },
     {
         key: '3x3x9',
         name: "3x3x9 Rubik's Cube CAD Model",
         category: ['Design'],
         text: `Designed a 3x3x9 Rubik's cube and won CAD competition. \n`,
-        stack: ['SolidWorks']
+        stack: ['SolidWorks'],
+        aspect_ratio: 1000/657
     },
     {
         key: 'dineknow',
         name: 'DineKnow, VentureHacks 2018',
         category: ['Mobile', 'Hackathons', 'Design'],
         text: 'Did first Hackathon and won with a Dining Hall Application. \n',
-        stack: ['Swift']
+        stack: ['Swift'],
+        aspect_ratio: 1500/842
     },
 ]
 
