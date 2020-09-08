@@ -107,7 +107,7 @@ const projects = [
         name: 'Two and Twenty LLP',
         category: ['Backend', 'ML/AI'],
         text: 'Competed in a high frequency trading competition and won. \n',
-        description: <p>Competeted in a high frequency trading competition hosted by Capco and the financial engineering department of Stevens. Worked in a VM of a simulated trading environment and initially lost a good deal of money using traditional HFT algorithms like MACD. Noticed market making in the simulation wasn't effectively and created a market maker and in combination with <a target='_blank' className='current' href='https://www.sciencedirect.com/science/article/abs/pii/0304405X76900064'>Garman's inventory model</a> making over 20% profit in the final two days of competition and winning.</p>,
+        description: <p>Competeted in a high frequency trading competition hosted by Capco and the financial engineering department of Stevens. Worked in a VM of a simulated trading environment and initially lost a good deal of money using traditional HFT algorithms like MACD. Noticed market making in the simulation wasn't effectively and created a market maker and in combination with <a target='_blank' className='link' href='https://www.sciencedirect.com/science/article/abs/pii/0304405X76900064'>Garman's inventory model</a> making over 20% profit in the final two days of competition and winning.</p>,
         stack: ['Python', 'Pandas'],
         link: 'https://github.com/JamesLawrence30/TwoAndTwentyLLP'
     },
@@ -243,18 +243,18 @@ const about = [
             {`I'm a software engineering student at Stevens Institute in Hoboken, NJ in the iSTEM program. Most of my free time I spend either running, reading, cooking, or coding. I compete on the varsity cross country and track teams at my university and plan to pursue ultra running after graduation.
             I'm currently a full-time student but engaged in several interesting side projects. Some notable projects I'm working on are `}
             <Link
-                            className="current"
+                            className="link"
                             to={"/projects/exire"}    
             >
                 my startup which focuses on creating plans for groups, 
             </Link>
-            <Link className="current" to={"/projects/babbio"}> a group chat app targetting university students, </Link>
+            <Link className="link" to={"/projects/babbio"}> a group chat app targetting university students, </Link>
             {`a conversational chatbot providing personalized therapy, `}
             {`and some other ones in that realm. 
             After competing in two Hackathons, I took on the responsibility as co-director of Hackathons for the Stevens Venture Center where I recently hosted a `}
-            <Link className="current" to={"/projects/covidhealthhack"}>Hackathon based around adjusting to life after Coronavirus. </Link> 
+            <Link className="link" to={"/projects/covidhealthhack"}>Hackathon based around adjusting to life after Coronavirus. </Link> 
             {`I also am engaged in systems engineering research for the Collective-Design Lab where i've recently been developing `} 
-            <Link className="current" to={"/projects/testbed"}>an infrastructure and control panel</Link>
+            <Link className="link" to={"/projects/testbed"}>an infrastructure and control panel</Link>
             {` for distributed space-system simulations.`}
         </p>
         )
@@ -274,10 +274,10 @@ DevOps / Scalability`
         text: '',
         component: (
             <p className='section' style={{ whiteSpace: 'pre-wrap' }}>
-GitHub: <a target='_blank' className="current" href="https://github.com/haydendaly">haydendaly</a><br />
-LinkedIn: <a target='_blank' className="current" href="https://www.linkedin.com/in/haydendaly/">haydendaly</a><br />
-Strava: <a target='_blank' className="current" href="https://www.strava.com/athletes/54285809">Hayden Daly</a><br />
-Email: <a target='_blank' className="current" href="mailto:hdaly1@stevens.edu">hdaly1@stevens.edu</a>
+GitHub: <a target='_blank' className="link" href="https://github.com/haydendaly">haydendaly</a><br />
+LinkedIn: <a target='_blank' className="link" href="https://www.linkedin.com/in/haydendaly/">haydendaly</a><br />
+Strava: <a target='_blank' className="link" href="https://www.strava.com/athletes/54285809">Hayden Daly</a><br />
+Email: <a target='_blank' className="link" href="mailto:hdaly1@stevens.edu">hdaly1@stevens.edu</a>
             </p>
         )
     },
@@ -286,12 +286,12 @@ Email: <a target='_blank' className="current" href="mailto:hdaly1@stevens.edu">h
         text: '',
         component: (
             <p>
-                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/6751.Consider_the_Lobster_and_Other_Essays"><i>Consider the Lobster by David Foster Wallace</i></a><br />
-                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/22822858-a-little-life"><i>A Little Life by Hanya Yanagihara</i></a><br />
-                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"><i>Kafka and the Shore by Haruki Murikami</i></a><br />
-                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/166997.Stoner"><i>Stoner by John Williams</i></a><br />
-                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/21480734-dataclysm"><i>Dataclysm by Christian Rudder</i></a><br />
-                <a className="current" target='_blank' href="https://www.goodreads.com/book/show/9915.Less_Than_Zero"><i>Less Than Zero by Bret Easton Ellis</i></a><br />
+                <a className="link" target='_blank' href="https://www.goodreads.com/book/show/6751.Consider_the_Lobster_and_Other_Essays"><i>Consider the Lobster by David Foster Wallace</i></a><br />
+                <a className="link" target='_blank' href="https://www.goodreads.com/book/show/22822858-a-little-life"><i>A Little Life by Hanya Yanagihara</i></a><br />
+                <a className="link" target='_blank' href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"><i>Kafka and the Shore by Haruki Murikami</i></a><br />
+                <a className="link" target='_blank' href="https://www.goodreads.com/book/show/166997.Stoner"><i>Stoner by John Williams</i></a><br />
+                <a className="link" target='_blank' href="https://www.goodreads.com/book/show/21480734-dataclysm"><i>Dataclysm by Christian Rudder</i></a><br />
+                <a className="link" target='_blank' href="https://www.goodreads.com/book/show/9915.Less_Than_Zero"><i>Less Than Zero by Bret Easton Ellis</i></a><br />
             </p>
         )
     },
@@ -324,6 +324,15 @@ const photos = [
         name: 'The Arch',
         location: 'San Luis Obispo, CA',
         aspect_ratio: 600/450
+    },
+    {
+        key: 8,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_8.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_8.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_8.jpg`,
+        name: 'Elizabeth',
+        location: 'Simi Valley, CA',
+        aspect_ratio: 600/800
     },
     {
         key: 44,
@@ -378,15 +387,6 @@ const photos = [
         name: 'Oat Mountain',
         location: 'Chatsworth, CA',
         aspect_ratio: 600/450
-    },
-    {
-        key: 8,
-        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_8.jpg`,
-        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_8.jpg`,
-        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_8.jpg`,
-        name: 'Elizabeth',
-        location: 'Simi Valley, CA',
-        aspect_ratio: 600/800
     },
     {
         key: 9,

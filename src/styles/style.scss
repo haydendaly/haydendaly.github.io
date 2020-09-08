@@ -196,6 +196,13 @@ a:hover {
     }
 }
 
+.link {
+    @include themed() {
+        color: t($highlight);
+        text-decoration: underline;
+    }
+}
+
 .category:hover,
 a.category:active {
     @include themed() {
@@ -212,8 +219,12 @@ a.category:active {
 // Project View Styling
 .project-link {
     @include themed() {
-        color: t($dark-text);
+        color: t($highlight);
     }
+}
+
+.project-link:hover {
+    text-decoration: underline;
 }
 
 .project-italics {
