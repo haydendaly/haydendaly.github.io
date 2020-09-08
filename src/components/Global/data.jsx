@@ -233,29 +233,6 @@ const projects = [
         text: 'Did first Hackathon and won with a Dining Hall Application. \n',
         stack: ['Swift']
     },
-    // data just for resume
-    {
-        key: 'svc',
-        name: 'Stevens Venture Center',
-        role: 'Co-director of Hackathons',
-    dates: 'May 2019 - Now',
-        category: ['Hackathons'],
-        description: 'Setup, manage, and operate multiple Hackathons annually with a budget of \$45k+ from sponsors at the UN, J\&J, IBM, and more. Recently hosted the 2020 COVID-19 Hackathon with 600+ global participants to address post-COVID life.\n',
-        stack: [],
-        link: 'https://covidhealthhack.com',
-        isResume: true
-    },
-    {
-        key: 'codelab',
-        name: 'Collective Design Lab',
-        role: 'Software Developer Researcher',
-        dates: 'May 2019 - Now',
-        category: ['Backend', 'DevOps', 'Web'],
-        description: 'Developed research-focused projects in the domain of distributed authority, aerospace engineering, and software architecture. Published the paper “A Reference Software Architecture for Model-centric Engineering Information Systems”. \n',
-        stack: ['React', 'Docker', 'Node', 'Flask'],
-        link: 'https://covidhealthhack.com',
-        isResume: true
-    },
 ]
 
 const about = [
@@ -320,8 +297,534 @@ Email: <a target='_blank' className="current" href="mailto:hdaly1@stevens.edu">h
     },
 ]
 
+const photos = [
+    {
+        key: 21,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_21.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_21.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_21.jpg`,
+        name: 'First Snow',
+        location: 'Hoboken, NJ',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 6,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_6.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_6.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_6.jpg`,
+        name: 'The Nets',
+        location: 'Simi Valley, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 43,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_43.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_43.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_43.jpg`,
+        name: 'The Arch',
+        location: 'San Luis Obispo, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 44,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_44.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_44.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_44.jpg`,
+        name: 'Nick',
+        location: 'San Luis Obispo, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 1,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_1.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_1.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_1.jpg`,
+        name: 'Caution Sign at LA-88 Nike Missile Base',
+        location: 'Chatsworth, CA',
+        aspect_ratio: 600/338
+    },
+    {
+        key: 3,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_3.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_3.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_3.jpg`,
+        name: 'Spelunking',
+        location: 'Joshua Tree, CA',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 4,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_4.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_4.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_4.jpg`,
+        name: 'Little Sister',
+        location: 'Porter Ranch, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 5,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_5.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_5.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_5.jpg`,
+        name: 'Trees in Aliso Canyon',
+        location: 'Granada Hills, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 7,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_7.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_7.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_7.jpg`,
+        name: 'Oat Mountain',
+        location: 'Chatsworth, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 8,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_8.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_8.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_8.jpg`,
+        name: 'Elizabeth',
+        location: 'Simi Valley, CA',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 9,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_9.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_9.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_9.jpg`,
+        name: '4th of July at Liberty State Park',
+        location: 'Jersey City, NJ',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 10,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_10.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_10.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_10.jpg`,
+        name: 'Flowers at Bee Canyon',
+        location: 'Granada Hills, CA',
+        aspect_ratio: 600/402
+    },
+    {
+        key: 11,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_11.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_11.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_11.jpg`,
+        name: 'Sean',
+        location: 'Goleta, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 12,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_12.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_12.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_12.jpg`,
+        name: 'Crossing the Gap',
+        location: 'Goleta, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 13,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_13.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_13.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_13.jpg`,
+        name: 'Climbing',
+        location: 'Goleta, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 14,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_14.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_14.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_14.jpg`,
+        name: 'Diego in Tree',
+        location: 'Goleta, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 15,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_15.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_15.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_15.jpg`,
+        name: 'Climbing',
+        location: 'Goleta, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 16,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_16.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_16.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_16.jpg`,
+        name: 'Family on Lake',
+        location: 'Mammoth Lakes, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 17,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_17.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_17.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_17.jpg`,
+        name: 'Stony Point',
+        location: 'Chatsworth, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 18,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_18.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_18.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_18.jpg`,
+        name: 'Hiking',
+        location: 'Chatsworth, CA',
+        aspect_ratio: 600/798
+    },
+    {
+        key: 19,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_19.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_19.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_19.jpg`,
+        name: 'First Day at School',
+        location: 'Hoboken, NJ',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 20,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_20.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_20.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_20.jpg`,
+        name: 'One WTC',
+        location: 'Manhattan, NYC',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 22,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_22.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_22.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_22.jpg`,
+        name: 'Dorm',
+        location: 'Hoboken, NJ',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 23,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_23.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_23.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_23.jpg`,
+        name: 'Track Championships',
+        location: 'Alfred, NY',
+        aspect_ratio: 600/400
+    },
+    {
+        key: 24,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_24.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_24.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_24.jpg`,
+        name: 'LA-88 Nike Missile Site',
+        location: 'Chatsworth, CA',
+        aspect_ratio: 600/401
+    },
+    {
+        key: 25,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_25.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_25.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_25.jpg`,
+        name: '4th of July',
+        location: 'Jersey City, NJ',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 26,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_26.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_26.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_26.jpg`,
+        name: 'The Met',
+        location: 'Manhattan, NY',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 27,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_27.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_27.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_27.jpg`,
+        name: 'Rooftop',
+        location: 'Hoboken, NJ',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 28,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_28.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_28.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_28.jpg`,
+        name: 'Central Park',
+        location: 'Manhattan, NY',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 29,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_29.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_29.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_29.jpg`,
+        name: 'Lucky Boy after COSPAR',
+        location: 'Pasadena, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 30,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_30.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_30.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_30.jpg`,
+        name: 'Initial College Visit',
+        location: 'Los Angeles, CA',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 2,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_2.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_2.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_2.jpg`,
+        name: 'Running at Pierce College',
+        location: 'Los Angeles, CA',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 31,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_31.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_31.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_31.jpg`,
+        name: 'Jacob',
+        location: 'Santa Barbara, CA',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 32,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_32.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_32.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_32.jpg`,
+        name: 'Hiking',
+        location: 'Joshua Tree, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 33,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_33.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_33.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_33.jpg`,
+        name: 'Off the Wall Chinese Food',
+        location: 'Hoboken, NJ',
+        aspect_ratio: 600/400
+    },
+    {
+        key: 34,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_34.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_34.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_34.jpg`,
+        name: 'Hiking',
+        location: 'Joshua Tree, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 35,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_35.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_35.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_35.jpg`,
+        name: 'Exploring LA-94 Nike Missile Base',
+        location: 'Sylmar, CA',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 36,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_36.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_36.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_36.jpg`,
+        name: 'Exploring LA-94 Nike Missile Base',
+        location: 'Sylmar, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 37,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_37.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_37.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_37.jpg`,
+        name: 'Exploring LA-94 Nike Missile Base',
+        location: 'Sylmar, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 38,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_38.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_38.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_38.jpg`,
+        name: 'Descanso Gardens',
+        location: 'Alta Dena, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 39,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_39.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_39.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_39.jpg`,
+        name: 'Sunset Over Gas Company',
+        location: 'Porter Ranch, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 40,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_40.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_40.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_40.jpg`,
+        name: 'Kyle',
+        location: 'Porter Ranch, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 41,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_41.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_41.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_41.jpg`,
+        name: 'Mormon Trail',
+        location: 'Porter Ranch, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 42,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_42.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_42.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_42.jpg`,
+        name: 'Overnight Hike',
+        location: 'Sylmar, CA',
+        aspect_ratio: 600/598
+    },
+    {
+        key: 45,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_45.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_45.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_45.jpg`,
+        name: 'Reseda Point',
+        location: 'Porter Ranch, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 46,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_46.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_46.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_46.jpg`,
+        name: 'Sunset in SM',
+        location: 'Santa Monica, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 47,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_47.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_47.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_47.jpg`,
+        name: 'Cool Architecture',
+        location: 'Rockefeller Island, NY',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 48,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_48.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_48.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_48.jpg`,
+        name: 'Night',
+        location: 'Hoboken, NJ',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 49,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_49.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_49.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_49.jpg`,
+        name: 'Jacob',
+        location: 'Granada Hills, CA',
+        aspect_ratio: 600/598
+    },
+    {
+        key: 50,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_50.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_50.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_50.jpg`,
+        name: 'Reading',
+        location: 'Rockefeller Island, NY',
+        aspect_ratio: 600/450
+    },
+        {
+        key: 51,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_51.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_51.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_51.jpg`,
+        name: "O'Melveny",
+        location: 'Granada Hills, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 52,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_52.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_52.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_52.jpg`,
+        name: 'Mission Point',
+        location: 'Granada Hills, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 53,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_53.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_53.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_53.jpg`,
+        name: 'Hummingbird Trail',
+        location: 'Simi Valley, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 54,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_54.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_54.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_54.jpg`,
+        name: 'Floyd-Kleinberg Diphering',
+        location: 'Chatsworth, CA',
+        aspect_ratio: 600/442
+    },
+    {
+        key: 55,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_55.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_55.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_55.jpg`,
+        name: 'Top of Zelzah',
+        location: 'Granada Hills, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 56,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_56.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_56.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_56.jpg`,
+        name: "Bee Canyon",
+        location: 'Granada Hills, CA',
+        aspect_ratio: 600/450
+    },
+    {
+        key: 57,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_57.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_57.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_57.jpg`,
+        name: 'Post Championships',
+        location: 'Alfred, NY',
+        aspect_ratio: 600/800
+    },
+    {
+        key: 58,
+        thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_58.jpg`,
+        highres_thumbnail: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_thumb_high_58.jpg`,
+        full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_58.jpg`,
+        name: 'Me',
+        location: 'Porter Ranch, CA',
+        aspect_ratio: 600/450
+    },
+]
+
 export {
     home,
     projects,
-    about
+    about,
+    photos
 }

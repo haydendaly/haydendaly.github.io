@@ -15,6 +15,7 @@ function Header({ page, setPage, dark, setMode }) {
         <Headroom
             onPin={() => setShow(true)}
             onUnfix={() => setShow(false)}
+            style={{ zIndex: 2 }}
         >
             <FD styles={show && { backgroundColor: dark ? '#00204a' : '#fff', boxShadow: `1px 0px 1px ${dark ? '#77abb7' : '#393e46'}` }}>
                 <div style={{
@@ -49,25 +50,23 @@ function Header({ page, setPage, dark, setMode }) {
                                 style={mobileStyles}>
                                 About
                             </Link>
-                            {/* <Link
-                                onClick={() => setPage("/resume")}
-                                to="/resume"
-                                className={`header-text${page === '/resume' ? ' current' : ''}`}
+                            <Link
+                                onClick={() => setPage("/photos")}
+                                to="/photos"
+                                className={`header-text${page === '/photos' ? ' current' : ''}`}
+                                style={mobileStyles}>
+                                Photos
+                            </Link>
+                            <a
+                                target='_blank'
+                                href={'https://hayden-portfolio.s3.us-east-2.amazonaws.com/HaydenDaly_Resume.pdf'}
+                                className='header-text'
+                                onClick={() => {
+                                    mixpanel.track('Resume PDF');
+                                }}
                                 style={mobileStyles}>
                                 Resume
-                            </Link> */}
-                            {/* {page === '/resume' && ( */}
-                                <a
-                                    target='_blank'
-                                    href={'https://hayden-portfolio.s3.us-east-2.amazonaws.com/HaydenDaly_Resume.pdf'}
-                                    className='header-text'
-                                    onClick={() => {
-                                        mixpanel.track('Resume PDF');
-                                    }}
-                                    style={mobileStyles}>
-                                    Resume
-                                </a>
-                            {/* )} */}
+                            </a>
                         </div>
                         <OverlayTrigger
                             placement='bottom'

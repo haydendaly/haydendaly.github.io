@@ -31,13 +31,14 @@ console.log('\nhttps://github.com/haydendaly/haydendaly.github.io\n ')
 const Home = lazy(() => import('./Home'));
 const Projects = lazy(() => import('./Projects'));
 const About = lazy(() => import('./About'));
-// const Resume = lazy(() => import('./Resume'));
+const Photos = lazy(() => import('./Photos'));
 const Project = lazy(() => import('./Project'));
 
 const titles = {
     '/projects': 'Projects - ',
     '/about': 'About - ',
-    '/resume': 'Resume - '
+    '/resume': 'Resume - ',
+    '/photos': 'Photos - '
 }
 
 function App() {
@@ -93,9 +94,9 @@ function App() {
                             <Route path={PUBLIC_URL + "/about"}>
                                 <About />
                             </Route>
-                            {/* <Route path={PUBLIC_URL + "/resume"}>
-                                <Resume />
-                            </Route> */}
+                            <Route path={PUBLIC_URL + "/photos"}>
+                                <Photos />
+                            </Route>
                             <Route exact path="/">
                                 <Home height={height}/>
                             </Route>
