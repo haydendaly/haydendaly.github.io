@@ -56,7 +56,7 @@ const projects = [
         dates: 'May 2020 - Now',
         category: ['Mobile'],
         text: 'Building an app for university-oriented group chats.\n',
-        description: 'Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 1,000 courses. \n',
+        description: 'Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 2,200 courses. Published React Native mobile application to Apple/Google Play App Stores and pushing out updates in weekly sprints. \n',
         stack: ['React Native', 'Node', 'Firebase'],
         link: 'https://babb.io',
         aspect_ratio: 1500/825
@@ -113,7 +113,7 @@ const projects = [
         name: 'Two and Twenty LLP',
         category: ['Backend', 'ML/AI'],
         text: 'Competed in a high frequency trading competition and won. \n',
-        description: <p>Competeted in a high frequency trading competition hosted by Capco and the financial engineering department of Stevens. Worked in a VM of a simulated trading environment and initially lost a good deal of money using traditional HFT algorithms like MACD. Noticed market making in the simulation wasn't effectively and created a market maker and in combination with <a target='_blank' className='link' href='https://www.sciencedirect.com/science/article/abs/pii/0304405X76900064'>Garman's inventory model</a> making over 20% profit in the final two days of competition and winning.</p>,
+        description: <p>Competed in a high frequency trading competition hosted by Capco and the financial engineering department of Stevens. Worked in a VM of a simulated trading environment and initially lost a good deal of money using traditional HFT algorithms like MACD. Noticed market making in the simulation wasn't effectively and created a market maker and in combination with <a target='_blank' className='link' href='https://www.sciencedirect.com/science/article/abs/pii/0304405X76900064'>Garman's inventory model</a> making over 20% profit in the final two days of competition and winning.</p>,
         stack: ['Python', 'Pandas'],
         link: 'https://github.com/JamesLawrence30/TwoAndTwentyLLP'
     },
@@ -584,7 +584,7 @@ const photos = [
         full: `https://hayden-portfolio.s3.us-east-2.amazonaws.com/photo_29.jpg`,
         name: 'Lucky Boy after COSPAR',
         location: 'Pasadena, CA',
-        aspect_ratio: 600/450
+        aspect_ratio: 600/399
     },
     {
         key: 30,
