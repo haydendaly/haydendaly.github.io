@@ -220,6 +220,7 @@ a.category:active {
 .project-link {
     @include themed() {
         color: t($highlight);
+        text-decoration: underline;
     }
 }
 

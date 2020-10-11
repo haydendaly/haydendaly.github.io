@@ -7,7 +7,7 @@ const home = [
     'securemeeting',
     'testbed',
     'healthhack',
-    'codeforhoboken',
+    'metrolabs',
     'atticus',
     '3x3x9'
 ]
@@ -30,22 +30,22 @@ const projects = [
         aspect_ratio: 1500/771
     },
     {
-        key: 'codeforhoboken',
-        name: 'Code for Hoboken',
+        key: 'metrolabs',
+        name: 'Metro Labs',
         role: 'Co-founder',
         dates: 'May 2020 - Now',
         category: ['Hardware', 'Mobile', 'Hackathons', 'Backend'],
         text: 'Starting nonprofit for local environmental focused tech initiatives.\n',
-        description: 'Starting sustainability focused 501(c)(3) organization with support of local government to bring open-sourced, smart city technology to Hoboken. \n',
-        stack: ['React Native']
+        description: 'Starting sustainability focused 501(c)(3) organization with support of local government to bring open-sourced, smart city technology to Hoboken. Forming a collaborative triangle between education, local industry, and municipalities to bring open-sourced solutions locally. Starting with pilot project of local garbage optimization full-stack application to be adopted by the Hoboken Sustainability Office.\n',
+        stack: ['React Native', 'React', 'Node']
     },
     {
         key: 'testbed',
-        name: 'Testbed Simulation Infrastructure',
+        name: 'NOS-T Simulation Infrastructure',
         dates: 'April 2020 - Now',
         category: ['Web', 'Backend', 'DevOps'],
         text: 'Creating infrastructure for distributed trade-space simulations.\n',
-        description: 'Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Developed orchestration with service mesh and gathered requirements from DOD, NASA, and USGS. \n',
+        description: 'Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Research awarded by the DoD/NASA for 3 year contract project to be implemented in the NASA Private Cloud to be used for distributed simulations. Developed orchestration with service mesh and gathered requirements from DOD, NASA, and USGS on both interfaces and developing communication protocols. \n',
         stack: ['React', 'Docker', 'Flask', 'MQTT', 'Python', 'Nginx'],
         link: 'https://github.com/haydendaly/nos-t-infrastructure',
         aspect_ratio: 1500/887
@@ -93,6 +93,7 @@ const projects = [
         name: 'COVID HealthHack',
         category: ['Hackathons'],
         text: 'Organized two global Hackathons focused on Coronavirus. \n',
+        description: <p style={{ marginBottom: 0 }}>Hosted the 2020 COVID-19 Hackathon with 600+ global participants to address post-COVID life--still advising multiple teams. Received media recognition from major media outlets such as <a className='link' href='https://www.inc.com/a-university-hackathon-tackles-reopening-the-economy-after-covid.html' target='_blank'>Inc. Magazine</a>, <a className='link' href='https://markets.businessinsider.com/news/stocks/infragistics-partners-with-stevens-venture-center-to-support-covid-healthhack-ii-1029182143#' target='_blank'>Business Insider</a>, and <a className='link' href='https://finance.yahoo.com/news/infragistics-partners-stevens-venture-center-130000325.html' target='_blank'>Yahoo Finance.</a></p>,
         stack: [],
         link: 'https://covidhealthhack.com',
         aspect_ratio: 1500/1086   
@@ -103,7 +104,7 @@ const projects = [
         category: ['Mobile', 'Backend'],
         dates: 'February 2020 - June 2020',
         text: 'Lead a team to build full-stack mobile book club app. \n',
-        description: 'Created full-stack mobile app for iOS/Android that for people to orchestrate reading in groups available on TestFlight. \n',
+        description: 'Created full-stack mobile app for iOS/Android that for people to orchestrate reading in groups available on TestFlight. Lead 4 others through Node and React Native development teaching and guiding them to build the application. \n',
         stack: ['React Native', 'Node', 'MongoDB'],
         link: 'https://github.com/haydendaly/bookClub',
         aspect_ratio: 1500/813
@@ -113,7 +114,7 @@ const projects = [
         name: 'Two and Twenty LLP',
         category: ['Backend', 'ML/AI'],
         text: 'Competed in a high frequency trading competition and won. \n',
-        description: <p>Competed in a high frequency trading competition hosted by Capco and the financial engineering department of Stevens. Worked in a VM of a simulated trading environment and initially lost a good deal of money using traditional HFT algorithms like MACD. Noticed market making in the simulation wasn't effectively and created a market maker and in combination with <a target='_blank' className='link' href='https://www.sciencedirect.com/science/article/abs/pii/0304405X76900064'>Garman's inventory model</a> making over 20% profit in the final two days of competition and winning.</p>,
+        description: <p style={{ marginBottom: 0 }}>Competed in a high frequency trading competition hosted by Capco and the financial engineering department of Stevens. Worked in a VM of a simulated trading environment and initially lost a good deal of money using traditional HFT algorithms like MACD. Noticed market making in the simulation wasn't effectively and created a market maker and in combination with <a target='_blank' className='link' href='https://www.sciencedirect.com/science/article/abs/pii/0304405X76900064'>Garman's inventory model</a> making over 20% profit in the final two days of competition and winning.</p>,
         stack: ['Python', 'Pandas'],
         link: 'https://github.com/JamesLawrence30/TwoAndTwentyLLP'
     },
@@ -132,7 +133,7 @@ const projects = [
         name: 'NPM Module Recommendation System',
         category: ['ML/AI'],
         text: 'Built a package/library recommendation system for software projects.\n',
-        description: 'Used a basic, tensor-based recommendation system for NPM modules based off a project description with data collected using the GitHub API for open-source JavaScript projects.',
+        description: 'Used a basic, tensor-based recommendation system for NPM modules based off a project description with data collected using the GitHub API for open-source JavaScript projects.\n',
         stack: ['Python', 'Sci-kit Learn', 'Pandas'],
         link: 'https://docs.google.com/document/d/1gyOCGEa7lazRmGwWWK1io5ym2EargMAka0fpsVf9F8M/edit?usp=sharing',
         aspect_ratio: 1346/730
@@ -142,7 +143,7 @@ const projects = [
         name: 'Financial Slack Bot',
         category: ['Backend'],
         text: 'Constructed financially-literate Slack bot. \n',
-        description: 'Constructed financially-literate Slack bot based around Alphavantage API to respond to natural language queries for both stock and cryptocurrency alphas. Focused primarily on BBANDs/MACD/other standard alphas for a functional prototype. \n',
+        description: 'Constructed financially-literate Slack bot based around Alphavantage API to respond to natural language queries for both stock and cryptocurrency alphas. Focused primarily on BBANDs, MACD, and other standard alphas for a functional prototype. \n',
         stack: ['Python'],
         link: 'https://github.com/haydendaly/financial-slack-bot'
     },
@@ -175,6 +176,7 @@ const projects = [
         name: 'Tradespace Analysis Tool for Constellations Knowledge Base',
         category: ['Backend', 'DevOps'],
         text: 'Developed backend for model-based satellite information system. \n',
+        description: 'Developed backend for model-based satellite information system. Worked with other research labs from institutions such as NASA Goddard, Texas A&M, and MIT to build component for larger architecture of the tradespace analysis tool for constellations. \n',
         stack: ['Node', 'JavaScript', 'Docker', 'MongoDB'],
         link: 'https://tatckb.org/',
         aspect_ratio: 1500/809      
@@ -184,15 +186,17 @@ const projects = [
         name: 'GEDCOM Parser',
         category: ['Backend'],
         text: 'Built a GEDCOM parser with varying agile practices.\n',
+        description: 'Built a GEDCOM parser with varying agile practices in a team of 3. Conducted weekly sprints with prioritized user stories to add to a parser system. Operated with a CLI interface and wrote clear documentation surrounded the development process.\n',
         stack: ['Python'],
         link: 'https://github.com/haydendaly/GEDCOM-Parser',
         aspect_ratio: 1500/811
     },
     {
         key: 'butterworth',
-        name: 'Butterworth Second-Order Cross-over Frequency Filter',
+        name: 'Cross-over Frequency Filter',
         category: ['Hardware'],
         text: 'Built crossover frequency filter for AUX to Speaker. \n',
+        description: 'Built crossover frequency filter for AUX to Speaker. Used a second-order Butterworth filter to distribute frequencies to a subwoofer and a tweeter for better playback quality.\n',
         stack: ['MatLab'],
         aspect_ratio: 1500/1122       
     },
@@ -201,6 +205,7 @@ const projects = [
         name: 'IoT Weather Station',
         category: ['Hardware'],
         text: 'Built IoT weather station to collect local data. \n',
+        description: 'Built IoT weather station to collect local data. Designed and 3d printed chasis to hold system which used an Arduino WeMos board and a few sensors to create the form. Used MQTT messages to communicate with local broker and output data to live dashboard.\n',
         stack: ['C/C++', 'Arduino', 'MQTT'],
         link: 'https://docs.google.com/document/d/1d9J_OK-EI_-PonLnMO0rbKbBFXkRxm4bvkkc8Gl63_E/edit?usp=sharing',
         aspect_ratio: 1500/1122
@@ -232,6 +237,7 @@ const projects = [
         name: 'Autonomously Navigating Arduino Robt',
         category: ['Hardware'],
         text: 'Built Arduino autonomous navigation bot to go through course. \n',
+        description: 'Built Arduino autonomous navigation bot to go through course. Used Arduino WeMos board with C++ to collect data from ultrasonic sensors and navigate accordingly. \n',
         stack: ['C/C++', 'Arduino'],
         aspect_ratio: 1500/1125
     },
@@ -240,6 +246,7 @@ const projects = [
         name: "3x3x9 Rubik's Cube CAD Model",
         category: ['Design'],
         text: `Designed a 3x3x9 Rubik's cube and won CAD competition. \n`,
+        description: `Designed a 3x3x9 Rubik's cube using SolidWorks and won CAD competition. Made cube function/move, 3d printed, and treated a few of the prototype pieces using ABS plastic.\n`,
         stack: ['SolidWorks'],
         aspect_ratio: 1000/657
     },
@@ -248,6 +255,7 @@ const projects = [
         name: 'DineKnow, VentureHacks 2018',
         category: ['Mobile', 'Hackathons', 'Design'],
         text: 'Did first Hackathon and won with a Dining Hall Application. \n',
+        description: 'Competed in first Hackathon and won with a Dining Hall Application. Built app in native Swift to optimize the on-campus dining experience by allowing students to check dining hall capacity, voting on what type of food they want to see, and view the menu from the app. Ultimate goal was reduction of food-waste which was over 133 billion lbs of food in 2010.\n',
         stack: ['Swift'],
         aspect_ratio: 1500/842
     },

@@ -243,7 +243,7 @@ function Resume() {
                 <SectionWrapper projectKey='svc' relatedProject='covidhealthhack' />
                 <SectionWrapper projectKey='dtva' />
                 <SectionWrapper projectKey='babbio' sectionKey='Projects' margin={90} />
-                <SectionWrapper projectKey='codeforhoboken' />
+                <SectionWrapper projectKey='metrolabs' />
                 <SectionWrapper projectKey='testbed' />
                 <SectionWrapper projectKey='securemeeting' />
                 <AwardsWrapper sectionKey='Awards' margin={80} />
@@ -265,7 +265,7 @@ function Resume() {
                     <EduWrapper sectionKey='Education' margin={105} />
                     <SkillsWrapper sectionKey='Skills' margin={55} />
                     <SectionWrapper projectKey='babbio' sectionKey='Projects' margin={90} />
-                    <SectionWrapper projectKey='codeforhoboken' />
+                    <SectionWrapper projectKey='metrolabs' />
                     <SectionWrapper projectKey='testbed' />
                     <SectionWrapper projectKey='securemeeting' />
                 </div>
