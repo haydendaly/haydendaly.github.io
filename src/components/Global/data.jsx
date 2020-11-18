@@ -288,11 +288,10 @@ const about = [
     {
         key: "Primary Interests",
         text: `Human-Computer Interaction
-Generative Adversial Networks
-Reinforcement Learning
+Collaborative Technologies
+Social Computing
 Affective Computing
 Sustainability / Smart Cities
-Functional Programming
 DevOps / Scalability`
     },
     {
