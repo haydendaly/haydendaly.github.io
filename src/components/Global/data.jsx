@@ -18,11 +18,23 @@ const projects = [
         category: ['year'],
     },
     {
+        key: 'hodas',
+        name: 'HODAS',
+        role: 'Tech Lead',
+        dates: 'August 2020 - Now',
+        category: ['Mobile', 'ML/AI', 'Design'],
+        text: 'Leading mental health journaling development team. \n',
+        description: "Leading team of seven to develop journaling application focused on accessibility and mood tracking. The goal is the gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of the user's mood over time. \n",
+        stack: ['Node', 'React (Native)', 'Firebase'],
+        link: 'https://github.com/HODAS-Senior-Design/mobile',
+        aspect_ratio: 1500/985
+    },
+    {
         key: 'exire',
         name: 'Exire.ai',
         role: 'Co-Founder/CEO',
         dates: 'June 2019 - Now',
-        category: ['Mobile', 'ML/AI', 'Backend', 'DevOps'],
+        category: ['Mobile', 'ML/AI', 'Backend', 'DevOps', 'Design'],
         text: 'Working on an AI-concierge app startup. \n',
         description: 'Building mobile app for iOS/Android that helps groups make plans with conversational AI. Rised out of irritation in making plans and incorporated to a C-Corp. Currently developing in small sprints focused around a private beta. \n',
         stack: ['Node', 'React (Native)', 'Swift', 'MongoDB', 'TensorFlow'],
@@ -46,18 +58,18 @@ const projects = [
         category: ['Web', 'Backend', 'DevOps'],
         text: 'Creating infrastructure for distributed trade-space simulations.\n',
         description: 'Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Research awarded by the DoD/NASA for 3 year contract project to be implemented in the NASA Private Cloud to be used for distributed simulations. Developed orchestration with service mesh and gathered requirements from DOD, NASA, and USGS on both interfaces and developing communication protocols. \n',
-        stack: ['React', 'Docker', 'Flask', 'MQTT', 'Python', 'Nginx'],
+        stack: ['React', 'Docker', 'Kubernetes', 'Flask', 'MQTT', 'Python', 'Nginx'],
         link: 'https://github.com/haydendaly/nos-t-infrastructure',
-        aspect_ratio: 1500/887
+        aspect_ratio: 1500/819
     },
     {
         key: 'babbio',
         name: 'Babb.io',
         dates: 'May 2020 - Now',
-        category: ['Mobile'],
+        category: ['Mobile', 'Design'],
         text: 'Building an app for university-oriented group chats.\n',
         description: 'Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 2,200 courses. Published React Native mobile application to Apple/Google Play App Stores and pushing out updates in weekly sprints. \n',
-        stack: ['React Native', 'Node', 'Firebase'],
+        stack: ['React Native', 'React', 'Node', 'Firebase'],
         link: 'https://babb.io',
         aspect_ratio: 1500/825
     },
@@ -67,11 +79,11 @@ const projects = [
     },
     {
         key: 'dtva',
-        name: 'Disney TV Animation',
+        name: 'The Walt Disney Company',
         category: ['Web', 'Backend', 'DevOps'],
         role: 'Software Developer Intern',
         dates: 'June 2020 - August 2020',
-        text: 'Interned at Disney Television Animation. \n',
+        text: 'Interned at The Walt Disney Company. \n',
         description: 'Developed full-stack to be used internally within the production of animated content. Restructured GitLab pipelines for automated testing of multiple environments. \n',
         stack: ['React', 'Django', 'Docker', 'SQL', 'Nginx', 'Ruby'],
         link: '',
@@ -121,7 +133,7 @@ const projects = [
     {
         key: 'stopthespread',
         name: 'stopthespread.info',
-        category: ['Web'],
+        category: ['Web', 'Design'],
         text: 'Worked on an open-source Coronavirus info site. \n',
         description: 'Worked with a global team consiting of faculty/students from University of Cambridge, Carnegie Mellon, nad more institutions to construct an open-source site to provide medical doctor-validated COVID-19 related information. Worked on frontend development and a backend notification/update system. Site was eventually taken down due to inability to keep up with constantly changing US policy and information. \n',
         stack: ['Gatsby', 'Node', 'GraphQL'],
@@ -234,7 +246,7 @@ const projects = [
     },
     {
         key: 'navbot',
-        name: 'Autonomously Navigating Arduino Robt',
+        name: 'Autonomously Navigating Arduino Robot',
         category: ['Hardware'],
         text: 'Built Arduino autonomous navigation bot to go through course. \n',
         description: 'Built Arduino autonomous navigation bot to go through course. Used Arduino WeMos board with C++ to collect data from ultrasonic sensors and navigate accordingly. \n',
@@ -313,7 +325,7 @@ Email: <a target='_blank' className="link" href="mailto:hdaly1@stevens.edu">hdal
             <p>
                 <a className="link" target='_blank' href="https://www.goodreads.com/book/show/6751.Consider_the_Lobster_and_Other_Essays"><i>Consider the Lobster by David Foster Wallace</i></a><br />
                 <a className="link" target='_blank' href="https://www.goodreads.com/book/show/22822858-a-little-life"><i>A Little Life by Hanya Yanagihara</i></a><br />
-                <a className="link" target='_blank' href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"><i>Kafka and the Shore by Haruki Murikami</i></a><br />
+                <a className="link" target='_blank' href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"><i>Kafka on the Shore by Haruki Murikami</i></a><br />
                 <a className="link" target='_blank' href="https://www.goodreads.com/book/show/166997.Stoner"><i>Stoner by John Williams</i></a><br />
                 <a className="link" target='_blank' href="https://www.goodreads.com/book/show/21480734-dataclysm"><i>Dataclysm by Christian Rudder</i></a><br />
                 <a className="link" target='_blank' href="https://www.goodreads.com/book/show/9915.Less_Than_Zero"><i>Less Than Zero by Bret Easton Ellis</i></a><br />

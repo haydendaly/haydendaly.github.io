@@ -57,7 +57,7 @@ function Header({ page, setPage, dark, setMode }) {
                                 style={mobileStyles}>
                                 Photos
                             </Link>
-                            <a
+                            {/* <a
                                 target='_blank'
                                 href={'https://hayden-portfolio.s3.us-east-2.amazonaws.com/HaydenDaly_Resume.pdf'}
                                 className='header-text'
@@ -66,7 +66,7 @@ function Header({ page, setPage, dark, setMode }) {
                                 }}
                                 style={mobileStyles}>
                                 Resume
-                            </a>
+                            </a> */}
                         </div>
                         <OverlayTrigger
                             placement='bottom'
