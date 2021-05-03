@@ -10,7 +10,6 @@ import mixpanel from "mixpanel-browser";
 
 import Loading from "./Global/Loading";
 import Header from "./Global/Header";
-import Cursor from "./Global/Cursor";
 import { LinksBg } from "./Global/Particles";
 import { useWindowDimensions } from "../functions/helper";
 import FD from "./Global/FormattedDiv";
@@ -78,7 +77,6 @@ function App() {
       id="main"
       style={{ height, width }}
     >
-      <Cursor />
       {page === "/" && <LinksBg dark={dark} />}
       <Router basename={PUBLIC_URL + "/"}>
         <Header page={page} setPage={setPage} dark={dark} setMode={setMode} />

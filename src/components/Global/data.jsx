@@ -143,7 +143,7 @@ const projects = [
     key: "3x3x9",
     name: "3x3x9 Rubik's Cube CAD Model",
     category: ["Design"],
-    text: `Designed a 3x3x9 Rubik's cube and won CAD competition. \n`,
+    text: `Designed a 3x3x9 Rubik's cube. \n`,
     description: `Designed a 3x3x9 Rubik"s cube using SolidWorks and won CAD competition. Made cube function/move, 3d printed, and treated a few of the prototype pieces using ABS plastic.\n`,
     stack: ["SolidWorks"],
     aspect_ratio: 1000 / 657,
@@ -164,7 +164,9 @@ const about = [
           {" "}
           a group chat platform targetting university students,{" "}
         </Link>
-        {`and a smart-journaling app focused on mental health, `}
+        <Link className="link" to={"/projects/hodas"}>
+          and a smart-journaling app focused on mental health.{" "}
+        </Link>
         {`After competiting in 4 hackathons, I became a director of Hackathons for the Stevens Venture Center where I hosted 5 different Hackathons.`}
         {` I was previously engaged in systems engineering research for the Collective-Design Lab where I developed `}
         <Link className="link" to={"/projects/testbed"}>

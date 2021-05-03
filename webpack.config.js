@@ -8,6 +8,7 @@ const RobotstxtPlugin = require("robotstxt-webpack-plugin");
 
 module.exports = (env, argv) => {
     return {
+        mode: argv.mode === "production" ? "production" : "development",
         entry: {
             scripts: "./src/index.js",
             styles: "./src/styles/style.scss"
@@ -26,11 +27,11 @@ module.exports = (env, argv) => {
                     exclude: /node_modules/,
                     use: ["babel-loader"]
                 },
-                // {
-                //     test: /\.tsx?$/,
-                //     exclude: /node_modules/,
-                //     use: ["ts-loader"]
-                // },
+                {
+                    test: /\.(ts|tsx)?$/,
+                    exclude: /node_modules/,
+                    use: ["ts-loader"]
+                },
                 {
                     test: /\.css$/i,
                     use: [
@@ -80,15 +81,17 @@ module.exports = (env, argv) => {
                 domain: "hcdaly.dev"
             }),
             new CompressionWebpackPlugin(),
-            new RobotstxtPlugin({ filePath: "./src/static/robots.txt" })
+            new RobotstxtPlugin({ filePath: "./src/static/robots.txt" }),
+            new webpack.ProvidePlugin({
+                'process': 'process/browser'
+            })
         ],
         devServer: {
-            inline: true,
             port: 8000,
             historyApiFallback: true
         },
         resolve: {
-            extensions: [".js", ".jsx"]
+            extensions: [".js", ".jsx", ".ts", ".tsx"]
         }
     }
 }
