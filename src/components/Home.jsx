@@ -1,30 +1,42 @@
-import React, { useRef, useEffect } from 'react';
-import StackGrid, { transitions } from "react-stack-grid";
-import { isMobile } from 'react-device-detect';
-import mixpanel from 'mixpanel-browser';
+import React, { useEffect } from "react";
+import { isMobile } from "react-device-detect";
+import mixpanel from "mixpanel-browser";
 
-import { useWindowDimensions } from '../functions/helper';
-import '../styles/style.scss';
+import { useWindowDimensions } from "../functions/helper";
+import "../styles/style.scss";
 
 function Home() {
-    const { width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        mixpanel.track('Home');
-    }, [])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    mixpanel.track("Home");
+  }, []);
 
-    return (
-            <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}>
-                <div className="current unselectable" style={{ fontFamily: 'Haas', fontSize: isMobile || width < 750 ? 28 : width * .95 > 1000 ? 48 : 40, width: isMobile || width < 800 ? '90%' : '75%', textAlign: 'center', paddingBottom: 120 }}>
-                    Hello! I'm Hayden, a software engineering student who enjoys building things.
-                </div>
-            </div>
-    );
-};
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        className="current unselectable"
+        style={{
+          fontFamily: "Haas",
+          fontSize:
+            isMobile || width < 750 ? 28 : width * 0.95 > 1000 ? 48 : 40,
+          width: isMobile || width < 800 ? "90%" : "75%",
+          textAlign: "center",
+          paddingBottom: 120,
+        }}
+      >
+        Hello! I'm Hayden, a software engineering student who enjoys building
+        things.
+      </div>
+    </div>
+  );
+}
 
 export default Home;

@@ -1,0 +1,53 @@
+@import "color-theme";
+
+a {
+    @include themed() {
+        color: t($text);
+    }
+}
+
+a:hover {
+    @include themed() {
+        color: t($hover-highlight);
+    }
+
+    text-decoration: none;
+}
+
+.section {
+    @include themed() {
+        color: t($dark-text);
+    }
+}
+
+.category {
+    @include themed() {
+        color: t($text);
+    }
+}
+
+.current {
+    @include themed() {
+        color: t($highlight);
+    }
+}
+
+.link {
+    @include themed() {
+        color: t($highlight);
+        text-decoration: underline;
+    }
+}
+
+.category:hover,
+a.category:active {
+    @include themed() {
+        color: t($hover-highlight);
+    }
+}
+
+.project {
+    @include themed() {
+        color: t($dark-text);
+    }
+}

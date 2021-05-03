@@ -1,3 +1,9 @@
+$bg: "bg";
+$highlight: "highlight";
+$hover-highlight: "hover-highlight";
+$text: "text";
+$dark-text: "dark-text";
+
 // Reguler color scheme
 $bg-reg: #ffffff;
 $highlight-reg: #00204a;
@@ -6,12 +12,13 @@ $text-reg: #77abb7;
 // $dark-text-reg: #393e46;
 $dark-text-reg: #3a3a3a;
 
+
 // Dark color scheme
-$bg-dark: #00204a;
+$bg-dark: #121212;
 $highlight-dark: #fafafa;
-$hover-highlight-dark:#aa96da;
-$text-dark: #77abb7;
-$dark-text-dark: #dddddd;
+$hover-highlight-dark:#ffff00;
+$text-dark: #ffffff;
+$dark-text-dark: #b3b3b3;
 
 $themes: (
     default: (
@@ -35,7 +42,7 @@ $themes: (
       .theme--#{$theme} & {
         $theme-map: () !global;
         @each $key, $submap in $map {
-          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $value: map-get(map-get($themes, $theme), "#{$key}");
           $theme-map: map-merge($theme-map, ($key: $value)) !global;
         }
         @content;
