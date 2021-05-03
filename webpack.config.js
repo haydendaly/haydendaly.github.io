@@ -1,14 +1,12 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CnameWebpackPlugin = require('cname-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const RobotstxtPlugin = require("robotstxt-webpack-plugin");
-const webpack = require('webpack');
 
 module.exports = (env, argv) => {
-    const devtool = argv.mode === "production" ? "eval-source-map" : "inline-source-map";
-
     return {
         entry: {
             scripts: './src/index.js',
@@ -19,17 +17,20 @@ module.exports = (env, argv) => {
             filename: '[name].[chunkhash].js',
             publicPath: '/'
         },
-        devtool: devtool,
+        devtool: argv.mode === "production" ? "eval-source-map" : "inline-source-map",
         module: {
             rules: [
                 {
                     test: /\.(js|jsx)$/,
                     enforce: 'pre',
                     exclude: /node_modules/,
-                    use: {
-                        loader: 'babel-loader'
-                    }
+                    use: ['babel-loader']
                 },
+                // {
+                //     test: /\.tsx?$/,
+                //     exclude: /node_modules/,
+                //     use: ['ts-loader']
+                // },
                 {
                     test: /\.css$/i,
                     use: [
@@ -47,9 +48,7 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.(jpg|jpeg|png|gif)$/,
-                    use: {
-                        loader: 'url-loader',
-                    },
+                    use: ['url-loader']
                 },
                 {
                     test: /\.(ttf|eot|woff|woff2|otf)$/,
@@ -78,10 +77,10 @@ module.exports = (env, argv) => {
             }),
             new CleanWebpackPlugin(),
             new CnameWebpackPlugin({
-                domain: 'hcdaly.dev',
+                domain: 'hcdaly.dev'
             }),
             new CompressionWebpackPlugin(),
-            new RobotstxtPlugin({ filePath: './src/static/robots.txt' }),
+            new RobotstxtPlugin({ filePath: './src/static/robots.txt' })
         ],
         devServer: {
             inline: true,
@@ -89,7 +88,7 @@ module.exports = (env, argv) => {
             historyApiFallback: true
         },
         resolve: {
-            extensions: ['.js', '.jsx'],
+            extensions: ['.js', '.jsx']
         }
     }
 }
