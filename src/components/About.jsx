@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
-import _ from "lodash";
-import { isMobile } from "react-device-detect";
 import mixpanel from "mixpanel-browser";
+import { isMobile } from "react-device-detect";
 
 import { TextRow } from "./Global/TextComponents";
-import { about } from "./Global/data";
+import { about } from "./Global/Data";
 
 function About() {
   useEffect(() => {
-    window.scrollTo(0, 0);
     mixpanel.track("About");
   }, []);
 

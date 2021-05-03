@@ -47,6 +47,7 @@ function TextColumn({ data, isFirst }) {
   if (data.category.includes("year")) {
     return (
       <p
+        key={data.key}
         className="section"
         style={{ fontSize: 16, marginBottom: 5, marginTop: isFirst ? 0 : 5 }}
       >
@@ -55,7 +56,11 @@ function TextColumn({ data, isFirst }) {
     );
   } else {
     return (
-      <Link to={`/projects/${data.key}`} className="project-link">
+      <Link
+        key={data.key}
+        to={`/projects/${data.key}`}
+        className="project-link"
+      >
         {data.text}
       </Link>
     );

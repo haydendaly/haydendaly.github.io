@@ -3,11 +3,11 @@ import _ from "lodash";
 import { isMobile } from "react-device-detect";
 import mixpanel from "mixpanel-browser";
 
-import { projects } from "./Global/data";
+import { projects } from "./Global/Data";
 import { useCategories } from "../functions/helper";
 import { ProjectRow } from "./Global/TextComponents";
 
-function Projects({ height }) {
+function Projects() {
   const categories = useCategories();
   const [content, setContent] = useState(projects);
   document.title = "Projects - Hayden Daly";

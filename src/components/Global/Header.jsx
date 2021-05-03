@@ -19,7 +19,7 @@ function Header({ page, setPage, dark, setMode }) {
       <FD
         styles={
           show && {
-            backgroundColor: dark ? "#00204a" : "#fff",
+            backgroundColor: dark ? "#121212" : "#fff",
             boxShadow: `1px 0px 1px ${dark ? "#77abb7" : "#393e46"}`,
           }
         }
@@ -71,19 +71,20 @@ function Header({ page, setPage, dark, setMode }) {
                 About
               </Link>
             </div>
-            <OverlayTrigger
-              placement="bottom"
-              overlay={<Tooltip>{dark ? "Light Mode" : "Dark Mode"}</Tooltip>}
-            >
-              <a
-                className="unselectable current"
-                style={{ fontSize: 20 }}
-                onClick={setMode}
+            {page.includes("projects/") || (
+              <OverlayTrigger
+                placement="bottom"
+                overlay={<Tooltip>{dark ? "Light Mode" : "Dark Mode"}</Tooltip>}
               >
-                {/* {dark ? "☀️" : "🌖"} */}
-                {dark ? <FiSun /> : <FaMoon />}
-              </a>
-            </OverlayTrigger>
+                <a
+                  className="unselectable current"
+                  style={{ fontSize: 20 }}
+                  onClick={setMode}
+                >
+                  {dark ? <FiSun /> : <FaMoon />}
+                </a>
+              </OverlayTrigger>
+            )}
           </div>
         </div>
       </FD>

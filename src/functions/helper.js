@@ -65,20 +65,11 @@ const useCategories = () => {
 
   const categoryPick = (category) => {
     let tempChosen = chosen;
-    if (category === "All" && !all) {
+    if (category === "All" && !all || tempChosen.includes(category)) {
       setAll(true);
       setChosen([]);
-    } else if (tempChosen.includes(category)) {
-      let filteredChosen = tempChosen.filter((o) => o !== category);
-      if (filteredChosen.length > 0) {
-        setChosen(filteredChosen);
-      } else {
-        setChosen([]);
-        setAll(true);
-      }
     } else if (category !== "All") {
-      tempChosen.push(category);
-      setChosen(tempChosen);
+      setChosen([category]);
       setAll(false);
     }
     setUpdate(!update);

@@ -14,7 +14,6 @@ import { useWindowDimensions } from "../functions/helper";
 function Project({ setPage }) {
   let location = useLocation();
   const { height, width } = useWindowDimensions();
-  const [loaded, setLoaded] = useState(true);
   const [data, setData] = useState({
     key: "",
     text: "",
@@ -58,7 +57,6 @@ function Project({ setPage }) {
               <Image
                 width={"100%"}
                 alt={data.name}
-                loaded={loaded}
                 src={`https://hayden-portfolio.s3.us-east-2.amazonaws.com/${image}.png`}
                 placeholderSrc={`https://hayden-portfolio.s3.us-east-2.amazonaws.com/${image}_thumb.png`}
                 className="selectable"
@@ -88,7 +86,6 @@ function Project({ setPage }) {
                   e.target.src =
                     "https://hayden-portfolio.s3.us-east-2.amazonaws.com/fallback_image.png";
                   setImage("fallback_image");
-                  setLoaded(false);
                 }}
               />
             </a>

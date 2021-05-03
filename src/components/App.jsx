@@ -64,13 +64,10 @@ function App() {
     if (dark) {
       document.body.style = "background: #ffffff";
     } else {
-      document.body.style = "background: #00204a";
+      document.body.style = "background: #121212";
     }
     setDark(!dark);
   };
-
-  const PUBLIC_URL = process.env.PUBLIC_URL || "";
-
   return (
     <div
       className={"theme " + (dark ? "theme--dark" : "theme--default")}
@@ -78,18 +75,18 @@ function App() {
       style={{ height, width }}
     >
       {page === "/" && <LinksBg dark={dark} />}
-      <Router basename={PUBLIC_URL + "/"}>
+      <Router basename={process.env.PUBLIC_URL || "" + "/"}>
         <Header page={page} setPage={setPage} dark={dark} setMode={setMode} />
         <Suspense fallback={<Loading height={height} width={width} />}>
           <FD height={height}>
             <Switch>
-              <Route path={PUBLIC_URL + "/projects/:project"}>
+              <Route path={"/projects/:project"}>
                 <Project setPage={setPage} />
               </Route>
-              <Route path={PUBLIC_URL + "/projects"}>
+              <Route path={"/projects"}>
                 <Projects />
               </Route>
-              <Route path={PUBLIC_URL + "/about"}>
+              <Route path={"/about"}>
                 <About />
               </Route>
               <Route exact path="/">
