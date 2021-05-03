@@ -1,9 +1,10 @@
 import React, { useState, useEffect, Suspense } from "react";
 import _ from "lodash";
+import mixpanel from "mixpanel-browser";
+
 import { isMobile } from "react-device-detect";
 import { useLocation, Redirect } from "react-router-dom";
 import { LazyLoadImage as Image } from "react-lazy-load-image-component";
-import mixpanel from "mixpanel-browser";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 import { projects } from "./Global/Data";
@@ -11,10 +12,10 @@ import Loading from "./Global/Loading";
 import { ProjectDescription } from "./Global/TextComponents";
 import { useWindowDimensions } from "../functions/helper";
 
-function Project({ setPage }) {
+function Project(props: { setPage: (page: string) => void }) {
   let location = useLocation();
   const { height, width } = useWindowDimensions();
-  const [data, setData] = useState({
+  const [data, setData] = useState<any>({
     key: "",
     text: "",
     component: "",
@@ -26,7 +27,7 @@ function Project({ setPage }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setPage("projects/");
+    props.setPage("projects/");
     let project = projects.filter(
       (o) => o.key === location.pathname.substr(10)
     );
@@ -41,16 +42,10 @@ function Project({ setPage }) {
 
   let link = _.get(data, "link");
 
-  const renderRedirect = () => {
-    if (redirect) {
-      return <Redirect to="/" />;
-    }
-  };
-
   return (
     <div style={{ paddingTop: isMobile ? 10 : 15 }}>
       <div style={{ marginBottom: 10 }}>
-        {renderRedirect()}
+        {redirect && <Redirect to="/" />}
         <Suspense fallback={<Loading height="100%" width="100%" />}>
           <div className="project-container">
             <a target="_blank" href={link}>
@@ -81,10 +76,7 @@ function Project({ setPage }) {
                 onMouseOut={() => link && link !== "" && setHover(false)}
                 onMouseOver={() => link && link !== "" && setHover(true)}
                 effect="blur"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://hayden-portfolio.s3.us-east-2.amazonaws.com/fallback_image.png";
+                onError={() => {
                   setImage("fallback_image");
                 }}
               />

@@ -1,8 +1,17 @@
 import React from "react";
 import Spinner from "react-spinkit";
 
-const Loading = ({ height, width }) => (
-  <div style={{ height: height - 55, width: width }}>
+const Loading = (props: {
+  height: number | string;
+  width: number | string;
+}) => (
+  <div
+    style={{
+      height:
+        typeof props.height === "string" ? props.height : props.height - 55,
+      width: props.width,
+    }}
+  >
     <div
       style={{
         position: "absolute",

@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
     return {
         mode: argv.mode === "production" ? "production" : "development",
         entry: {
-            scripts: "./src/index.js",
+            scripts: "./src/index.tsx",
             styles: "./src/styles/style.scss"
         },
         output: {

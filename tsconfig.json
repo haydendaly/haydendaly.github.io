@@ -8,11 +8,12 @@
       "allowJs": true,
       "jsx": "react",
       "moduleResolution": "node",
-      "rootDir": "src",
+      "rootDir": ".",
       "noImplicitReturns": true,
       "noImplicitThis": true,
       "noImplicitAny": true,
-      "strictNullChecks": true
+      "strictNullChecks": true,
+      "esModuleInterop": true
     },
     "exclude": [
       "node_modules",

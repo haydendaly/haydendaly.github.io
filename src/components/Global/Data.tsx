@@ -12,10 +12,8 @@ const projects = [
     role: "Intern",
     dates: "May 2020 - Now",
     category: ["Web", "Backend", "Mobile"],
-    text:
-      "Interning at Expo \n",
-    description:
-      "Working on EAS infra \n",
+    text: "Interning at Expo \n",
+    description: "Working on EAS infra \n",
     stack: ["React Native", "React", "Node", "Kubernetes", "Docker"],
   },
   {
@@ -24,8 +22,7 @@ const projects = [
     role: "Co-founder",
     dates: "May 2020 - Now",
     category: ["Web", "Design"],
-    text:
-      "Nonprofit for local environmental focused tech initiatives \n",
+    text: "Nonprofit for local environmental focused tech initiatives \n",
     description:
       "Starting sustainability focused 501(c)(3) organization with support of local government to bring open-sourced, smart city technology to Hoboken. Forming a collaborative triangle between education, local industry, and municipalities to bring open-sourced solutions locally. Starting with pilot project of local garbage optimization full-stack application to be adopted by the Hoboken Sustainability Office.\n",
     stack: ["React Native", "React", "Node"],

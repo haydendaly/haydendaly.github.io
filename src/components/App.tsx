@@ -47,7 +47,7 @@ function App() {
     fetch("https://api.ipify.org?format=json")
       .then((response) => {
         return response.json();
-      }, "jsonp")
+      })
       .then(async (res) => {
         mixpanel.identify(res.ip);
         mixpanel.track("Home");
@@ -62,8 +62,10 @@ function App() {
 
   const setMode = () => {
     if (dark) {
+      // @ts-ignore
       document.body.style = "background: #ffffff";
     } else {
+      // @ts-ignore
       document.body.style = "background: #121212";
     }
     setDark(!dark);
@@ -90,7 +92,7 @@ function App() {
                 <About />
               </Route>
               <Route exact path="/">
-                <Home height={height} />
+                <Home />
               </Route>
               <Route path="/">
                 <Redirect to="/" />

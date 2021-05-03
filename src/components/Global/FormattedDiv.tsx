@@ -1,15 +1,20 @@
 import React from "react";
 
-const FormattedDiv = ({ children, height, styles = {}, ref = null }) => {
+const FormattedDiv = (props: {
+  children: any;
+  height?: number;
+  styles?: any;
+  ref?: any;
+}) => {
   return (
     <div
       style={{
         display: "flex",
         justifyContent: "space-around",
         width: "100%",
-        ...styles,
+        ...props.styles,
       }}
-      ref={ref ? ref : undefined}
+      ref={props.ref ? props.ref : undefined}
     >
       <div
         style={{
@@ -17,11 +22,11 @@ const FormattedDiv = ({ children, height, styles = {}, ref = null }) => {
           maxWidth: 1000,
           display: "flex",
           justifyContent: "flex-start",
-          minHeight: height ? height - 65 : undefined,
+          minHeight: props.height ? props.height - 65 : undefined,
           zIndex: 1,
         }}
       >
-        {children}
+        {props.children}
       </div>
     </div>
   );

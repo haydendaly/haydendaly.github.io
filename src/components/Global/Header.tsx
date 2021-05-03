@@ -7,7 +7,12 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FaMoon } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
 
-function Header({ page, setPage, dark, setMode }) {
+function Header(props: {
+  page: string;
+  setPage: (page: string) => void;
+  dark: boolean;
+  setMode: () => void;
+}) {
   const [show, setShow] = useState(false);
 
   return (
@@ -19,8 +24,8 @@ function Header({ page, setPage, dark, setMode }) {
       <FD
         styles={
           show && {
-            backgroundColor: dark ? "#121212" : "#fff",
-            boxShadow: `1px 0px 1px ${dark ? "#77abb7" : "#393e46"}`,
+            backgroundColor: props.dark ? "#121212" : "#fff",
+            boxShadow: `1px 0px 1px ${props.dark ? "#77abb7" : "#393e46"}`,
           }
         }
       >
@@ -35,7 +40,7 @@ function Header({ page, setPage, dark, setMode }) {
         >
           <div style={{ width: isMobile ? "35%" : "20%" }}>
             <Link
-              onClick={() => setPage("/")}
+              onClick={() => props.setPage("/")}
               to="/"
               className={`header-text current name`}
               style={{ ...mobileStyles, paddingLeft: 0, paddingRight: 0 }}
@@ -53,35 +58,41 @@ function Header({ page, setPage, dark, setMode }) {
           >
             <div>
               <Link
-                onClick={() => setPage("/projects")}
+                onClick={() => props.setPage("/projects")}
                 to="/projects"
                 className={`header-text${
-                  page === "/projects" ? " current" : ""
+                  props.page === "/projects" ? " current" : ""
                 }`}
                 style={{ ...mobileStyles, paddingLeft: 0 }}
               >
                 Projects
               </Link>
               <Link
-                onClick={() => setPage("/about")}
+                onClick={() => props.setPage("/about")}
                 to="/about"
-                className={`header-text${page === "/about" ? " current" : ""}`}
+                className={`header-text${
+                  props.page === "/about" ? " current" : ""
+                }`}
                 style={mobileStyles}
               >
                 About
               </Link>
             </div>
-            {page.includes("projects/") || (
+            {props.page.includes("projects/") || (
               <OverlayTrigger
                 placement="bottom"
-                overlay={<Tooltip>{dark ? "Light Mode" : "Dark Mode"}</Tooltip>}
+                overlay={
+                  <Tooltip id="color-changer">
+                    {props.dark ? "Light Mode" : "Dark Mode"}
+                  </Tooltip>
+                }
               >
                 <a
                   className="unselectable current"
                   style={{ fontSize: 20 }}
-                  onClick={setMode}
+                  onClick={props.setMode}
                 >
-                  {dark ? <FiSun /> : <FaMoon />}
+                  {props.dark ? <FiSun /> : <FaMoon />}
                 </a>
               </OverlayTrigger>
             )}

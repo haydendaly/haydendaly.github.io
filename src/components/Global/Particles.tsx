@@ -1,7 +1,7 @@
 import React from "react";
 import Particles from "react-particles-js";
 
-function NightBg({ dark }) {
+function NightBg(props: { dark: boolean }) {
   return (
     <Particles
       params={{
@@ -32,7 +32,7 @@ function NightBg({ dark }) {
             },
           },
           color: {
-            value: dark ? "#eeeeee" : "#393e46",
+            value: props.dark ? "#eeeeee" : "#393e46",
           },
         },
         interactivity: {
@@ -60,7 +60,7 @@ function NightBg({ dark }) {
   );
 }
 
-function LinksBg({ dark }) {
+function LinksBg(props: { dark: boolean }) {
   return (
     <Particles
       params={{
@@ -72,11 +72,11 @@ function LinksBg({ dark }) {
             value: 3,
           },
           color: {
-            value: dark ? "#dddddd" : "#393e46",
+            value: props.dark ? "#dddddd" : "#393e46",
           },
           line_linked: {
             color: {
-              value: dark ? "#77abb7" : "#77abb7",
+              value: props.dark ? "#77abb7" : "#77abb7",
             },
           },
         },
@@ -99,7 +99,7 @@ function LinksBg({ dark }) {
   );
 }
 
-function BubblesBg({ dark }) {
+function BubblesBg(props: { dark: boolean }) {
   return (
     <Particles
       params={{
@@ -111,7 +111,7 @@ function BubblesBg({ dark }) {
             },
           },
           color: {
-            value: dark ? "#eeeeee" : "#393e46",
+            value: props.dark ? "#eeeeee" : "#393e46",
           },
           size: {
             value: 3,
