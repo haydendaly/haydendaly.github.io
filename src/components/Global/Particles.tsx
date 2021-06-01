@@ -1,65 +1,6 @@
 import React from "react";
 import Particles from "react-particles-js";
 
-function NightBg(props: { dark: boolean }) {
-  return (
-    <Particles
-      params={{
-        particles: {
-          number: {
-            value: 100,
-            density: {
-              enable: true,
-              value_area: 1500,
-            },
-          },
-          line_linked: {
-            enable: true,
-            opacity: 0.02,
-          },
-          move: {
-            direction: "right",
-            speed: 0.05,
-          },
-          size: {
-            value: 1,
-          },
-          opacity: {
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.05,
-            },
-          },
-          color: {
-            value: props.dark ? "#eeeeee" : "#393e46",
-          },
-        },
-        interactivity: {
-          events: {
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
-          },
-          modes: {
-            push: {
-              particles_nb: 1,
-            },
-          },
-        },
-        retina_detect: true,
-      }}
-      style={{
-        position: "absolute",
-        top: 0,
-        width: "100%",
-        height: "100%",
-      }}
-    />
-  );
-}
-
 function LinksBg(props: { dark: boolean }) {
   return (
     <Particles
@@ -69,10 +10,10 @@ function LinksBg(props: { dark: boolean }) {
             value: 50,
           },
           size: {
-            value: 3,
+            value: 2,
           },
           color: {
-            value: props.dark ? "#dddddd" : "#393e46",
+            value: props.dark ? "#bbb" : "#3a3a3a",
           },
           line_linked: {
             color: {
@@ -111,7 +52,7 @@ function BubblesBg(props: { dark: boolean }) {
             },
           },
           color: {
-            value: props.dark ? "#eeeeee" : "#393e46",
+            value: props.dark ? "#bbb" : "#3a3a3a",
           },
           size: {
             value: 3,
@@ -166,4 +107,4 @@ function BubblesBg(props: { dark: boolean }) {
   );
 }
 
-export { NightBg, LinksBg, BubblesBg };
+export { LinksBg, BubblesBg };

@@ -78,7 +78,7 @@ function Header(props: {
                 About
               </Link>
             </div>
-            {props.page.includes("projects/") || (
+            {/*props.page.includes("projects/") || */(
               <OverlayTrigger
                 placement="bottom"
                 overlay={

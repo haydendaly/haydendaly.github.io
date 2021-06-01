@@ -58,7 +58,7 @@ const useWindowDimensions = () => {
 };
 
 const useCategories = () => {
-  const categories = ["Web", "Mobile", "Backend", "DevOps", "Design"];
+  const categories = ["Web", "Mobile", "Backend", "Design", "Management"];
   const [chosen, setChosen] = useState([]);
   const [all, setAll] = useState(true);
   const [update, setUpdate] = useState(true);
