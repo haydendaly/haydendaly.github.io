@@ -6,15 +6,16 @@ const FormattedDiv = (props: {
   styles?: any;
   ref?: any;
 }) => {
+  const { children, height, styles, ref } = props;
   return (
     <div
       style={{
         display: "flex",
         justifyContent: "space-around",
         width: "100%",
-        ...props.styles,
+        ...styles,
       }}
-      ref={props.ref ? props.ref : undefined}
+      ref={ref}
     >
       <div
         style={{
@@ -22,11 +23,11 @@ const FormattedDiv = (props: {
           maxWidth: 1000,
           display: "flex",
           justifyContent: "flex-start",
-          minHeight: props.height ? props.height - 65 : undefined,
+          minHeight: height ? height - 65 : undefined,
           zIndex: 1,
         }}
       >
-        {props.children}
+        {children}
       </div>
     </div>
   );

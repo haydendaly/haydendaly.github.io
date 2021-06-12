@@ -10,7 +10,6 @@ a:hover {
     @include themed() {
         color: t($hover-highlight);
     }
-
     text-decoration: none;
 }
 
@@ -28,7 +27,7 @@ a:hover {
 
 .current {
     @include themed() {
-        color: t($highlight);
+        color: t($dark-text);
     }
 }
 
@@ -42,7 +41,7 @@ a:hover {
 .category:hover,
 a.category:active {
     @include themed() {
-        color: t($hover-highlight);
+        color: t($highlight);
     }
 }
 

@@ -40,7 +40,7 @@ function Project(props: { setPage: (page: string) => void }) {
     }
   }, []);
 
-  let link = _.get(data, "link");
+  const link = _.get(data, "link");
 
   return (
     <div style={{ paddingTop: isMobile ? 10 : 15 }}>
@@ -84,7 +84,7 @@ function Project(props: { setPage: (page: string) => void }) {
           </div>
         </Suspense>
       </div>
-      <ProjectDescription data={data} />
+      <ProjectDescription project={data} />
     </div>
   );
 }

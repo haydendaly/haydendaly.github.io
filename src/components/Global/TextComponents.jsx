@@ -27,7 +27,7 @@ function TextRow({ data }) {
         style={{
           display: "flex",
           flexDirection: "row",
-          marginBottom: _.has(data, "component") ? -10 : 5,
+          marginBottom: data?.component ? -10 : 5,
         }}
         className="section"
       >
@@ -36,7 +36,7 @@ function TextRow({ data }) {
           style={{ width: "80%", whiteSpace: "pre-wrap" }}
           className="section about"
         >
-          {_.has(data, "component") ? data.component : data.text}
+          {data?.component ?? data.text}
         </p>
       </div>
     );
@@ -123,38 +123,38 @@ function ProjectRow({ categories, data }) {
   }
 }
 
-function ProjectDescription({ data }) {
-  let link = data.link !== "" && data.link;
+function ProjectDescription({ project }) {
+  const link = project.link !== "" && project.link;
   if (isMobile) {
     return (
-      <div key={data.key} style={{ paddingBottom: 15 }}>
+      <div key={project.key} style={{ paddingBottom: 15 }}>
         {link ? (
           <a
             target="_blank"
-            className="current"
+            className="project-title"
             href={link}
             style={{ marginBottom: 5 }}
           >
-            {data.name}
+            {project.name}
           </a>
         ) : (
           <p className="project" style={{ marginBottom: 5 }}>
-            {data.name}
+            {project.name}
           </p>
         )}
         <div
           className="project"
           style={{ fontSize: 15, whiteSpace: "pre-wrap" }}
         >
-          {_.has(data, "description") ? data.description : data.text}
-          {data.stack && data.stack.length > 0 && (
+          {project?.description ?? project.text}
+          {project.stack && project.stack.length > 0 && (
             <i className="project-italics" style={{ fontSize: 15 }}>
-              Using {data.stack.join(",  ")}
+              Using {project.stack.join(",  ")}
             </i>
           )}
-          {data.friends && data.friends.length > 0 && (
+          {project.friends && project.friends.length > 0 && (
             <i className="project-italics">
-              Built using: {data.friends.join(",  ")}
+              Built using: {project.friends.join(",  ")}
             </i>
           )}
         </div>
@@ -163,31 +163,31 @@ function ProjectDescription({ data }) {
   } else {
     return (
       <div
-        key={data.key}
+        key={project.key}
         style={{ display: "flex", flexDirection: "row", paddingBottom: 15 }}
       >
         <div className="project" style={{ width: "20%" }}>
           {link ? (
-            <a target="_blank" className="current" href={link}>
-              {data.name}
+            <a target="_blank" className="project-title" href={link}>
+              {project.name}
             </a>
           ) : (
-            <p className="project">{data.name}</p>
+            <p className="project">{project.name}</p>
           )}
         </div>
         <div
           className="project"
           style={{ width: "80%", whiteSpace: "pre-wrap" }}
         >
-          {_.has(data, "description") ? data.description : data.text}
-          {data.stack && data.stack.length > 0 && (
+          {project?.description ?? project.text}
+          {project.stack && project.stack.length > 0 && (
             <i className="project-italics" style={{ fontSize: 15 }}>
-              Using {data.stack.join(",  ")}
+              Using {project.stack.join(",  ")}
             </i>
           )}
-          {data.friends && data.friends.length > 0 && (
+          {project.friends && project.friends.length > 0 && (
             <i className="project-italics">
-              Built using: {data.friends.join(",  ")}
+              Built using: {project.friends.join(",  ")}
             </i>
           )}
         </div>

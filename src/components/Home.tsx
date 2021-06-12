@@ -32,7 +32,7 @@ function Home() {
           paddingBottom: 120,
         }}
       >
-        Hello! I'm Hayden, a student and fullstack engineer.
+        Hello! I'm Hayden, a student and software engineer.
       </div>
     </div>
   );

@@ -44,17 +44,6 @@ function App() {
   const { height, width } = useWindowDimensions();
 
   useEffect(() => {
-    fetch("https://api.ipify.org?format=json")
-      .then((response) => {
-        return response.json();
-      })
-      .then(async (res) => {
-        mixpanel.identify(res.ip);
-        mixpanel.track("Home");
-      });
-  }, []);
-
-  useEffect(() => {
     if (!page.includes("projects/")) {
       document.title = _.get(titles, page, "") + "Hayden Daly";
     }
@@ -63,7 +52,7 @@ function App() {
   const setMode = () => {
     if (dark) {
       // @ts-ignore
-      document.body.style = "background: #ffffff";
+      document.body.style = "background: #eee";
     } else {
       // @ts-ignore
       document.body.style = "background: #121212";

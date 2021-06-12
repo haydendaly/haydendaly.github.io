@@ -43,7 +43,6 @@ function Header(props: {
               onClick={() => props.setPage("/")}
               to="/"
               className={`header-text current name`}
-              style={{ ...mobileStyles, paddingLeft: 0, paddingRight: 0 }}
             >
               Hayden Daly 🏃🏻‍♂️
             </Link>
@@ -78,8 +77,8 @@ function Header(props: {
                 About
               </Link>
             </div>
-            {/*props.page.includes("projects/") || */(
-              <OverlayTrigger
+            {
+              /*props.page.includes("projects/") || */ <OverlayTrigger
                 placement="bottom"
                 overlay={
                   <Tooltip id="color-changer">
@@ -88,14 +87,14 @@ function Header(props: {
                 }
               >
                 <a
-                  className="unselectable current"
+                  className="unselectable current header-text"
                   style={{ fontSize: 20 }}
                   onClick={props.setMode}
                 >
                   {props.dark ? <FiSun /> : <FaMoon />}
                 </a>
               </OverlayTrigger>
-            )}
+            }
           </div>
         </div>
       </FD>

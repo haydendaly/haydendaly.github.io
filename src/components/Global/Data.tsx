@@ -11,8 +11,9 @@ const projects = [
     name: "Expo",
     category: ["Web", "Backend", "Mobile"],
     text: "Interning at Expo \n",
-    description: "Working on EAS infra \n",
-    stack: ["React Native", "React", "Node", "Kubernetes", "Docker"],
+    description: "Just started... nothing so far \n",
+    stack: ["React"],
+    aspect_ratio: 599 / 393,
   },
   {
     key: "metrolabs",
@@ -155,8 +156,8 @@ const projects = [
         financial engineering department of Stevens. Worked in a VM of a
         simulated trading environment and initially lost a good deal of money
         using traditional HFT algorithms like MACD. Noticed market making in the
-        simulation wasn't effective and created a market maker in
-        combination with{" "}
+        simulation wasn't effective and created a market maker in combination
+        with{" "}
         <a
           target="_blank"
           className="link"
@@ -177,7 +178,14 @@ const projects = [
     text: "Itinerary creation startup \n",
     description:
       "Built mobile app for iOS/Android that helps groups make plans with conversational AI. Used chatbot micro-service for group communication to help users build plans. \n",
-    stack: ["Node", "React (Native)", "Swift", "MongoDB", "TensorFlow", "Redis"],
+    stack: [
+      "Node",
+      "React (Native)",
+      "Swift",
+      "MongoDB",
+      "TensorFlow",
+      "Redis",
+    ],
     link: "https://exire.ai",
     aspect_ratio: 1500 / 771,
   },

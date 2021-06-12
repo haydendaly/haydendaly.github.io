@@ -23,8 +23,7 @@ function Projects() {
         (o.category.includes("year") ||
           o.category.filter((cat) => categories.chosen.includes(cat)).length >
             0 ||
-          categories.all) &&
-        !_.get(o, "isResume")
+          categories.all)
     );
     for (var i = 0; i < filteredData.length; i++) {
       let next = _.get(filteredData, `[${i + 1}]`);

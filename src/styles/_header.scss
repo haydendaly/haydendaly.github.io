@@ -26,7 +26,7 @@ headroom {
     transform: translateY(0%);
 }
 
-.name {
+.name {    
     padding-left: 20;
     font-weight: 500;
     font-family: "HaasMd", "Helvetica Neue", "Arial", "sans-serif";
@@ -36,7 +36,13 @@ headroom {
     @include themed() {
         color: t($text);
     }
+    padding-left: 20;
+}
 
+.header-text:hover {
+    @include themed() {
+        color: t($highlight);
+    }
     padding-left: 20;
 }
 
@@ -44,14 +50,5 @@ headroom {
     @include themed() {
         color: t($highlight);
     }
-
-    padding-left: 20;
-}
-
-.header-text:hover {
-    @include themed() {
-        color: t($hover-highlight);
-    }
-
     padding-left: 20;
 }

@@ -3,8 +3,19 @@
 .project-link {
     @include themed() {
         color: t($highlight);
-        text-decoration: underline;
     }
+    text-decoration: underline;
+}
+
+.project-title {
+    @include themed() {
+        color: t($highlight);
+    }
+    text-decoration: none;
+}
+
+.project-title:hover {
+    text-decoration: underline;
 }
 
 .project-link:hover {
@@ -19,16 +30,14 @@
 
 .project-container {
     @include themed() {
-        background-color: t($text);
+        background-color: t($light);
     }
 }
-
 
 .display-text {
     @include themed() {
         color: #fff;
     }
-
     font-size: 24;
     font-family: "HaasMd";
 }
