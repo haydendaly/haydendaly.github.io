@@ -34,8 +34,8 @@ a:hover {
 .link {
     @include themed() {
         color: t($highlight);
-        text-decoration: underline;
     }
+    text-decoration: underline;
 }
 
 .category:hover,
@@ -43,6 +43,7 @@ a.category:active {
     @include themed() {
         color: t($highlight);
     }
+    cursor: pointer;
 }
 
 .project {

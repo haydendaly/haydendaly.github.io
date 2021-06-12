@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from "react";
-import _ from "lodash";
+import React, { useContext, useState, useEffect } from "react";
 import { isMobile } from "react-device-detect";
-import mixpanel from "mixpanel-browser";
 
 import { projects } from "./Global/Data";
 import { useCategories } from "../functions/helper";
+import { PageContext } from "../functions/Page";
 import { ProjectRow } from "./Global/TextComponents";
 
 function Projects() {
   const categories = useCategories();
   const [content, setContent] = useState(projects);
+  const { track } = useContext(PageContext);
   document.title = "Projects - Hayden Daly";
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    mixpanel.track("Projects");
+    track("Projects");
   }, []);
 
   useEffect(() => {
-    let filteredData = projects.filter(
+    const filteredData = projects.filter(
       (o) =>
-        (o.category.includes("year") ||
-          o.category.filter((cat) => categories.chosen.includes(cat)).length >
-            0 ||
-          categories.all)
+        o.category.includes("year") ||
+        o.category.filter((cat) => categories.chosen.includes(cat)).length >
+          0 ||
+        categories.all
     );
-    for (var i = 0; i < filteredData.length; i++) {
-      let next = _.get(filteredData, `[${i + 1}]`);
+    const len = filteredData.length;
+    for (var i = 0; i < len; i++) {
+      const next = len != i + 1 && filteredData[i + 1];
       if (
         filteredData[i].category[0] === "year" &&
         (!next || next.category[0] === "year")

@@ -53,7 +53,7 @@ const projects = [
     category: ["Mobile", "Design", "Management"],
     text: "Mental health smart-journaling app \n",
     description:
-      "Led team of seven to develop journaling application focused on accessibility and mood tracking. The goal is the gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of a user's mood over time. \n",
+      "Led team of seven to develop journaling application focused on accessibility and mood tracking. The goal is to gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of a user's mood over time. \n",
     stack: ["Node", "React (Native)", "Firebase"],
     link: "https://github.com/HODAS-Senior-Design/mobile",
     aspect_ratio: 1500 / 985,

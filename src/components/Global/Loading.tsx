@@ -1,28 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import Spinner from "react-spinkit";
 
-const Loading = (props: {
-  height: number | string;
-  width: number | string;
-}) => (
-  <div
-    style={{
-      height:
-        typeof props.height === "string" ? props.height : props.height - 55,
-      width: props.width,
-    }}
-  >
+import { StyleContext } from "../../functions/Style";
+
+const Loading = () => {
+  const { height, width } = useContext(StyleContext);
+  return (
     <div
       style={{
-        position: "absolute",
-        left: "50%",
-        top: "50%",
-        transform: "translate(-50%, -50%)",
+        height: typeof height === "number" ? height - 55 : height,
+        width,
       }}
     >
-      <Spinner name="cube-grid" />
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <Spinner name="cube-grid" />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Loading;

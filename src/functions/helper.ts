@@ -1,35 +1,15 @@
 import { useState, useEffect } from "react";
 
-const request = (
-  url,
-  type = "GET",
-  send,
-  body = null,
-  defaultValue = {},
-  format = "json"
-) => {
-  body = body ? { body: JSON.stringify(body) } : {};
-  fetch(url, {
-    method: type,
-    ...body,
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => {
-      if (format === "json") {
-        return res.json();
-      } else {
-        return res.text();
-      }
-    })
-    .then((response) => {
-      send(response);
-    })
-    .catch((err) => {
-      send(defaultValue);
-    });
+const getTitle = (path: string): string => {
+  const titles: { [key: string]: string } = {
+    "/projects": "Projects - ",
+    "/about": "About - ",
+  };
+  let title = "";
+  if (titles.hasOwnProperty(path)) {
+    title += titles[path];
+  }
+  return title + "Hayden Daly";
 };
 
 const getWindowDimensions = () => {
@@ -59,13 +39,13 @@ const useWindowDimensions = () => {
 
 const useCategories = () => {
   const categories = ["Web", "Mobile", "Backend", "Design", "Management"];
-  const [chosen, setChosen] = useState([]);
+  const [chosen, setChosen] = useState<string[]>([]);
   const [all, setAll] = useState(true);
   const [update, setUpdate] = useState(true);
 
-  const categoryPick = (category) => {
+  const categoryPick = (category: string) => {
     let tempChosen = chosen;
-    if (category === "All" && !all || tempChosen.includes(category)) {
+    if ((category === "All" && !all) || tempChosen.includes(category)) {
       setAll(true);
       setChosen([]);
     } else if (category !== "All") {
@@ -84,4 +64,4 @@ const useCategories = () => {
   };
 };
 
-export { request, useWindowDimensions, useCategories };
+export { getTitle, useWindowDimensions, useCategories };

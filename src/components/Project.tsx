@@ -1,7 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
-import _ from "lodash";
-import mixpanel from "mixpanel-browser";
-
+import React, { useContext, useEffect, useState, Suspense } from "react";
 import { isMobile } from "react-device-detect";
 import { useLocation, Redirect } from "react-router-dom";
 import { LazyLoadImage as Image } from "react-lazy-load-image-component";
@@ -10,11 +7,14 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { projects } from "./Global/Data";
 import Loading from "./Global/Loading";
 import { ProjectDescription } from "./Global/TextComponents";
-import { useWindowDimensions } from "../functions/helper";
+import { PageContext } from "../functions/Page";
+import { StyleContext } from "../functions/Style";
 
-function Project(props: { setPage: (page: string) => void }) {
-  let location = useLocation();
-  const { height, width } = useWindowDimensions();
+function Project() {
+  const { setPage, setTitle, track } = useContext(PageContext);
+  const { height, width } = useContext(StyleContext);
+  const location = useLocation();
+
   const [data, setData] = useState<any>({
     key: "",
     text: "",
@@ -27,26 +27,26 @@ function Project(props: { setPage: (page: string) => void }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    props.setPage("projects/");
-    let project = projects.filter(
+    setPage("projects/");
+    const project = projects.filter(
       (o) => o.key === location.pathname.substr(10)
     );
     if (project.length !== 0) {
       setData(project[0]);
-      document.title = project[0].name + " - Hayden Daly";
-      mixpanel.track(`Project ${project[0].name}`);
+      setTitle(project[0].name + " - Hayden Daly");
+      track(`Project ${project[0].name}`);
     } else {
       setRedirect(true);
     }
   }, []);
 
-  const link = _.get(data, "link");
+  const link = data?.link;
 
   return (
     <div style={{ paddingTop: isMobile ? 10 : 15 }}>
       <div style={{ marginBottom: 10 }}>
         {redirect && <Redirect to="/" />}
-        <Suspense fallback={<Loading height="100%" width="100%" />}>
+        <Suspense fallback={<Loading />}>
           <div className="project-container">
             <a target="_blank" href={link}>
               <Image
@@ -60,14 +60,14 @@ function Project(props: { setPage: (page: string) => void }) {
                     ? {
                         opacity: "75%",
                         maxHeight: height * 0.9,
-                        minHeight: _.has(data, "aspect_ratio")
+                        minHeight: data?.aspect_ratio
                           ? (width * 0.95 > 1000 ? 1000 : width * 0.95) /
                             data.aspect_ratio
                           : height * 0.5,
                       }
                     : {
                         maxHeight: height * 0.9,
-                        minHeight: _.has(data, "aspect_ratio")
+                        minHeight: data?.aspect_ratio
                           ? (width * 0.95 > 1000 ? 1000 : width * 0.95) /
                             data.aspect_ratio
                           : height * 0.5,

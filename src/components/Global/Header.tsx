@@ -1,19 +1,26 @@
-import React, { useState } from "react";
-import { isMobile } from "react-device-detect";
-import FD from "./FormattedDiv";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import Headroom from "react-headroom";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FaMoon } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { Tooltip } from "react-tippy";
 
-function Header(props: {
-  page: string;
-  setPage: (page: string) => void;
-  dark: boolean;
-  setMode: () => void;
-}) {
+import "react-tippy/dist/tippy.css";
+
+import FD from "./FormattedDiv";
+import { PageContext } from "../../functions/Page";
+import { StyleContext } from "../../functions/Style";
+
+function Header() {
   const [show, setShow] = useState(false);
+  const { page, setPage } = useContext(PageContext);
+  const { isDark, isMobile, toggleTheme } = useContext(StyleContext);
+
+  const mobileStyles = {
+    fontSize: isMobile ? 17 : 18,
+    paddingLeft: isMobile ? 0 : 20,
+    paddingRight: isMobile ? 15 : 20,
+  };
 
   return (
     <Headroom
@@ -24,8 +31,8 @@ function Header(props: {
       <FD
         styles={
           show && {
-            backgroundColor: props.dark ? "#121212" : "#fff",
-            boxShadow: `1px 0px 1px ${props.dark ? "#77abb7" : "#393e46"}`,
+            backgroundColor: isDark ? "#121212" : "#fff",
+            boxShadow: `1px 0px 1px ${isDark ? "#77abb7" : "#393e46"}`,
           }
         }
       >
@@ -40,7 +47,7 @@ function Header(props: {
         >
           <div style={{ width: isMobile ? "35%" : "20%" }}>
             <Link
-              onClick={() => props.setPage("/")}
+              onClick={() => setPage("/")}
               to="/"
               className={`header-text current name`}
             >
@@ -57,55 +64,44 @@ function Header(props: {
           >
             <div>
               <Link
-                onClick={() => props.setPage("/projects")}
+                onClick={() => setPage("/projects")}
                 to="/projects"
                 className={`header-text${
-                  props.page === "/projects" ? " current" : ""
+                  page === "/projects" ? " current" : ""
                 }`}
                 style={{ ...mobileStyles, paddingLeft: 0 }}
               >
                 Projects
               </Link>
               <Link
-                onClick={() => props.setPage("/about")}
+                onClick={() => setPage("/about")}
                 to="/about"
-                className={`header-text${
-                  props.page === "/about" ? " current" : ""
-                }`}
+                className={`header-text${page === "/about" ? " current" : ""}`}
                 style={mobileStyles}
               >
                 About
               </Link>
             </div>
-            {
-              /*props.page.includes("projects/") || */ <OverlayTrigger
-                placement="bottom"
-                overlay={
-                  <Tooltip id="color-changer">
-                    {props.dark ? "Light Mode" : "Dark Mode"}
-                  </Tooltip>
-                }
+            <Tooltip
+              title={isDark ? "Light Mode" : "Dark Mode"}
+              position="bottom"
+              size="small"
+              animation="fade"
+              distance={4}
+            >
+              <a
+                className="unselectable current header-text"
+                style={{ fontSize: 20 }}
+                onClick={toggleTheme}
               >
-                <a
-                  className="unselectable current header-text"
-                  style={{ fontSize: 20 }}
-                  onClick={props.setMode}
-                >
-                  {props.dark ? <FiSun /> : <FaMoon />}
-                </a>
-              </OverlayTrigger>
-            }
+                {isDark ? <FiSun /> : <FaMoon />}
+              </a>
+            </Tooltip>
           </div>
         </div>
       </FD>
     </Headroom>
   );
 }
-
-const mobileStyles = {
-  fontSize: isMobile ? 17 : 18,
-  paddingLeft: isMobile ? 0 : 20,
-  paddingRight: isMobile ? 15 : 20,
-};
 
 export default Header;

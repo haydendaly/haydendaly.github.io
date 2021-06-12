@@ -2,7 +2,7 @@ import React from "react";
 
 const FormattedDiv = (props: {
   children: any;
-  height?: number;
+  height?: number | string;
   styles?: any;
   ref?: any;
 }) => {
@@ -23,7 +23,7 @@ const FormattedDiv = (props: {
           maxWidth: 1000,
           display: "flex",
           justifyContent: "flex-start",
-          minHeight: height ? height - 65 : undefined,
+          minHeight: typeof height === "number" ? height - 65 : undefined,
           zIndex: 1,
         }}
       >

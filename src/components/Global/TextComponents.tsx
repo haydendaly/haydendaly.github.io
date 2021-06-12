@@ -1,22 +1,52 @@
-import React from "react";
-import _ from "lodash";
+import React, { ReactNode } from "react";
 import { isMobile } from "react-device-detect";
 const createReactClass = require("create-react-class");
 import { Link } from "react-router-dom";
 
-function TextRow({ data }) {
+type TextRowProps = {
+  data: { key?: string; component?: ReactNode; text?: string };
+};
+
+type Project = {
+  key?: string;
+  category?: string[];
+  name?: string;
+  text?: string;
+  description?: string;
+  stack?: string[];
+  friends?: string[];
+  aspect_ratio?: number;
+  link?: string;
+};
+
+type TextColumnProps = {
+  data: Project;
+  isFirst?: boolean;
+};
+
+type ProjectRowProps = {
+  categories: {
+    chosen?: string[];
+    categories: string[];
+    categoryPick: (category: string) => void;
+    all: boolean;
+  };
+  data?: Project | any;
+};
+
+type ProjectDescriptionProps = {
+  project: Project;
+};
+
+function TextRow({ data }: TextRowProps) {
   if (isMobile) {
     return (
-      <div key={data.key} style={{ paddingBottom: 5 }}>
+      <div style={{ paddingBottom: 5 }}>
         <p className="section" style={{ marginBottom: 5 }}>
           {data.key}
         </p>
         <div style={{ fontSize: 15, whiteSpace: "pre-wrap" }}>
-          {_.has(data, "component") ? (
-            data.component
-          ) : (
-            <p className="section">{data.text}</p>
-          )}
+          {data?.component ?? <p className="section">{data.text}</p>}
         </div>
       </div>
     );
@@ -43,8 +73,8 @@ function TextRow({ data }) {
   }
 }
 
-function TextColumn({ data, isFirst }) {
-  if (data.category.includes("year")) {
+function TextColumn({ data, isFirst }: TextColumnProps) {
+  if (data?.category && data?.category.includes("year")) {
     return (
       <p
         key={data.key}
@@ -67,14 +97,10 @@ function TextColumn({ data, isFirst }) {
   }
 }
 
-function ProjectRow({ categories, data }) {
+function ProjectRow({ categories, data }: ProjectRowProps) {
   if (isMobile) {
     return (
-      <div>
-        {data.map((o) => (
-          <TextColumn data={o} />
-        ))}
-      </div>
+      <div>{data?.map && data?.map((o: any) => <TextColumn data={o} />)}</div>
     );
   } else {
     return (
@@ -93,7 +119,7 @@ function ProjectRow({ categories, data }) {
                       onClick={this.onClick}
                       className={`category${
                         (o === "All" && categories.all) ||
-                        categories.chosen.includes(o)
+                        categories?.chosen?.includes(o)
                           ? " current"
                           : ""
                       }`}
@@ -114,7 +140,7 @@ function ProjectRow({ categories, data }) {
             fontSize: isMobile ? 15 : 16,
           }}
         >
-          {data.map((o) => (
+          {data.map((o: any) => (
             <TextColumn data={o} isFirst={data[0] === o} />
           ))}
         </div>
@@ -123,7 +149,7 @@ function ProjectRow({ categories, data }) {
   }
 }
 
-function ProjectDescription({ project }) {
+function ProjectDescription({ project }: ProjectDescriptionProps) {
   const link = project.link !== "" && project.link;
   if (isMobile) {
     return (
@@ -147,14 +173,14 @@ function ProjectDescription({ project }) {
           style={{ fontSize: 15, whiteSpace: "pre-wrap" }}
         >
           {project?.description ?? project.text}
-          {project.stack && project.stack.length > 0 && (
+          {project?.stack && project?.stack.length > 0 && (
             <i className="project-italics" style={{ fontSize: 15 }}>
-              Using {project.stack.join(",  ")}
+              Using {project?.stack.join(",  ")}
             </i>
           )}
-          {project.friends && project.friends.length > 0 && (
+          {project?.friends && project?.friends.length > 0 && (
             <i className="project-italics">
-              Built using: {project.friends.join(",  ")}
+              Built using: {project?.friends.join(",  ")}
             </i>
           )}
         </div>
@@ -180,14 +206,14 @@ function ProjectDescription({ project }) {
           style={{ width: "80%", whiteSpace: "pre-wrap" }}
         >
           {project?.description ?? project.text}
-          {project.stack && project.stack.length > 0 && (
+          {project?.stack && project?.stack.length > 0 && (
             <i className="project-italics" style={{ fontSize: 15 }}>
-              Using {project.stack.join(",  ")}
+              Using {project?.stack.join(",  ")}
             </i>
           )}
-          {project.friends && project.friends.length > 0 && (
+          {project?.friends && project?.friends.length > 0 && (
             <i className="project-italics">
-              Built using: {project.friends.join(",  ")}
+              Built using: {project?.friends.join(",  ")}
             </i>
           )}
         </div>

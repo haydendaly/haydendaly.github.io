@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Particles from "react-particles-js";
+import { StyleContext, StyleContextType } from "../../functions/Style";
 
-function LinksBg(props: { dark: boolean }) {
+function LinksBg() {
+  const { isDark } = useContext(StyleContext) as StyleContextType;
   return (
     <Particles
       params={{
@@ -13,11 +15,11 @@ function LinksBg(props: { dark: boolean }) {
             value: 2,
           },
           color: {
-            value: props.dark ? "#bbb" : "#3a3a3a",
+            value: isDark ? "#bbb" : "#3a3a3a",
           },
           line_linked: {
             color: {
-              value: props.dark ? "#77abb7" : "#77abb7",
+              value: isDark ? "#77abb7" : "#77abb7",
             },
           },
         },
@@ -40,7 +42,8 @@ function LinksBg(props: { dark: boolean }) {
   );
 }
 
-function BubblesBg(props: { dark: boolean }) {
+function BubblesBg() {
+  const { isDark } = useContext(StyleContext) as StyleContextType;
   return (
     <Particles
       params={{
@@ -52,7 +55,7 @@ function BubblesBg(props: { dark: boolean }) {
             },
           },
           color: {
-            value: props.dark ? "#bbb" : "#3a3a3a",
+            value: isDark ? "#bbb" : "#3a3a3a",
           },
           size: {
             value: 3,
