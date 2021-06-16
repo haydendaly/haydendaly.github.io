@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --open",
     "build": "webpack --mode production && cp build/index.html build/404.html",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "format": "prettier --write \"src/**/*.ts(x)?\""
   },

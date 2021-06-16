@@ -38,6 +38,20 @@ a:hover {
     text-decoration: underline;
 }
 
+.italic {
+    @include themed() {
+        color: t($dark-text);
+    }
+    text-decoration: italic;
+    font-family: "HaasIt", "Helvetica Neue", "Arial", "sans-serif";
+}
+
+.italic:hover {
+    @include themed() {
+        color: t($text);
+    }
+}
+
 .category:hover,
 a.category:active {
     @include themed() {
@@ -50,4 +64,12 @@ a.category:active {
     @include themed() {
         color: t($dark-text);
     }
+}
+
+.tippy-popper .tippy-tooltip.light * {
+    background-color: red !important;    
+}
+
+.tippy-popper .tippy-tooltip.dark * {
+    background-color: blue !important;    
 }

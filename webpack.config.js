@@ -84,6 +84,7 @@ module.exports = (env, argv) => {
       new RobotstxtPlugin({filePath: './src/static/robots.txt'}),
       new webpack.ProvidePlugin({
         'process': 'process/browser',
+        'NODE_ENV': argv.mode,
       }),
     ],
     devServer: {

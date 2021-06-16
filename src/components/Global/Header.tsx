@@ -88,6 +88,7 @@ function Header() {
               size="small"
               animation="fade"
               distance={4}
+              theme={isDark ? "dark" : "light"}
             >
               <a
                 className="unselectable current header-text"

@@ -30,7 +30,7 @@ export const StyleProvider: FC = ({ children }) => {
       document.body.style = "background: #121212";
     } else {
       // @ts-ignore
-      document.body.style = "background: #f0f0f0";
+      document.body.style = "background: #fafafa";
     }
     setIsDark("true" === isDarkCached);
     logDeveloperMessage();
@@ -39,7 +39,7 @@ export const StyleProvider: FC = ({ children }) => {
   const toggleTheme = () => {
     if (isDark) {
       // @ts-ignore
-      document.body.style = "background: #f0f0f0";
+      document.body.style = "background: #fafafa";
       localStorage.setItem("isDark", "false");
     } else {
       // @ts-ignore

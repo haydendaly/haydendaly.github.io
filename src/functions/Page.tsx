@@ -11,17 +11,21 @@ type PageContextType = {
 };
 
 function onMount() {
-  mixpanel.init("5a38064353748fc70f226574b814d85d");
-  fetch("https://api.ipify.org?format=json")
-    .then((res) => res.json())
-    .then(async (res) => {
-      mixpanel.identify(res.ip);
-      track("Home");
-    });
+  if (process.env.NODE_ENV === "production") {
+    mixpanel.init("5a38064353748fc70f226574b814d85d");
+    fetch("https://api.ipify.org?format=json")
+      .then((res) => res.json())
+      .then(async (res) => {
+        mixpanel.identify(res.ip);
+        track("Home");
+      });
+  }
 }
 
 function track(event: string) {
-  mixpanel.track(event);
+  if (process.env.NODE_ENV === "production") {
+    mixpanel.track(event);
+  }
 }
 
 export const PageContext = createContext<PageContextType>({

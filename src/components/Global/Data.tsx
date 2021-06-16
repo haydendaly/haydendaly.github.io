@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Tooltip } from "react-tippy";
+
+import { StyleContext } from "../../functions/Style";
+
+import "react-tippy/dist/tippy.css";
 
 const projects = [
   {
@@ -13,7 +18,7 @@ const projects = [
     text: "Interning at Expo \n",
     description: "Just started... nothing so far \n",
     stack: ["React"],
-    aspect_ratio: 599 / 393,
+    aspect_ratio: 1280 / 720,
   },
   {
     key: "metrolabs",
@@ -88,7 +93,7 @@ const projects = [
     key: "securemeeting",
     name: "SecureMeeting",
     category: ["Web", "Backend", "Mobile"],
-    text: "Developed features for video-chat platform \n",
+    text: "Developed features for WebRTC chat platform \n",
     description:
       "Worked with fullstack WebRTC platform to improve backend performance, develop frontend features, and start/lead development on a mobile application. \n",
     stack: ["React", "WebRTC", "React Native"],
@@ -103,8 +108,7 @@ const projects = [
     description: (
       <p style={{ marginBottom: 0 }}>
         Hosted the 2020 COVID-19 Hackathon with 600+ global participants to
-        address post-COVID life--still advising multiple teams. Received media
-        recognition from major media outlets such as{" "}
+        address post-COVID life. Received media recognition from{" "}
         <a
           className="link"
           href="https://www.inc.com/a-university-hackathon-tackles-reopening-the-economy-after-covid.html"
@@ -252,13 +256,33 @@ const projects = [
   },
 ];
 
+function CMTooltip() {
+  const { isDark } = useContext(StyleContext);
+  return (
+    <Tooltip
+      title={
+        "A mixture of computer science, product, and design under an information science/systems degree."
+      }
+      position="bottom"
+      size="small"
+      animation="fade"
+      distance={4}
+      theme={isDark ? "dark" : "light"}
+    >
+      <a className="italic">Connective Media</a>
+    </Tooltip>
+  );
+}
+
 const about = [
   {
     key: "Info",
     component: (
       <p className="section" style={{ whiteSpace: "pre-wrap" }}>
-        {`I'm a masters student at Cornell Tech in NYC where I study information systems/science. I did my bachelors in software engineering at Stevens Institute in Hoboken, NJ.  I spend most my free time running, reading, and mountain biking.  I competed cross country and track in my undergrad and now am training to run an ultra marathon.
-            I'm also involved in some side projects—prior ones include:  `}
+        {`I'm a masters student at Cornell Tech studying `}
+        <CMTooltip />
+        {`. I did my bachelors in software engineering at Stevens Institute of Tech.  I spend my free time running, reading, and mountain biking.  I competed cross country and track in my undergrad and now am training to run an ultra marathon.
+            Some side projects I've done include:  `}
         <Link className="link" to={"/projects/exire"}>
           a startup focused on creating plans for groups
         </Link>
@@ -266,18 +290,18 @@ const about = [
         <Link className="link" to={"/projects/babbio"}>
           a group chat platform targetting university students.
         </Link>
-        {`  I was previously engaged in research for the Collective-Design Lab where I developed `}
+        {`  I previously did research for the Collective-Design Lab where I developed `}
         <Link className="link" to={"/projects/testbed"}>
           an event-driven infrastructure
         </Link>
-        {` for distributed space-system simulations.  I was also the director of Hackathons for the Stevens Venture Center where I hosted 5 competitions.`}
+        {` for distributed space-system simulations.  I also was the director of Hackathons for the Stevens Venture Center where I hosted 5 competitions.`}
       </p>
     ),
   },
   {
-    key: "Primary Interests",
+    key: "Focuses",
     text: `Distributed Systems
-Software Architecture
+Performance Engineering
 Product Management
 Cross-platform Development`,
   },

@@ -16,6 +16,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "HaasIt";
+    src: url("../static/fonts/NeueHaasDisplayRomanItalic.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 ::selection {
     @include themed() {
         color: t($bg);
