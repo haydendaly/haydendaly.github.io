@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
-import { isMobile } from "react-device-detect";
-import mixpanel from "mixpanel-browser";
+import React, { useContext, useEffect } from "react";
 
-import { useWindowDimensions } from "../functions/helper";
-import "../styles/style.scss";
+import { PageContext } from "../functions/Page";
+import { StyleContext } from "../functions/Style";
 
 function Home() {
-  const { width } = useWindowDimensions();
+  const { width, isMobile } = useContext(StyleContext);
+  const { track } = useContext(PageContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    mixpanel.track("Home");
+    track("Home");
   }, []);
 
   return (

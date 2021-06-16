@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState, Suspense } from "react";
-import { isMobile } from "react-device-detect";
 import { useLocation, Redirect } from "react-router-dom";
 import { LazyLoadImage as Image } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -12,7 +11,7 @@ import { StyleContext } from "../functions/Style";
 
 function Project() {
   const { setPage, setTitle, track } = useContext(PageContext);
-  const { height, width } = useContext(StyleContext);
+  const { height, width, isMobile } = useContext(StyleContext);
   const location = useLocation();
 
   const [data, setData] = useState<any>({

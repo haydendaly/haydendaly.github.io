@@ -16,7 +16,7 @@ function onMount() {
     .then((res) => res.json())
     .then(async (res) => {
       mixpanel.identify(res.ip);
-      mixpanel.track("Home");
+      track("Home");
     });
 }
 

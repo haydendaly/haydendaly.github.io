@@ -2,7 +2,6 @@ import React, { FC, createContext, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 
 import { useWindowDimensions } from "../functions/helper";
-import "../styles/style.scss";
 
 export type StyleContextType = {
   isDark: boolean;
@@ -14,7 +13,7 @@ export type StyleContextType = {
 
 export const StyleContext = createContext<StyleContextType>({
   isDark: false,
-  isMobile: isMobile,
+  isMobile,
   height: 100,
   width: 100,
   toggleTheme: () => null,

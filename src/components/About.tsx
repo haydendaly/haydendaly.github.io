@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
-import mixpanel from "mixpanel-browser";
-import { isMobile } from "react-device-detect";
+import React, { useContext, useEffect } from "react";
 
 import { TextRow } from "./Global/TextComponents";
 import { about } from "./Global/Data";
+import { PageContext } from "../functions/Page";
+import { StyleContext } from "../functions/Style";
 
 function About() {
+  const { track } = useContext(PageContext);
+  const { isMobile } = useContext(StyleContext);
+
   useEffect(() => {
-    mixpanel.track("About");
+    track("About");
   }, []);
 
   const items = about.map((o) => <TextRow data={o} />);

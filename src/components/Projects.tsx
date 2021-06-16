@@ -1,15 +1,16 @@
 import React, { useContext, useState, useEffect } from "react";
-import { isMobile } from "react-device-detect";
 
 import { projects } from "./Global/Data";
 import { useCategories } from "../functions/helper";
 import { PageContext } from "../functions/Page";
+import { StyleContext } from "../functions/Style";
 import { ProjectRow } from "./Global/TextComponents";
 
 function Projects() {
   const categories = useCategories();
   const [content, setContent] = useState(projects);
   const { track } = useContext(PageContext);
+  const { isMobile } = useContext(StyleContext);
   document.title = "Projects - Hayden Daly";
 
   useEffect(() => {
