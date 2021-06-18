@@ -7,9 +7,9 @@ import { Tooltip } from "react-tippy";
 
 import "react-tippy/dist/tippy.css";
 
-import FD from "./FormattedDiv";
-import { PageContext } from "../../functions/Page";
-import { StyleContext } from "../../functions/Style";
+import FD from "~/components/Global/FormattedDiv";
+import { PageContext } from "~/functions/Page";
+import { StyleContext } from "~/functions/Style";
 
 function Header() {
   const [show, setShow] = useState(false);

@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState, Suspense } from "react";
 import { useLocation, Redirect } from "react-router-dom";
 import { LazyLoadImage as Image } from "react-lazy-load-image-component";
 
-import { projects } from "./Global/Data";
-import Loading from "./Global/Loading";
-import { ProjectDescription } from "./Global/TextComponents";
-import { PageContext } from "../functions/Page";
-import { StyleContext } from "../functions/Style";
+import { projects } from "~/components/Global/Data";
+import Loading from "~/components/Global/Loading";
+import { ProjectDescription } from "~/components/Global/TextComponents";
+import { PageContext } from "~/functions/Page";
+import { StyleContext } from "~/functions/Style";
 
 function Project() {
   const { setPage, setTitle, track } = useContext(PageContext);
@@ -46,7 +46,7 @@ function Project() {
         {redirect && <Redirect to="/" />}
         <Suspense fallback={<Loading />}>
           <div className="project-container">
-            <a target="_blank" href={link}>
+            <a target="_blank" rel="noreferrer" href={link}>
               <Image
                 width={"100%"}
                 alt={data.name}

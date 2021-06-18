@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 
-import { TextRow } from "./Global/TextComponents";
-import { about } from "./Global/Data";
-import { PageContext } from "../functions/Page";
-import { StyleContext } from "../functions/Style";
+import { TextRow } from "~/components/Global/TextComponents";
+import { about } from "~/components/Global/Data";
+import { PageContext } from "~/functions/Page";
+import { StyleContext } from "~/functions/Style";
 
 function About() {
   const { track } = useContext(PageContext);

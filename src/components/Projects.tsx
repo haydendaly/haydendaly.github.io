@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 
-import { projects } from "./Global/Data";
-import { useCategories } from "../functions/helper";
-import { PageContext } from "../functions/Page";
-import { StyleContext } from "../functions/Style";
-import { ProjectRow } from "./Global/TextComponents";
+import { PageContext } from "~/functions/Page";
+import { StyleContext } from "~/functions/Style";
+import { ProjectRow } from "~/components/Global/TextComponents";
+import { useCategories } from "~/functions/helper";
+import { projects } from "~/components/Global/Data";
 
 function Projects() {
   const categories = useCategories();

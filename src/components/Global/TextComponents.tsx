@@ -157,6 +157,7 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
         {link ? (
           <a
             target="_blank"
+            rel="noreferrer"
             className="project-title"
             href={link}
             style={{ marginBottom: 5 }}
@@ -194,7 +195,12 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
       >
         <div className="project" style={{ width: "20%" }}>
           {link ? (
-            <a target="_blank" className="project-title" href={link}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              className="project-title"
+              href={link}
+            >
               {project.name}
             </a>
           ) : (

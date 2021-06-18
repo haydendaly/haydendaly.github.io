@@ -1,7 +1,7 @@
 import React, { FC, createContext, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 
-import { useWindowDimensions } from "../functions/helper";
+import { useWindowDimensions } from "~/functions/helper";
 
 export type StyleContextType = {
   isDark: boolean;

@@ -6,12 +6,12 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Loading from "./Global/Loading";
-import Header from "./Global/Header";
-import { LinksBg as Background } from "./Global/Particles";
-import FD from "./Global/FormattedDiv";
-import { PageContext } from "../functions/Page";
-import { StyleContext } from "../functions/Style";
+import Loading from "~/components/Global/Loading";
+import Header from "~/components/Global/Header";
+import { LinksBg as Background } from "~/components/Global/Particles";
+import FD from "~/components/Global/FormattedDiv";
+import { PageContext } from "~/functions/Page";
+import { StyleContext } from "~/functions/Style";
 
 const Home = lazy(() => import("./Home"));
 const Projects = lazy(() => import("./Projects"));

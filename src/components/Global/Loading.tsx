@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Spinner from "react-spinkit";
 
-import { StyleContext } from "../../functions/Style";
+import { StyleContext } from "~/functions/Style";
 
 const Loading = () => {
   const { height, width } = useContext(StyleContext);

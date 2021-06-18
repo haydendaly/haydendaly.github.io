@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 
-import { PageContext } from "../functions/Page";
-import { StyleContext } from "../functions/Style";
+import { PageContext } from "~/functions/Page";
+import { StyleContext } from "~/functions/Style";
 
 function Home() {
   const { width, isMobile } = useContext(StyleContext);

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Particles from "react-particles-js";
-import { StyleContext, StyleContextType } from "../../functions/Style";
+
+import { StyleContext, StyleContextType } from "~/functions/Style";
 
 function LinksBg() {
   const { isDark } = useContext(StyleContext) as StyleContextType;

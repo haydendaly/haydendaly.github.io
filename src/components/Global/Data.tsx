@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Tooltip } from "react-tippy";
 
-import { StyleContext } from "../../functions/Style";
+import { StyleContext } from "~/functions/Style";
 
 import "react-tippy/dist/tippy.css";
 
@@ -113,6 +113,7 @@ const projects = [
           className="link"
           href="https://www.inc.com/a-university-hackathon-tackles-reopening-the-economy-after-covid.html"
           target="_blank"
+          rel="noreferrer"
         >
           Inc. Magazine
         </a>
@@ -121,6 +122,7 @@ const projects = [
           className="link"
           href="https://markets.businessinsider.com/news/stocks/infragistics-partners-with-stevens-venture-center-to-support-covid-healthhack-ii-1029182143#"
           target="_blank"
+          rel="noreferrer"
         >
           Business Insider
         </a>
@@ -129,6 +131,7 @@ const projects = [
           className="link"
           href="https://finance.yahoo.com/news/infragistics-partners-stevens-venture-center-130000325.html"
           target="_blank"
+          rel="noreferrer"
         >
           Yahoo Finance.
         </a>
@@ -164,6 +167,7 @@ const projects = [
         with{" "}
         <a
           target="_blank"
+          rel="noreferrer"
           className="link"
           href="https://www.sciencedirect.com/science/article/abs/pii/0304405X76900064"
         >
@@ -260,9 +264,8 @@ function CMTooltip() {
   const { isDark } = useContext(StyleContext);
   return (
     <Tooltip
-      title={
-        "A mixture of computer science, product, and design under an information science/systems degree."
-      }
+      title="A mixture of computer science, product, and design under an
+          information science/systems degree."
       position="bottom"
       size="small"
       animation="fade"
@@ -313,6 +316,7 @@ Cross-platform Development`,
         GitHub:{"  "}
         <a
           target="_blank"
+          rel="noreferrer"
           className="link"
           href="https://github.com/haydendaly"
         >
@@ -322,6 +326,7 @@ Cross-platform Development`,
         LinkedIn:{"  "}
         <a
           target="_blank"
+          rel="noreferrer"
           className="link"
           href="https://www.linkedin.com/in/haydendaly/"
         >
@@ -331,6 +336,7 @@ Cross-platform Development`,
         Strava:{"  "}
         <a
           target="_blank"
+          rel="noreferrer"
           className="link"
           href="https://www.strava.com/athletes/54285809"
         >
@@ -338,7 +344,12 @@ Cross-platform Development`,
         </a>
         <br />
         Email:{"  "}
-        <a target="_blank" className="link" href="mailto:hcd36@cornell.edu">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          className="link"
+          href="mailto:hcd36@cornell.edu"
+        >
           hcd36@cornell.edu
         </a>
       </p>
@@ -352,6 +363,7 @@ Cross-platform Development`,
         <a
           className="link"
           target="_blank"
+          rel="noreferrer"
           href="https://www.goodreads.com/book/show/6751.Consider_the_Lobster_and_Other_Essays"
         >
           <i>Consider the Lobster by David Foster Wallace</i>
@@ -360,6 +372,7 @@ Cross-platform Development`,
         <a
           className="link"
           target="_blank"
+          rel="noreferrer"
           href="https://www.goodreads.com/book/show/22822858-a-little-life"
         >
           <i>A Little Life by Hanya Yanagihara</i>
@@ -368,6 +381,7 @@ Cross-platform Development`,
         <a
           className="link"
           target="_blank"
+          rel="noreferrer"
           href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"
         >
           <i>Kafka on the Shore by Haruki Murikami</i>
@@ -376,6 +390,7 @@ Cross-platform Development`,
         <a
           className="link"
           target="_blank"
+          rel="noreferrer"
           href="https://www.goodreads.com/book/show/9915.Less_Than_Zero"
         >
           <i>Less Than Zero by Bret Easton Ellis</i>

@@ -1,7 +1,7 @@
 import React, { FC, createContext, useEffect, useState } from "react";
 import mixpanel from "mixpanel-browser";
 
-import { getTitle } from "./helper";
+import { getTitle } from "~/functions/helper";
 
 type PageContextType = {
   track: (event: string) => void;
