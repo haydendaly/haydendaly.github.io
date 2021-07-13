@@ -16,18 +16,10 @@ const projects = [
     name: "Expo",
     category: ["Web", "Backend", "Mobile"],
     text: "Interning at Expo \n",
-    description: "Just started... nothing so far \n",
-    stack: ["React"],
-    aspect_ratio: 1280 / 720,
-  },
-  {
-    key: "metrolabs",
-    name: "Metro Labs",
-    category: ["Web", "Design", "Management"],
-    text: "Nonprofit for local environmental focused tech initiatives \n",
-    description:
-      "Started sustainability focused 501(c)(3) organization with support of local government to bring open-sourced, smart city technology to Hoboken. Forming a collaborative triangle between education, local industry, and municipalities to bring open-sourced solutions locally. Starting with pilot project of local garbage optimization full-stack application to be adopted by the Hoboken Sustainability Office.\n",
-    stack: ["React Native", "React", "Node"],
+    description: "Spearheaded development of internal tools: surveyed engineers on their pain points, user-tested mockups, and built/launched platform. Wrote scripts to parse database entities and generate GraphQL types, queries, and resolvers. Contributed to production frontend/backend, cross-platform tools (Expo Go), privacy-aware ORM, and CLI tools. \n",
+    stack: ["React", "React Native", "Node", "TypeScript", "GraphQL", "Postgres"],
+    link: "https://expo.dev",
+    aspect_ratio: 1500 / 748,
   },
   {
     key: "2021",
@@ -39,7 +31,7 @@ const projects = [
     category: ["Web", "Backend", "Management"],
     text: "Distributed simulation infrastructure for NASA ESTO \n",
     description:
-      "Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Research awarded by the DoD/NASA for 3 year contract project to be implemented in the NASA Private Cloud to be used for distributed simulations. Developed orchestration with service mesh and gathered requirements from DOD, NASA, and USGS on both interfaces and developing communication protocols. \n",
+      "Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Funded by $965k NASA contract to implement system in the NASA Private Cloud and use for distributed simulations. Developed orchestration with service mesh and gathered requirements from the DoD, NASA, and USGS on both interfaces and developing communication protocols. \n",
     stack: [
       "React",
       "Docker",
@@ -59,7 +51,7 @@ const projects = [
     text: "Mental health smart-journaling app \n",
     description:
       "Led team of seven to develop journaling application focused on accessibility and mood tracking. The goal is to gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of a user's mood over time. \n",
-    stack: ["Node", "React (Native)", "Firebase"],
+    stack: ["Node", "React", "React Native", "Firebase"],
     link: "https://github.com/HODAS-Senior-Design/mobile",
     aspect_ratio: 1500 / 985,
   },
@@ -84,9 +76,8 @@ const projects = [
     category: ["Web", "Backend"],
     text: "Interned at The Walt Disney Company \n",
     description:
-      "Developed full-stack to be used internally within the production of animated content. Restructured GitLab pipelines for automated testing of multiple environments. \n",
+      "Developed full-stack tools to be used internally within the production of animated content. Restructured GitLab pipelines for automated testing of multiple environments. \n",
     stack: ["React", "Django", "Docker", "MySQL", "Nginx", "Ruby"],
-    link: "",
     aspect_ratio: 1280 / 720,
   },
   {
@@ -177,7 +168,8 @@ const projects = [
       </p>
     ),
     stack: ["Python", "Pandas"],
-    link: "https://github.com/JamesLawrence30/TwoAndTwentyLLP",
+    link: "https://github.com/haydendaly/experiments/tree/main/algo-trading-contest",
+    aspect_ratio: 964 / 629,
   },
   {
     key: "exire",
@@ -297,14 +289,14 @@ const about = [
         <Link className="link" to={"/projects/testbed"}>
           an event-driven infrastructure
         </Link>
-        {` for distributed space-system simulations.  I also was the director of Hackathons for the Stevens Venture Center where I hosted 5 competitions.`}
+        {` for distributed space-system simulations.  I also was the director of Hackathons for the Stevens Venture Center where I hosted many Hackathons.`}
       </p>
     ),
   },
   {
     key: "Focuses",
     text: `Distributed Systems
-Performance Engineering
+Web Performance
 Product Management
 Cross-platform Development`,
   },

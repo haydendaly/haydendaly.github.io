@@ -18,9 +18,10 @@ function Home() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        width: "100%"
       }}
     >
-      <div
+      <p
         className="current unselectable"
         style={{
           fontFamily: "Haas",
@@ -28,11 +29,11 @@ function Home() {
             isMobile || width < 750 ? 28 : width * 0.95 > 1000 ? 48 : 40,
           width: isMobile || width < 800 ? "90%" : "75%",
           textAlign: "center",
-          paddingBottom: 120,
+          marginBottom: 120,
         }}
       >
-        Hello! I'm Hayden, a student and software engineer.
-      </div>
+        Hello! I'm Hayden, and I enjoy building things
+      </p>
     </div>
   );
 }

@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CnameWebpackPlugin = require("cname-webpack-plugin");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const RobotstxtPlugin = require("robotstxt-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => ({
   mode: argv.mode === "production" ? "production" : "development",
@@ -17,7 +18,7 @@ module.exports = (env, argv) => ({
     filename: "[name].[chunkhash].js",
     publicPath: "/",
   },
-  devtool: argv.mode === "production" ? "eval-source-map" : "inline-source-map",
+  devtool: argv.mode === "production" ? undefined : "inline-source-map",
   module: {
     rules: [
       {
@@ -78,6 +79,7 @@ module.exports = (env, argv) => ({
       process: "process/browser",
       NODE_ENV: argv.mode,
     }),
+    new BundleAnalyzerPlugin()
   ],
   devServer: {
     port: 8000,

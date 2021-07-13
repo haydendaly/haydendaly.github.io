@@ -19,6 +19,7 @@
         "~*": ["./src/*"]
       }
     },
+    "include": ["src", "src/static/svgs/svg.d.ts"],
     "exclude": [
       "node_modules",
       "build",

@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import Headroom from "react-headroom";
-import { FaMoon } from "react-icons/fa";
-import { FiSun } from "react-icons/fi";
+import { FaMoon } from "@react-icons/all-files/fa/FaMoon";
+import { FiSun } from "@react-icons/all-files/fi/FiSun";
+
 import { Link } from "react-router-dom";
 import { Tooltip } from "react-tippy";
 
@@ -13,8 +14,13 @@ import { StyleContext } from "~/functions/Style";
 
 function Header() {
   const [show, setShow] = useState(false);
-  const { page, setPage } = useContext(PageContext);
+  const { page, setPage, track } = useContext(PageContext);
   const { isDark, isMobile, toggleTheme } = useContext(StyleContext);
+
+  function toggleDark() {
+    track("Toggle dark theme");
+    toggleTheme();
+  }
 
   const mobileStyles = {
     fontSize: isMobile ? 17 : 18,
@@ -93,7 +99,7 @@ function Header() {
               <a
                 className="unselectable current header-text"
                 style={{ fontSize: 20 }}
-                onClick={toggleTheme}
+                onClick={toggleDark}
               >
                 {isDark ? <FiSun /> : <FaMoon />}
               </a>
