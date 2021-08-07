@@ -1,13 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { TextRow } from "~/components/Global/TextComponents";
 import { about } from "~/components/Global/Data";
-import { PageContext } from "~/functions/Page";
-import { StyleContext } from "~/functions/Style";
+import { usePage } from "~/functions/Page";
+import { useStyle } from "~/functions/Style";
 
 function About() {
-  const { track } = useContext(PageContext);
-  const { isMobile } = useContext(StyleContext);
+  const { track } = usePage();
+  const { isMobile } = useStyle();
 
   useEffect(() => {
     track("About");

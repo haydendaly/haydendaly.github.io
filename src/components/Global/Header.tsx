@@ -9,12 +9,12 @@ import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 
 import FD from "~/components/Global/FormattedDiv";
-import { PageContext } from "~/functions/Page";
+import { usePage } from "~/functions/Page";
 import { StyleContext } from "~/functions/Style";
 
 function Header() {
   const [show, setShow] = useState(false);
-  const { page, setPage, track } = useContext(PageContext);
+  const { page, setPage, track } = usePage();
   const { isDark, isMobile, toggleTheme } = useContext(StyleContext);
 
   function toggleDark() {
@@ -78,14 +78,6 @@ function Header() {
                 style={{ ...mobileStyles, paddingLeft: 0 }}
               >
                 Projects
-              </Link>
-              <Link
-                onClick={() => setPage("/about")}
-                to="/about"
-                className={`header-text${page === "/about" ? " current" : ""}`}
-                style={mobileStyles}
-              >
-                About
               </Link>
             </div>
             <Tooltip

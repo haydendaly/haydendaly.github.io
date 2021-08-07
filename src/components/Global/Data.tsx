@@ -16,8 +16,16 @@ const projects = [
     name: "Expo",
     category: ["Web", "Backend", "Mobile"],
     text: "Interning at Expo \n",
-    description: "Spearheaded development of internal tools: surveyed engineers on their pain points, user-tested mockups, and built/launched platform. Wrote scripts to parse database entities and generate GraphQL types, queries, and resolvers. Contributed to production frontend/backend, cross-platform tools (Expo Go), privacy-aware ORM, and CLI tools. \n",
-    stack: ["React", "React Native", "Node", "TypeScript", "GraphQL", "Postgres"],
+    description:
+      "Spearheaded development of internal tools: surveyed engineers on their pain points, user-tested mockups, and built/launched platform. Wrote scripts to parse database entities and generate GraphQL types, queries, and resolvers. Contributed to production frontend/backend, cross-platform tools (Expo Go), privacy-aware ORM, and CLI tools. \n",
+    stack: [
+      "React",
+      "React Native",
+      "Node",
+      "TypeScript",
+      "GraphQL",
+      "Postgres",
+    ],
     link: "https://expo.dev",
     aspect_ratio: 1500 / 748,
   },
@@ -294,10 +302,9 @@ const about = [
     ),
   },
   {
-    key: "Focuses",
+    key: "Interests",
     text: `Distributed Systems
 Web Performance
-Product Management
 Cross-platform Development`,
   },
   {
@@ -358,8 +365,9 @@ Cross-platform Development`,
           rel="noreferrer"
           href="https://www.goodreads.com/book/show/6751.Consider_the_Lobster_and_Other_Essays"
         >
-          <i>Consider the Lobster by David Foster Wallace</i>
+          <i>Consider the Lobster</i>
         </a>
+        <i>by David Foster Wallace</i>
         <br />
         <a
           className="link"
@@ -367,8 +375,9 @@ Cross-platform Development`,
           rel="noreferrer"
           href="https://www.goodreads.com/book/show/22822858-a-little-life"
         >
-          <i>A Little Life by Hanya Yanagihara</i>
+          <i>A Little Life</i>
         </a>
+        <i> by Hanya Yanagihara</i>
         <br />
         <a
           className="link"
@@ -376,8 +385,9 @@ Cross-platform Development`,
           rel="noreferrer"
           href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"
         >
-          <i>Kafka on the Shore by Haruki Murikami</i>
+          <i>Kafka on the Shore</i>
         </a>
+        <i> by Haruki Murikami</i>
         <br />
         <a
           className="link"
@@ -385,8 +395,9 @@ Cross-platform Development`,
           rel="noreferrer"
           href="https://www.goodreads.com/book/show/9915.Less_Than_Zero"
         >
-          <i>Less Than Zero by Bret Easton Ellis</i>
+          <i>Less Than Zero</i>
         </a>
+        <i> by Bret Easton Ellis</i>
         <br />
       </p>
     ),

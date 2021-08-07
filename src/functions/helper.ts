@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const getTitle = (path: string): string => {
   const titles: { [key: string]: string } = {
     "/projects": "Projects - ",
-    "/about": "About - ",
+    "/": "About - ",
   };
   let title = "";
   if (titles.hasOwnProperty(path)) {

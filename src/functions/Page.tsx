@@ -1,4 +1,4 @@
-import React, { FC, createContext, useEffect, useState } from "react";
+import React, { FC, createContext, useContext, useEffect, useState } from "react";
 import mixpanel from "mixpanel-browser";
 
 import { getTitle } from "~/functions/helper";
@@ -52,3 +52,7 @@ export const PageProvider: FC = ({ children }) => {
     </PageContext.Provider>
   );
 };
+
+export function usePage(): PageContextType {
+  return useContext(PageContext);
+}

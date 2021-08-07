@@ -79,11 +79,12 @@ module.exports = (env, argv) => ({
       process: "process/browser",
       NODE_ENV: argv.mode,
     }),
-    new BundleAnalyzerPlugin()
+    ...(argv.bundle || argv.b ? [new BundleAnalyzerPlugin()] : []),
   ],
   devServer: {
     port: 8000,
     historyApiFallback: true,
+    public: 'hcdaly.test'
   },
   resolve: {
     alias: {

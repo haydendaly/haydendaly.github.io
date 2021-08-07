@@ -1,4 +1,4 @@
-import React, { FC, createContext, useEffect, useState } from "react";
+import React, { FC, createContext, useContext, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 
 import { useWindowDimensions } from "~/functions/helper";
@@ -71,6 +71,10 @@ export const StyleProvider: FC = ({ children }) => {
     </StyleContext.Provider>
   );
 };
+
+export const useStyle = () => {
+  return useContext(StyleContext);
+}
 
 const logDeveloperMessage = () => {
   console.log(

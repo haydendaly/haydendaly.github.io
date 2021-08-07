@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-import { PageContext } from "~/functions/Page";
-import { StyleContext } from "~/functions/Style";
+import { usePage } from "~/functions/Page";
+import { useStyle } from "~/functions/Style";
 import { ProjectRow } from "~/components/Global/TextComponents";
 import { useCategories } from "~/functions/helper";
 import { projects } from "~/components/Global/Data";
@@ -9,8 +9,8 @@ import { projects } from "~/components/Global/Data";
 function Projects() {
   const categories = useCategories();
   const [content, setContent] = useState(projects);
-  const { track } = useContext(PageContext);
-  const { isMobile } = useContext(StyleContext);
+  const { track } = usePage();
+  const { isMobile } = useStyle();
   document.title = "Projects - Hayden Daly";
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function Projects() {
         categories.all
     );
     const len = filteredData.length;
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
       const next = len != i + 1 && filteredData[i + 1];
       if (
         filteredData[i].category[0] === "year" &&

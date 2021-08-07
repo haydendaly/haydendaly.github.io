@@ -1,16 +1,16 @@
-import React, { useContext, useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { useLocation, Redirect } from "react-router-dom";
 import { LazyLoadImage as Image } from "react-lazy-load-image-component";
 
 import { projects } from "~/components/Global/Data";
 import Loading from "~/components/Global/Loading";
 import { ProjectDescription } from "~/components/Global/TextComponents";
-import { PageContext } from "~/functions/Page";
-import { StyleContext } from "~/functions/Style";
+import { usePage } from "~/functions/Page";
+import { useStyle } from "~/functions/Style";
 
 function Project() {
-  const { setPage, setTitle, track } = useContext(PageContext);
-  const { height, width, isMobile } = useContext(StyleContext);
+  const { setPage, setTitle, track } = usePage();
+  const { height, width, isMobile } = useStyle();
   const location = useLocation();
 
   const [data, setData] = useState<any>({
