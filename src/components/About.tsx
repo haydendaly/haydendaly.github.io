@@ -10,7 +10,7 @@ function About() {
   const { isMobile } = useStyle();
 
   useEffect(() => {
-    track("About");
+    track(window.location.pathname);
   }, []);
 
   const items = about.map((o) => <TextRow data={o} />);

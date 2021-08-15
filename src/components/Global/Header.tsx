@@ -17,11 +17,6 @@ function Header() {
   const { page, setPage, track } = usePage();
   const { isDark, isMobile, toggleTheme } = useContext(StyleContext);
 
-  function toggleDark() {
-    track("Toggle dark theme");
-    toggleTheme();
-  }
-
   const mobileStyles = {
     fontSize: isMobile ? 17 : 18,
     paddingLeft: isMobile ? 0 : 20,
@@ -70,12 +65,22 @@ function Header() {
           >
             <div>
               <Link
+                onClick={() => setPage("/")}
+                to="/"
+                className={`header-text${
+                  page === "/" ? " current" : ""
+                }`}
+                style={{ ...mobileStyles, paddingLeft: 0 }}
+              >
+                About
+              </Link>
+              <Link
                 onClick={() => setPage("/projects")}
                 to="/projects"
                 className={`header-text${
                   page === "/projects" ? " current" : ""
                 }`}
-                style={{ ...mobileStyles, paddingLeft: 0 }}
+                style={{ ...mobileStyles, paddingLeft: 16 }}
               >
                 Projects
               </Link>
@@ -91,7 +96,7 @@ function Header() {
               <a
                 className="unselectable current header-text"
                 style={{ fontSize: 20 }}
-                onClick={toggleDark}
+                onClick={toggleTheme}
               >
                 {isDark ? <FiSun /> : <FaMoon />}
               </a>

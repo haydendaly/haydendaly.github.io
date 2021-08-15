@@ -2,6 +2,7 @@ import React, { FC, createContext, useContext, useEffect, useState } from "react
 import { isMobile } from "react-device-detect";
 
 import { useWindowDimensions } from "~/functions/helper";
+import { PageContext } from "~/functions/Page";
 
 export type StyleContextType = {
   isDark: boolean;
@@ -22,6 +23,7 @@ export const StyleContext = createContext<StyleContextType>({
 export const StyleProvider: FC = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
   const { height, width } = useWindowDimensions();
+  const { track } = useContext(PageContext);
 
   const onMount = () => {
     const isDarkCached = localStorage.getItem("isDark");
@@ -30,7 +32,7 @@ export const StyleProvider: FC = ({ children }) => {
       document.body.style = "background: #121212";
     } else {
       // @ts-ignore
-      document.body.style = "background: #fafafa";
+      document.body.style = "background: #ffffff";
     }
     setIsDark("true" === isDarkCached);
     logDeveloperMessage();
@@ -38,10 +40,12 @@ export const StyleProvider: FC = ({ children }) => {
 
   const toggleTheme = () => {
     if (isDark) {
+      track("Light mode");
       // @ts-ignore
       document.body.style = "background: #fafafa";
       localStorage.setItem("isDark", "false");
     } else {
+      track("Dark mode");
       // @ts-ignore
       document.body.style = "background: #121212";
       localStorage.setItem("isDark", "true");

@@ -17,7 +17,7 @@ function onMount() {
       .then((res) => res.json())
       .then(async (res) => {
         mixpanel.identify(res.ip);
-        track("Home");
+        track(window.location.pathname);
       });
   }
 }

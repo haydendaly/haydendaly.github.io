@@ -15,9 +15,9 @@ const projects = [
     key: "expo",
     name: "Expo",
     category: ["Web", "Backend", "Mobile"],
-    text: "Interning at Expo \n",
+    text: "Interned at Expo \n",
     description:
-      "Spearheaded development of internal tools: surveyed engineers on their pain points, user-tested mockups, and built/launched platform. Wrote scripts to parse database entities and generate GraphQL types, queries, and resolvers. Contributed to production frontend/backend, cross-platform tools (Expo Go), privacy-aware ORM, and CLI tools. \n",
+      "Spearheaded development of internal tools platform. Contributed code to production frontend/backend and created GraphQL type, query, resolver code generation tool.\n",
     stack: [
       "React",
       "React Native",
@@ -37,13 +37,12 @@ const projects = [
     key: "testbed",
     name: "NOS-T Simulation Infrastructure",
     category: ["Web", "Backend", "Management"],
-    text: "Distributed simulation infrastructure for NASA ESTO \n",
+    text: "Distributed simulation infra for NASA ESTO \n",
     description:
-      "Prototyped Docker simulation architectures to allow researchers to upload components of space systems and optimize models. Funded by $965k NASA contract to implement system in the NASA Private Cloud and use for distributed simulations. Developed orchestration with service mesh and gathered requirements from the DoD, NASA, and USGS on both interfaces and developing communication protocols. \n",
+      "Led development of simulation infrastructure under contract to support 7 teams from MIT, UIUC, and USC. Got the opportunity to work on cross-disciplinary projects. \n",
     stack: [
       "React",
       "Docker",
-      "Kubernetes",
       "Flask",
       "MQTT",
       "Python",
@@ -67,7 +66,7 @@ const projects = [
     key: "babbio",
     name: "Babb.io",
     category: ["Mobile", "Design"],
-    text: "Platform for university-oriented group chats \n",
+    text: "University-oriented group chat platform \n",
     description:
       "Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 2,200 courses. Published React Native mobile application to Apple/Google Play App Stores and pushing out updates in weekly sprints. \n",
     stack: ["React Native", "React", "Node", "Firebase"],
@@ -82,7 +81,7 @@ const projects = [
     key: "dtva",
     name: "The Walt Disney Company",
     category: ["Web", "Backend"],
-    text: "Interned at The Walt Disney Company \n",
+    text: "Disney Internship \n",
     description:
       "Developed full-stack tools to be used internally within the production of animated content. Restructured GitLab pipelines for automated testing of multiple environments. \n",
     stack: ["React", "Django", "Docker", "MySQL", "Nginx", "Ruby"],
@@ -92,10 +91,10 @@ const projects = [
     key: "securemeeting",
     name: "SecureMeeting",
     category: ["Web", "Backend", "Mobile"],
-    text: "Developed features for WebRTC chat platform \n",
+    text: "WebRTC chat platform features \n",
     description:
       "Worked with fullstack WebRTC platform to improve backend performance, develop frontend features, and start/lead development on a mobile application. \n",
-    stack: ["React", "WebRTC", "React Native"],
+    stack: ["React", "React Native", "WebRTC"],
     link: "https://securemeeting.org",
     aspect_ratio: 1500 / 937,
   },
@@ -103,10 +102,10 @@ const projects = [
     key: "covidhealthhack",
     name: "COVID HealthHack",
     category: ["Management"],
-    text: "Organized two global Hackathons focused on Coronavirus \n",
+    text: "COVID-focused Hackathon series \n",
     description: (
       <p style={{ marginBottom: 0 }}>
-        Hosted the 2020 COVID-19 Hackathon with 600+ global participants to
+        Hosted 2020 COVID-19 Hackathon I and II with 600+ global participants to
         address post-COVID life. Received media recognition from{" "}
         <a
           className="link"
@@ -144,18 +143,18 @@ const projects = [
     key: "atticus",
     name: "Atticus",
     category: ["Mobile", "Backend", "Design", "Management"],
-    text: "App to coordinate book clubs \n",
+    text: "Book club coordination app \n",
     description:
-      "Created full-stack mobile app for iOS/Android that for people to orchestrate reading in groups available on TestFlight. Led 4 others through Node and React Native development teaching and guiding them to build the application. \n",
+      "Created full-stack mobile app for iOS/Android that for people to orchestrate reading in groups and deployed on Testflight. Led 4 others through Node and React Native development guiding them to build the application. \n",
     stack: ["React Native", "Node", "MongoDB"],
-    link: "https://github.com/haydendaly/bookClub",
+    link: "https://github.com/haydendaly/atticus",
     aspect_ratio: 1500 / 813,
   },
   {
     key: "2&20",
     name: "Two and Twenty LLP",
     category: ["Backend"],
-    text: "Won high frequency trading competition \n",
+    text: "High frequency trading competition \n",
     description: (
       <p style={{ marginBottom: 0 }}>
         Competed in a high frequency trading competition hosted by Capco and the
@@ -163,16 +162,7 @@ const projects = [
         simulated trading environment and initially lost a good deal of money
         using traditional HFT algorithms like MACD. Noticed market making in the
         simulation wasn't effective and created a market maker in combination
-        with{" "}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          className="link"
-          href="https://www.sciencedirect.com/science/article/abs/pii/0304405X76900064"
-        >
-          Garman's inventory model
-        </a>{" "}
-        making over 20% profit in the final two days of competition and winning.
+        with Garman's inventory model making over 130% profit in the final two days of competition and winning.
       </p>
     ),
     stack: ["Python", "Pandas"],
@@ -188,7 +178,8 @@ const projects = [
       "Built mobile app for iOS/Android that helps groups make plans with conversational AI. Used chatbot micro-service for group communication to help users build plans. \n",
     stack: [
       "Node",
-      "React (Native)",
+      "React",
+      "React Native",
       "Swift",
       "MongoDB",
       "TensorFlow",
@@ -203,7 +194,7 @@ const projects = [
     category: ["Web", "Design"],
     text: "COVID-19 information site \n",
     description:
-      "Worked on global team consiting of faculty/students from University of Cambridge, Carnegie Mellon, and more institutions to construct an open-source site to provide medical doctor-validated COVID-19 related information. Worked on frontend development and a backend notification/update system. Site was eventually taken down due to inability to keep up with constantly changing US policy and information. \n",
+      "Worked on global team consiting of faculty/students from University of Cambridge and Carnegie Mellon to construct an open-source site to provide medical doctor-validated COVID-19 related information. Worked on frontend development and a backend notification/update system. Site was eventually taken down due to inability to keep up with constantly changing US policy and information. \n",
     stack: ["Gatsby", "Node", "GraphQL"],
     link: "https://stopthespread.info",
     aspect_ratio: 1500 / 829,
@@ -284,20 +275,20 @@ const about = [
       <p className="section" style={{ whiteSpace: "pre-wrap" }}>
         {`I'm a masters student at Cornell Tech studying `}
         <CMTooltip />
-        {`. I did my bachelors in software engineering at Stevens Institute of Tech.  I spend my free time running, reading, and mountain biking.  I competed cross country and track in my undergrad and now am training to run an ultra marathon.
+        {`. I did my bachelors in software engineering at Stevens Institute of Tech.  I spend my free time running, reading, and mountain biking.
             Some side projects I've done include:  `}
         <Link className="link" to={"/projects/exire"}>
-          a startup focused on creating plans for groups
+          an itinerary creation app
         </Link>
-        {" and "}
+        {" for groups and "}
         <Link className="link" to={"/projects/babbio"}>
-          a group chat platform targetting university students.
+          a group chat platform
         </Link>
-        {`  I previously did research for the Collective-Design Lab where I developed `}
+        {` targetting university students.  I previously did research for the Collective-Design Lab where I developed `}
         <Link className="link" to={"/projects/testbed"}>
           an event-driven infrastructure
         </Link>
-        {` for distributed space-system simulations.  I also was the director of Hackathons for the Stevens Venture Center where I hosted many Hackathons.`}
+        {` for distributed space-system simulations.  I also enjoy organizing Hackathons for the Stevens Venture Center where I hosted a handful of interdisciplinary events.`}
       </p>
     ),
   },
@@ -305,7 +296,8 @@ const about = [
     key: "Interests",
     text: `Distributed Systems
 Web Performance
-Cross-platform Development`,
+Cross-platform Development
+Metaprogramming`,
   },
   {
     key: "Social",
@@ -367,7 +359,7 @@ Cross-platform Development`,
         >
           <i>Consider the Lobster</i>
         </a>
-        <i>by David Foster Wallace</i>
+        <i> by David Foster Wallace</i>
         <br />
         <a
           className="link"

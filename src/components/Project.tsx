@@ -32,7 +32,7 @@ function Project() {
     if (project.length !== 0) {
       setData(project[0]);
       setTitle(project[0].name + " - Hayden Daly");
-      track(`Project ${project[0].name}`);
+      track(window.location.pathname);
     } else {
       setRedirect(true);
     }
