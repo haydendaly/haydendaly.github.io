@@ -33,7 +33,7 @@ function App() {
               <Projects />
             </Route>
             <Route
-              path="/google"
+              path="/resume"
               component={() => {
                 window.location.href =
                   "https://drive.google.com/file/d/1Th76cEVQUyF0LEhlgtqFqAAq633kC81h/view?usp=sharing";

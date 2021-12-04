@@ -8,7 +8,7 @@ import "react-tippy/dist/tippy.css";
 
 const projects = [
   {
-    key: "Current",
+    key: "2021",
     category: ["year"],
   },
   {
@@ -28,10 +28,6 @@ const projects = [
     ],
     link: "https://expo.dev",
     aspect_ratio: 1500 / 748,
-  },
-  {
-    key: "2021",
-    category: ["year"],
   },
   {
     key: "testbed",
