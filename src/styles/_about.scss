@@ -1,0 +1,16 @@
+@import "color-theme";
+
+.experience {
+    margin-bottom: 5px;
+}
+
+.experience-title {
+    text-decoration: underline !important;
+}
+
+.experience-role, .experience-dates {
+    margin-bottom: 0;
+    @include themed() {
+        color: t($text);
+    }
+}

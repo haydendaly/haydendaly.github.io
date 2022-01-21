@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const getTitle = (path: string): string => {
   const titles: { [key: string]: string } = {
     "/projects": "Projects - ",
-    "/": "About - ",
+    "/about": "About - ",
   };
   let title = "";
   if (titles.hasOwnProperty(path)) {
@@ -38,7 +38,7 @@ const useWindowDimensions = () => {
 };
 
 const useCategories = () => {
-  const categories = ["Web", "Mobile", "Backend", "Design", "Management"];
+  const categories = ["Web", "Mobile", "Systems", "Design", "Management"];
   const [chosen, setChosen] = useState<string[]>([]);
   const [all, setAll] = useState(true);
   const [update, setUpdate] = useState(true);

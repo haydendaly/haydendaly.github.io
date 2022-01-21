@@ -4,6 +4,7 @@ $hover-highlight: "hover-highlight";
 $text: "text";
 $dark-text: "dark-text";
 $light: "light";
+$selection: "selection";
 
 // Reguler color scheme
 $bg-reg: #ffffff;
@@ -12,6 +13,7 @@ $hover-highlight-reg: #00204a;
 $text-reg: #77abb7;
 $dark-text-reg: #3a3a3a;
 $light-reg: #dddddd;
+$selection-reg: #fff;
 
 // Dark color scheme
 $bg-dark: #121212;
@@ -20,14 +22,16 @@ $hover-highlight-dark: #444;
 $text-dark: #707070;
 $dark-text-dark: #cfcfcf;
 $light-dark: #111111;
+$selection-dark: #fff;
 
 // Rainbow color scheme
-$bg-rainbow: transparent;
+$bg-rainbow: #fff;
 $highlight-rainbow: #444;
-$hover-highlight-rainbow: #333;
+$hover-highlight-rainbow: rgba(64, 64, 64, 0.5);
 $text-rainbow: #555;
 $dark-text-rainbow: #333;
 $light-rainbow: #111111;
+$selection-rainbow: rgba(0, 0, 0, 0.5);
 
 $themes: (
     light: (
@@ -36,7 +40,8 @@ $themes: (
         hover-highlight: $hover-highlight-reg,
         text: $text-reg,
         dark-text: $dark-text-reg,
-        light: $light-reg
+        light: $light-reg,
+        selection: $selection-reg
     ),
     dark: (
         bg: $bg-dark,
@@ -44,7 +49,8 @@ $themes: (
         hover-highlight: $hover-highlight-dark,
         text: $text-dark,
         dark-text: $dark-text-dark,
-        light: $light-dark
+        light: $light-dark,
+        selection: $selection-dark
     ),
     rainbow: (
         bg: $bg-rainbow,
@@ -52,7 +58,8 @@ $themes: (
         hover-highlight: $hover-highlight-rainbow,
         text: $text-rainbow,
         dark-text: $dark-text-rainbow,
-        light: $light-rainbow
+        light: $light-rainbow,
+        selection: $selection-rainbow
     ),
 );
 

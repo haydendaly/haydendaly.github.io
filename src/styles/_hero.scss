@@ -1,0 +1,58 @@
+@import "color-theme";
+
+.hero-text {
+    @include themed() {
+        color: t($dark-text);
+    }
+    padding-top: 10vh;
+    padding-bottom: 14vh;
+    font-size: min(7vw, max(7vh, 40px));
+}
+
+.hero-sub-text-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-sub-text {
+    @include themed() {
+        color: t($dark-text);
+    }
+    font-size: 20px;
+    padding-right: 6px;
+}
+
+.hero-sub-link-text {
+    @include themed() {
+        color: t($dark-text);
+    }
+    font-size: 20px;
+    padding-right: 6px;
+    text-decoration: underline !important;
+}
+
+// Credit goes to https://github.com/wrongakram/react-happytext/blob/master/src/Happy/styles.css
+.rainbow-text {
+    background: linear-gradient(270deg, #FF5F6D, #FFC371, #c34dbf, #ff4b1f, #ff9068, #16BFFD, #a84dc3, #CB3066, #4CA1AF, #C4E0E5);
+    background-size: 2000% 2000%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: rainbowTextAni 30s ease infinite;
+    -moz-animation: rainbowTextAni 30s ease infinite;
+    animation: rainbowTextAni 30s ease infinite;
+  } 
+  @-webkit-keyframes rainbowTextAni {
+      0% {background-position:0% 14%}
+      50% {background-position:100% 87%}
+      100% {background-position:0% 14%}
+  }
+  @-moz-keyframes rainbowTextAni {
+      0% {background-position:0% 14%}
+      50% {background-position:100% 87%}
+      100% {background-position:0% 14%}
+  }
+  @keyframes rainbowTextAni {
+      0% {background-position:0% 14%}
+      50% {background-position:100% 87%}
+      100% {background-position:0% 14%}
+  }

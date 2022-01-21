@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { Tooltip } from "react-tippy";
 
 import { StyleContext } from "~/functions/Style";
@@ -7,44 +6,41 @@ import { StyleContext } from "~/functions/Style";
 import "react-tippy/dist/tippy.css";
 
 const projects = [
+  // {
+  //   key: "Current",
+  //   category: ["year"]
+  // },
   {
     key: "2021",
     category: ["year"],
   },
   {
-    key: "expo",
-    name: "Expo",
-    category: ["Web", "Backend", "Mobile"],
-    text: "Interned at Expo \n",
+    key: "minitorch",
+    name: "Minitorch",
+    category: ["Systems"],
+    text: "Minitorch:  implementation of the Torch API. \n",
     description:
-      "Spearheaded development of internal tools platform. Contributed code to production frontend/backend and created GraphQL type, query, resolver code generation tool.\n",
-    stack: [
-      "React",
-      "React Native",
-      "Node",
-      "TypeScript",
-      "GraphQL",
-      "Postgres",
-    ],
-    link: "https://expo.dev",
-    aspect_ratio: 1500 / 748,
+      "Built Python tensor library including CUDA optimized tensor operations. Was course project for CS 5781: Machine Learning Engineering at Cornell Tech. \n",
+    stack: ["Python", "CUDA"],
+    link: "https://github.com/haydendaly/experiments/minitorch",
+    aspect_ratio: 1500 / 819,
   },
   {
     key: "testbed",
     name: "NOS-T Simulation Infrastructure",
-    category: ["Web", "Backend", "Management"],
-    text: "Distributed simulation infra for NASA ESTO \n",
+    category: ["Web", "Systems", "Management"],
+    text: "NOS-T:  distributed space-mission simulation infrastructure \n",
     description:
-      "Led development of simulation infrastructure under contract to support 7 teams from MIT, UIUC, and USC. Got the opportunity to work on cross-disciplinary projects. \n",
+      "Built implementation-agnostic, event-driven architecture for executing space mission simulations. Managed a team of 4 engineers to support 7 teams from NASA, MIT, UIUC, and USC. \n",
     stack: ["React", "Docker", "Flask", "MQTT", "Python", "Nginx"],
-    link: "https://github.com/haydendaly/nos-t-infrastructure",
+    link: "https://esto.nasa.gov/forums/estf2021/Presentations/June10/Grogan_NOST_ESTF2021.pdf",
     aspect_ratio: 1500 / 819,
   },
   {
-    key: "LilyPad",
+    key: "lilypad",
     name: "LilyPad",
     category: ["Mobile", "Design", "Management"],
-    text: "Mental health smart-journaling app \n",
+    text: "LilyPad:  mental health smart-journaling \n",
     description:
       "Led team of seven to develop journaling application focused on accessibility and mood tracking. The goal is to gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of a user's mood over time. \n",
     stack: ["Node", "React", "React Native", "Firebase"],
@@ -53,9 +49,9 @@ const projects = [
   },
   {
     key: "babbio",
-    name: "Babb.io",
+    name: "babb.io",
     category: ["Mobile", "Design"],
-    text: "University-oriented group chat platform \n",
+    text: "babb.io:  university-oriented group chats \n",
     description:
       "Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 2,200 courses. Published React Native mobile application to Apple/Google Play App Stores and pushing out updates in weekly sprints. \n",
     stack: ["React Native", "React", "Node", "Firebase"],
@@ -65,27 +61,6 @@ const projects = [
   {
     key: "2020",
     category: ["year"],
-  },
-  {
-    key: "dtva",
-    name: "The Walt Disney Company",
-    category: ["Web", "Backend"],
-    text: "Disney Internship \n",
-    description:
-      "Developed full-stack tools to be used internally within the production of animated content. Restructured GitLab pipelines for automated testing of multiple environments. \n",
-    stack: ["React", "Django", "Docker", "MySQL", "Nginx", "Ruby"],
-    aspect_ratio: 1280 / 720,
-  },
-  {
-    key: "securemeeting",
-    name: "SecureMeeting",
-    category: ["Web", "Backend", "Mobile"],
-    text: "WebRTC chat platform features \n",
-    description:
-      "Worked with fullstack WebRTC platform to improve backend performance, develop frontend features, and start/lead development on a mobile application. \n",
-    stack: ["React", "React Native", "WebRTC"],
-    link: "https://securemeeting.org",
-    aspect_ratio: 1500 / 937,
   },
   {
     key: "covidhealthhack",
@@ -131,8 +106,8 @@ const projects = [
   {
     key: "atticus",
     name: "Atticus",
-    category: ["Mobile", "Backend", "Design", "Management"],
-    text: "Book club coordination app \n",
+    category: ["Mobile", "Systems", "Design", "Management"],
+    text: "Atticus:  book clubs simplified \n",
     description:
       "Created full-stack mobile app for iOS/Android that for people to orchestrate reading in groups and deployed on Testflight. Led 4 others through Node and React Native development guiding them to build the application. \n",
     stack: ["React Native", "Node", "MongoDB"],
@@ -142,7 +117,7 @@ const projects = [
   {
     key: "2&20",
     name: "Two and Twenty LLP",
-    category: ["Backend"],
+    category: ["Systems"],
     text: "High frequency trading competition \n",
     description: (
       <p style={{ marginBottom: 0 }}>
@@ -162,8 +137,8 @@ const projects = [
   {
     key: "exire",
     name: "Exire.ai",
-    category: ["Mobile", "Backend", "Design", "Management"],
-    text: "Itinerary creation startup \n",
+    category: ["Mobile", "Systems", "Design", "Management"],
+    text: "Exire.ai:  itinerary creation startup \n",
     description:
       "Built mobile app for iOS/Android that helps groups make plans with conversational AI. Used chatbot micro-service for group communication to help users build plans. \n",
     stack: [
@@ -182,11 +157,22 @@ const projects = [
     key: "stopthespread",
     name: "stopthespread.info",
     category: ["Web", "Design"],
-    text: "COVID-19 information site \n",
+    text: "stopthespread.info:  COVID-19 information site \n",
     description:
       "Worked on global team consiting of faculty/students from University of Cambridge and Carnegie Mellon to construct an open-source site to provide medical doctor-validated COVID-19 related information. Worked on frontend development and a backend notification/update system. Site was eventually taken down due to inability to keep up with constantly changing US policy and information. \n",
     stack: ["Gatsby", "Node", "GraphQL"],
     link: "https://stopthespread.info",
+    aspect_ratio: 1500 / 829,
+  },
+  {
+    key: "songshare",
+    name: "Songshare",
+    category: ["Web", "Design"],
+    text: "Songshare: social media for music \n",
+    description:
+      "Worked with Spotify API to create fullstack Twitter clone for users to share music. \n",
+    stack: ["React", "Node", "MongoDB", "Docker", "Redis"],
+    link: "https://github.com/haydendaly/cs554-music-platform",
     aspect_ratio: 1500 / 829,
   },
   {
@@ -218,13 +204,24 @@ const projects = [
   {
     key: "tatckb",
     name: "Tradespace Analysis Tool for Constellations Knowledge Base",
-    category: ["Backend", "Web"],
-    text: "Model-based satellite information system \n",
+    category: ["Systems", "Web"],
+    text: "tatckb.org:  model-based satellite information system \n",
     description:
       "Developed backend for model-based satellite information system. Worked with other research labs from institutions such as NASA Goddard, Texas A&M, and MIT to build component for larger architecture of the tradespace analysis tool for constellations. \n",
     stack: ["Node", "JavaScript", "Docker", "MongoDB"],
     link: "https://tatckb.org/",
     aspect_ratio: 1500 / 809,
+  },
+  {
+    key: "securemeeting",
+    name: "SecureMeeting",
+    category: ["Web", "Systems", "Mobile"],
+    text: "securemeeting.org: WebRTC chat platform \n",
+    description:
+      "Worked with fullstack WebRTC platform to improve backend performance, develop frontend features, and start/lead development on a mobile application. \n",
+    stack: ["React", "React Native", "WebRTC"],
+    link: "https://securemeeting.org",
+    aspect_ratio: 1500 / 937,
   },
   {
     key: "2018",
@@ -258,36 +255,42 @@ function CMTooltip() {
   );
 }
 
+const Experience = ({ name, dates, role, link }) => {
+  return (
+    <div className='experience'>
+      <a target="_blank"
+        rel="noreferrer"
+        href={link} className='link experience-title'>
+        {name}
+      </a>
+      <p className='experience-role'>{role}</p>
+      <p className='experience-dates'>{dates}</p>
+    </div >
+  );
+}
+
 const about = [
   {
     key: "Info",
     component: (
       <p className="section" style={{ whiteSpace: "pre-wrap" }}>
-        {`I'm a masters student at Cornell Tech studying `}
+        {`I am an NYC-based developer pursuing a masters at Cornell Tech in `}
         <CMTooltip />
-        {`. I did my bachelors in software engineering at Stevens Institute of Tech.  I spend my free time running, reading, and mountain biking.
-            Some side projects I've done include:  `}
-        <Link className="link" to={"/projects/exire"}>
-          an itinerary creation app
-        </Link>
-        {" for groups and "}
-        <Link className="link" to={"/projects/babbio"}>
-          a group chat platform
-        </Link>
-        {` targetting university students.  I previously did research for the Collective-Design Lab where I developed `}
-        <Link className="link" to={"/projects/testbed"}>
-          an event-driven infrastructure
-        </Link>
-        {` for distributed space-system simulations.  I also enjoy organizing Hackathons for the Stevens Venture Center where I hosted a handful of interdisciplinary events.`}
+        {`.   I did my bachelors in software engineering at Stevens Institue of Tech.   In my free time, I am an avid runner, reader, and mountain biker.`}
       </p>
     ),
   },
   {
-    key: "Interests",
-    text: `Distributed Systems
-Web Performance
-Cross-platform Development
-Metaprogramming`,
+    key: "Experience",
+    component: (
+      <div className="section" style={{ whiteSpace: "pre-wrap" }}>
+        {/* <Experience role='Freelance Developer' name='Kanopy Labs' dates='2020 - Present' link/> */}
+        <Experience role='Software Engineer Intern' name='Expo' dates='May - Aug 2021' link='https://expo.dev/' />
+        <Experience role='Contract Software Engineer' name='NASA' dates='2020 - 2021' link='https://esto.nasa.gov/' />
+        <Experience role='Research Assistant' name='Collective-Design Lab' dates='2019 - 2021' link='https://code-lab.org/' />
+        <Experience role='Software Developer Intern' name='Disney' dates='May - Aug 2020' link='https://disney.com/' />
+      </div>
+    ),
   },
   {
     key: "Social",

@@ -34,6 +34,7 @@ const themes = ["light", "dark", "rainbow"];
 
 export const StyleProvider: FC = ({ children }) => {
   const gradient = useRef(null);
+  const [init, setInit] = useState(true);
   const [theme, setTheme] = useState<Theme>("light");
   const { height, width } = useWindowDimensions();
   const { track } = useContext(PageContext);
@@ -45,7 +46,7 @@ export const StyleProvider: FC = ({ children }) => {
     track("Toggled theme");
   };
 
-  const changeTheme = (newTheme: Theme, init = false) => {
+  const changeTheme = (newTheme: Theme) => {
     setTheme(newTheme);
     if (newTheme === "light") {
       // @ts-ignore
@@ -62,16 +63,20 @@ export const StyleProvider: FC = ({ children }) => {
       gradient.current.initGradient("#gradient-canvas");
     }
     localStorage.setItem("theme", newTheme);
+    if (init) {
+      setInit(false);
+    }
   };
 
   useEffect(() => {
+    const G = new Gradient();
     // @ts-ignore
-    gradient.current = new Gradient();
+    gradient.current = G;
     const storedTheme = localStorage.getItem("theme");
     // @ts-ignore
     if (storedTheme && themes.includes(storedTheme)) {
       // @ts-ignore
-      changeTheme(storedTheme, true);
+      changeTheme(storedTheme);
     }
     logDeveloperMessage();
   }, []);
@@ -86,7 +91,9 @@ export const StyleProvider: FC = ({ children }) => {
         nextTheme,
       }}
     >
-      {theme === "light" ? null : <canvas id="gradient-canvas"></canvas>}
+      {init || theme !== "light" ? (
+        <canvas id="gradient-canvas"></canvas>
+      ) : null}
       <div
         className={`theme theme--${theme}`}
         id="main"

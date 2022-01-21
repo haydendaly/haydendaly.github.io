@@ -14,6 +14,7 @@ import { StyleContext } from "~/functions/Style";
 
 const Projects = lazy(() => import("./Projects"));
 const About = lazy(() => import("./About"));
+const Hero = lazy(() => import("./Hero"));
 const Project = lazy(() => import("./Project"));
 
 function App() {
@@ -41,8 +42,11 @@ function App() {
                 return null;
               }}
             /> */}
-            <Route exact path="/">
+            <Route path="/about">
               <About />
+            </Route>
+            <Route exact path="/">
+              <Hero />
             </Route>
             <Route path="/">
               <Redirect to="/" />

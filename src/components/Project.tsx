@@ -10,7 +10,7 @@ import { useStyle } from "~/functions/Style";
 
 function Project() {
   const { setPage, setTitle, track } = usePage();
-  const { height, width, isMobile } = useStyle();
+  const { height, width, isMobile, theme } = useStyle();
   const location = useLocation();
 
   const [data, setData] = useState<any>({
@@ -45,7 +45,12 @@ function Project() {
       <div style={{ marginBottom: 10 }}>
         {redirect && <Redirect to="/" />}
         <Suspense fallback={<Loading />}>
-          <div className="project-container">
+          <div
+            className={
+              "project-container" +
+              (theme === "rainbow" ? " shadow-rainbow" : "")
+            }
+          >
             <a target="_blank" rel="noreferrer" href={link}>
               <Image
                 width={"100%"}
