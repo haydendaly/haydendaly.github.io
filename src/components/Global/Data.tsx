@@ -36,26 +36,19 @@ const projects = [
     text: "Distributed simulation infra for NASA ESTO \n",
     description:
       "Led development of simulation infrastructure under contract to support 7 teams from MIT, UIUC, and USC. Got the opportunity to work on cross-disciplinary projects. \n",
-    stack: [
-      "React",
-      "Docker",
-      "Flask",
-      "MQTT",
-      "Python",
-      "Nginx",
-    ],
+    stack: ["React", "Docker", "Flask", "MQTT", "Python", "Nginx"],
     link: "https://github.com/haydendaly/nos-t-infrastructure",
     aspect_ratio: 1500 / 819,
   },
   {
-    key: "hodas",
-    name: "HODAS",
+    key: "LilyPad",
+    name: "LilyPad",
     category: ["Mobile", "Design", "Management"],
     text: "Mental health smart-journaling app \n",
     description:
       "Led team of seven to develop journaling application focused on accessibility and mood tracking. The goal is to gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of a user's mood over time. \n",
     stack: ["Node", "React", "React Native", "Firebase"],
-    link: "https://github.com/HODAS-Senior-Design/mobile",
+    link: "https://github.com/LilyPad-Journaling/mobile",
     aspect_ratio: 1500 / 985,
   },
   {
@@ -158,7 +151,8 @@ const projects = [
         simulated trading environment and initially lost a good deal of money
         using traditional HFT algorithms like MACD. Noticed market making in the
         simulation wasn't effective and created a market maker in combination
-        with Garman's inventory model making over 130% profit in the final two days of competition and winning.
+        with Garman's inventory model making over 130% profit in the final two
+        days of competition and winning.
       </p>
     ),
     stack: ["Python", "Pandas"],
@@ -248,7 +242,7 @@ const projects = [
 ];
 
 function CMTooltip() {
-  const { isDark } = useContext(StyleContext);
+  const { theme } = useContext(StyleContext);
   return (
     <Tooltip
       title="A mixture of computer science, product, and design under an
@@ -257,7 +251,7 @@ function CMTooltip() {
       size="small"
       animation="fade"
       distance={4}
-      theme={isDark ? "dark" : "light"}
+      theme={theme === "dark" ? "dark" : "light"}
     >
       <a className="italic">Connective Media</a>
     </Tooltip>
@@ -339,54 +333,6 @@ Metaprogramming`,
         >
           hcd36@cornell.edu
         </a>
-      </p>
-    ),
-  },
-  {
-    key: "Favorite Books",
-    text: "",
-    component: (
-      <p>
-        <a
-          className="link"
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.goodreads.com/book/show/6751.Consider_the_Lobster_and_Other_Essays"
-        >
-          <i>Consider the Lobster</i>
-        </a>
-        <i> by David Foster Wallace</i>
-        <br />
-        <a
-          className="link"
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.goodreads.com/book/show/22822858-a-little-life"
-        >
-          <i>A Little Life</i>
-        </a>
-        <i> by Hanya Yanagihara</i>
-        <br />
-        <a
-          className="link"
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore"
-        >
-          <i>Kafka on the Shore</i>
-        </a>
-        <i> by Haruki Murikami</i>
-        <br />
-        <a
-          className="link"
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.goodreads.com/book/show/9915.Less_Than_Zero"
-        >
-          <i>Less Than Zero</i>
-        </a>
-        <i> by Bret Easton Ellis</i>
-        <br />
       </p>
     ),
   },

@@ -32,7 +32,7 @@ function App() {
             <Route path={"/projects"}>
               <Projects />
             </Route>
-            <Route
+            {/* <Route
               path="/resume"
               component={() => {
                 window.location.href =
@@ -40,7 +40,7 @@ function App() {
                 track(window.location.pathname);
                 return null;
               }}
-            />
+            /> */}
             <Route exact path="/">
               <About />
             </Route>

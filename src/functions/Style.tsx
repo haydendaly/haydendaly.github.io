@@ -1,72 +1,94 @@
-import React, { FC, createContext, useContext, useEffect, useState } from "react";
+import React, {
+  FC,
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { isMobile } from "react-device-detect";
 
 import { useWindowDimensions } from "~/functions/helper";
 import { PageContext } from "~/functions/Page";
+import Gradient from "~/functions/gradient";
+
+export type Theme = "light" | "dark" | "rainbow";
 
 export type StyleContextType = {
-  isDark: boolean;
+  theme: Theme;
   isMobile: boolean;
   height: number;
   width: number;
-  toggleTheme: () => void;
+  nextTheme: () => void;
 };
 
 export const StyleContext = createContext<StyleContextType>({
-  isDark: false,
+  theme: "light",
   isMobile,
   height: 100,
   width: 100,
-  toggleTheme: () => null,
+  nextTheme: () => null,
 });
 
+const themes = ["light", "dark", "rainbow"];
+
 export const StyleProvider: FC = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+  const gradient = useRef(null);
+  const [theme, setTheme] = useState<Theme>("light");
   const { height, width } = useWindowDimensions();
   const { track } = useContext(PageContext);
 
-  const onMount = () => {
-    const isDarkCached = localStorage.getItem("isDark");
-    if (isDarkCached === "true") {
+  const nextTheme = () => {
+    const newTheme = themes[(themes.indexOf(theme) + 1) % themes.length];
+    // @ts-ignore
+    changeTheme(newTheme);
+    track("Toggled theme");
+  };
+
+  const changeTheme = (newTheme: Theme, init = false) => {
+    setTheme(newTheme);
+    if (newTheme === "light") {
       // @ts-ignore
-      document.body.style = "background: #121212";
-    } else {
+      gradient.current.disconnect();
       // @ts-ignore
       document.body.style = "background: #ffffff";
-    }
-    setIsDark("true" === isDarkCached);
-    logDeveloperMessage();
-  };
-
-  const toggleTheme = () => {
-    if (isDark) {
-      track("Light mode");
-      // @ts-ignore
-      document.body.style = "background: #fafafa";
-      localStorage.setItem("isDark", "false");
-    } else {
-      track("Dark mode");
+    } else if (newTheme === "dark") {
       // @ts-ignore
       document.body.style = "background: #121212";
-      localStorage.setItem("isDark", "true");
+    } else {
+      // @ts-ignore
+      document.body.style = "background: rgb(0, 0, 0, 0)";
+      // @ts-ignore
+      gradient.current.initGradient("#gradient-canvas");
     }
-    setIsDark(!isDark);
+    localStorage.setItem("theme", newTheme);
   };
 
-  useEffect(onMount, []);
+  useEffect(() => {
+    // @ts-ignore
+    gradient.current = new Gradient();
+    const storedTheme = localStorage.getItem("theme");
+    // @ts-ignore
+    if (storedTheme && themes.includes(storedTheme)) {
+      // @ts-ignore
+      changeTheme(storedTheme, true);
+    }
+    logDeveloperMessage();
+  }, []);
 
   return (
     <StyleContext.Provider
       value={{
-        isDark,
+        theme,
         isMobile,
         height,
         width,
-        toggleTheme,
+        nextTheme,
       }}
     >
+      {theme === "light" ? null : <canvas id="gradient-canvas"></canvas>}
       <div
-        className={"theme " + (isDark ? "theme--dark" : "theme--default")}
+        className={`theme theme--${theme}`}
         id="main"
         style={{ height, width }}
       >
@@ -78,7 +100,7 @@ export const StyleProvider: FC = ({ children }) => {
 
 export const useStyle = () => {
   return useContext(StyleContext);
-}
+};
 
 const logDeveloperMessage = () => {
   console.log(

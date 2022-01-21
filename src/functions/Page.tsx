@@ -1,4 +1,10 @@
-import React, { FC, createContext, useContext, useEffect, useState } from "react";
+import React, {
+  FC,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import mixpanel from "mixpanel-browser";
 
 import { getTitle } from "~/functions/helper";

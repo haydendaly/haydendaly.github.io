@@ -56,4 +56,23 @@ body {
     }
 
     font-family: "Haas", "Helvetica Neue", "Arial", "sans-serif";
+    z-index: 1;
+}
+
+#gradient-canvas {
+    width: 100vw;
+    height: 100vh;
+    --gradient-color-1: #ff71ce;
+    --gradient-color-2: #01cdfe;
+    --gradient-color-3: #fffb96;
+    --gradient-color-4: #b967ff;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    top: 0;
+}
+
+.transparent-bg {
+    background: transparent;
 }

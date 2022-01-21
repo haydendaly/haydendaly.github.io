@@ -21,8 +21,16 @@ $text-dark: #707070;
 $dark-text-dark: #cfcfcf;
 $light-dark: #111111;
 
+// Rainbow color scheme
+$bg-rainbow: transparent;
+$highlight-rainbow: #444;
+$hover-highlight-rainbow: #333;
+$text-rainbow: #555;
+$dark-text-rainbow: #333;
+$light-rainbow: #111111;
+
 $themes: (
-    default: (
+    light: (
         bg: $bg-reg,
         highlight: $highlight-reg,
         hover-highlight: $hover-highlight-reg,
@@ -37,7 +45,15 @@ $themes: (
         text: $text-dark,
         dark-text: $dark-text-dark,
         light: $light-dark
-    )
+    ),
+    rainbow: (
+        bg: $bg-rainbow,
+        highlight: $highlight-rainbow,
+        hover-highlight: $hover-highlight-rainbow,
+        text: $text-rainbow,
+        dark-text: $dark-text-rainbow,
+        light: $light-rainbow
+    ),
 );
 
 @mixin themed() {

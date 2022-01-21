@@ -13,7 +13,7 @@ function About() {
     track(window.location.pathname);
   }, []);
 
-  const items = about.map((o) => <TextRow data={o} />);
+  const items = about.map((o) => <TextRow key={o.key} data={o} />);
   return (
     <div style={{ width: "100%", paddingTop: isMobile ? 10 : 15 }}>{items}</div>
   );

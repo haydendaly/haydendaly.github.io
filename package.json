@@ -6,7 +6,7 @@
   "homepage": "https://hcdaly.dev/",
   "scripts": {
     "start": "webpack-dev-server --host 127.0.0.1",
-    "dev": "chalet start && chalet add http://127.0.0.1:8000 -n hcdaly && open http://hcdaly.test && yarn start",
+    "dev": "chalet start && chalet add http://127.0.0.1:8000 -n hcdaly && yarn start",
     "build": "webpack --mode production && cp build/index.html build/404.html",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",

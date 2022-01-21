@@ -5,7 +5,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CnameWebpackPlugin = require("cname-webpack-plugin");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const RobotstxtPlugin = require("robotstxt-webpack-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => ({
   mode: argv.mode === "production" ? "production" : "development",
@@ -84,7 +85,7 @@ module.exports = (env, argv) => ({
   devServer: {
     port: 8000,
     historyApiFallback: true,
-    public: 'hcdaly.test'
+    public: "hcdaly.test",
   },
   resolve: {
     alias: {

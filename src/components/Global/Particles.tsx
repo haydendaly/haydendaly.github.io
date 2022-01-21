@@ -4,7 +4,7 @@ import Particles from "react-particles-js";
 import { StyleContext, StyleContextType } from "~/functions/Style";
 
 function LinksBg() {
-  const { isDark } = useContext(StyleContext) as StyleContextType;
+  const { theme } = useContext(StyleContext) as StyleContextType;
   return (
     <Particles
       params={{
@@ -16,11 +16,11 @@ function LinksBg() {
             value: 2,
           },
           color: {
-            value: isDark ? "#bbb" : "#3a3a3a",
+            value: theme === "dark" ? "#bbb" : "#3a3a3a",
           },
           line_linked: {
             color: {
-              value: isDark ? "#77abb7" : "#77abb7",
+              value: theme === "dark" ? "#77abb7" : "#77abb7",
             },
           },
         },
@@ -44,7 +44,7 @@ function LinksBg() {
 }
 
 function BubblesBg() {
-  const { isDark } = useContext(StyleContext) as StyleContextType;
+  const { theme } = useContext(StyleContext) as StyleContextType;
   return (
     <Particles
       params={{
@@ -56,7 +56,7 @@ function BubblesBg() {
             },
           },
           color: {
-            value: isDark ? "#bbb" : "#3a3a3a",
+            value: theme === "dark" ? "#bbb" : "#3a3a3a",
           },
           size: {
             value: 3,
