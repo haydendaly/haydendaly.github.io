@@ -20,6 +20,7 @@ export type StyleContextType = {
   height: number;
   width: number;
   nextTheme: () => void;
+  init: boolean;
 };
 
 export const StyleContext = createContext<StyleContextType>({
@@ -28,6 +29,7 @@ export const StyleContext = createContext<StyleContextType>({
   height: 100,
   width: 100,
   nextTheme: () => null,
+  init: true,
 });
 
 const themes = ["light", "dark", "rainbow"];
@@ -61,11 +63,11 @@ export const StyleProvider: FC = ({ children }) => {
       document.body.style = "background: rgb(0, 0, 0, 0)";
       // @ts-ignore
       gradient.current.initGradient("#gradient-canvas");
+      if (init) {
+        setInit(false);
+      }
     }
     localStorage.setItem("theme", newTheme);
-    if (init) {
-      setInit(false);
-    }
   };
 
   useEffect(() => {
@@ -89,6 +91,7 @@ export const StyleProvider: FC = ({ children }) => {
         height,
         width,
         nextTheme,
+        init
       }}
     >
       {init || theme !== "light" ? (

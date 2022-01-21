@@ -6,13 +6,14 @@ import { FiSun } from "@react-icons/all-files/fi/FiSun";
 import { Link } from "react-router-dom";
 
 import FD from "~/components/Global/FormattedDiv";
+import Wiggle from "~/components/Global/Wiggle";
 import { usePage } from "~/functions/Page";
-import { StyleContext } from "~/functions/Style";
+import { useStyle } from "~/functions/Style";
 
 function Header() {
   const [show, setShow] = useState(false);
-  const { page, setPage, track } = usePage();
-  const { theme, isMobile, nextTheme } = useContext(StyleContext);
+  const { page, setPage } = usePage();
+  const { theme, isMobile, nextTheme, init } = useStyle();
 
   const mobileStyles = {
     fontSize: isMobile ? 17 : 18,
@@ -30,9 +31,8 @@ function Header() {
         styles={
           show && {
             backgroundColor: theme === "dark" ? "#121212" : "#fff",
-            boxShadow: `1px 0px 1px ${
-              theme === "dark" ? "#77abb7" : "#393e46"
-            }`,
+            boxShadow: `1px 0px 1px ${theme === "dark" ? "#77abb7" : "#393e46"
+              }`,
           }
         }
       >
@@ -74,9 +74,8 @@ function Header() {
               <Link
                 onClick={() => setPage("/projects")}
                 to="/projects"
-                className={`header-text${
-                  page === "/projects" ? " current" : ""
-                }`}
+                className={`header-text${page === "/projects" ? " current" : ""
+                  }`}
                 style={{ ...mobileStyles, paddingLeft: 16 }}
               >
                 Projects
@@ -87,13 +86,16 @@ function Header() {
               style={{ fontSize: 20 }}
               onClick={nextTheme}
             >
-              {theme === "dark" ? (
-                <p className="rainbow-emoji">🌈</p>
-              ) : theme === "rainbow" ? (
-                <FiSun />
-              ) : (
-                <FaMoon />
-              )}
+              <Wiggle angleRange={25} isRotating={init}>
+                {theme === "dark" ? (
+                  <p className="rainbow-emoji">🌈</p>
+                ) : theme === "rainbow" ? (
+                  <FiSun />
+                ) : (
+                  <FaMoon />
+                )}
+              </Wiggle>
+
             </a>
           </div>
         </div>

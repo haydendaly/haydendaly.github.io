@@ -15,17 +15,6 @@ const projects = [
     category: ["year"],
   },
   {
-    key: "minitorch",
-    name: "Minitorch",
-    category: ["Systems"],
-    text: "Minitorch:  implementation of the Torch API. \n",
-    description:
-      "Built Python tensor library including CUDA optimized tensor operations. Was course project for CS 5781: Machine Learning Engineering at Cornell Tech. \n",
-    stack: ["Python", "CUDA"],
-    link: "https://github.com/haydendaly/experiments/minitorch",
-    aspect_ratio: 1500 / 819,
-  },
-  {
     key: "testbed",
     name: "NOS-T Simulation Infrastructure",
     category: ["Web", "Systems", "Management"],
@@ -37,15 +26,15 @@ const projects = [
     aspect_ratio: 1500 / 819,
   },
   {
-    key: "lilypad",
-    name: "LilyPad",
-    category: ["Mobile", "Design", "Management"],
-    text: "LilyPad:  mental health smart-journaling \n",
+    key: "minitorch",
+    name: "Minitorch",
+    category: ["Systems"],
+    text: "Minitorch:  implementation of the Torch API. \n",
     description:
-      "Led team of seven to develop journaling application focused on accessibility and mood tracking. The goal is to gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of a user's mood over time. \n",
-    stack: ["Node", "React", "React Native", "Firebase"],
-    link: "https://github.com/LilyPad-Journaling/mobile",
-    aspect_ratio: 1500 / 985,
+      "Built Python tensor library including CUDA optimized tensor operations. Was course project for CS 5781: Machine Learning Engineering at Cornell Tech. \n",
+    stack: ["Python", "CUDA"],
+    link: "https://github.com/haydendaly/experiments/minitorch",
+    aspect_ratio: 1500 / 819,
   },
   {
     key: "babbio",
@@ -57,6 +46,17 @@ const projects = [
     stack: ["React Native", "React", "Node", "Firebase"],
     link: "https://babb.io",
     aspect_ratio: 1500 / 825,
+  },
+  {
+    key: "lilypad",
+    name: "LilyPad",
+    category: ["Mobile", "Design", "Management"],
+    text: "LilyPad:  mental health smart-journaling \n",
+    description:
+      "Led team of seven to develop journaling application focused on accessibility and mood tracking. The goal is to gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of a user's mood over time. \n",
+    stack: ["Node", "React", "React Native", "Firebase"],
+    link: "https://github.com/LilyPad-Journaling/mobile",
+    aspect_ratio: 1500 / 985,
   },
   {
     key: "2020",
@@ -276,7 +276,7 @@ const about = [
       <p className="section" style={{ whiteSpace: "pre-wrap" }}>
         {`I am an NYC-based developer pursuing a masters at Cornell Tech in `}
         <CMTooltip />
-        {`.   I did my bachelors in software engineering at Stevens Institue of Tech.   In my free time, I am an avid runner, reader, and mountain biker.`}
+        {`.  I did my bachelors in software engineering at Stevens Institue of Tech.  In my free time, I am an avid runner, reader, and mountain biker.`}
       </p>
     ),
   },
@@ -284,7 +284,8 @@ const about = [
     key: "Experience",
     component: (
       <div className="section" style={{ whiteSpace: "pre-wrap" }}>
-        {/* <Experience role='Freelance Developer' name='Kanopy Labs' dates='2020 - Present' link/> */}
+        {/* <Experience role='Software Engineer Intern' name='Stripe' dates='May - Aug 2022' link='https://stripe.com/' /> */}
+        <Experience role='Freelance Software Developer' name='Kanopy Labs' dates='2021 - Present' link='mailto:hayden@kanopylabs.com' />
         <Experience role='Software Engineer Intern' name='Expo' dates='May - Aug 2021' link='https://expo.dev/' />
         <Experience role='Contract Software Engineer' name='NASA' dates='2020 - 2021' link='https://esto.nasa.gov/' />
         <Experience role='Research Assistant' name='Collective-Design Lab' dates='2019 - 2021' link='https://code-lab.org/' />
