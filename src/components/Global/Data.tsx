@@ -183,7 +183,7 @@ const projects = [
     key: "healthtech",
     name: "2019 HealthTech Hackathon",
     category: ["Management", "Design"],
-    text: "Hosted a Hackathon focused on Melanoma survivors and living with RA \n",
+    text: "Organized Hackathon focused on Melanoma survivors \n",
     description:
       "Hosted a Hackathon focused on Melanoma survivors and millenials managing Rheumatoid Arthiritus. Fundraised over $45k in sponsorship from Bristol-Meyers Squibb, Quest Diagnostics, Greenberg Traurig, Johnson & Johnson, and many more organizations. Event was successful as many projects were continued after the event and some students receieved internship and full time offers with the sponsoring companies.\n",
     stack: [],
@@ -194,7 +194,7 @@ const projects = [
     key: "bluehack",
     name: "Argo, IBM/United Nations Blue Hack Against Human Trafficking",
     category: ["Management", "Web", "Design"],
-    text: "Won a human-trafficking Hackathon and attended an IBM Conference \n",
+    text: "Won IBM BlueHack Hackathon \n",
     description:
       "Competed in a Hackathon to develop solutions to problems surrounding human trafficking. Interviewed stakeholders from the Manhattan DA Office to learn about how they solve cases and put together a tool to parse social media data for insights regarding human trafficking victims. Ended up winning first and attending the IBM AI New Horizons Conference at their research center in Yorktown Heights, NY. \n",
     stack: ["Python", "HTML/CSS"],

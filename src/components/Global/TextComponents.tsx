@@ -92,6 +92,7 @@ function TextColumn({ data, isFirst }: TextColumnProps) {
         className="project-link"
       >
         {data.text}
+        {isMobile ? <br /> : null}
       </Link>
     );
   }
@@ -117,12 +118,11 @@ function ProjectRow({ categories, data }: ProjectRowProps) {
                   <div key={o}>
                     <a
                       onClick={this.onClick}
-                      className={`category${
-                        (o === "All" && categories.all) ||
+                      className={`category${(o === "All" && categories.all) ||
                         categories?.chosen?.includes(o)
-                          ? " current"
-                          : ""
-                      }`}
+                        ? " current"
+                        : ""
+                        }`}
                     >
                       {o}
                     </a>

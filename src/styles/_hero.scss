@@ -9,6 +9,12 @@
     font-size: min(7vw, max(7vh, 40px));
 }
 
+.mobile-hero-text {
+    padding-top: 6vh;
+    padding-bottom: 10vh;
+    font-size: 7vh;
+}
+
 .hero-sub-text-container {
     display: flex;
     flex-direction: row;
@@ -34,6 +40,7 @@
 .rainbow-text-container {
     display: flex;
     flex-direction: column;
+    margin-top: 0;
 }
 
 
