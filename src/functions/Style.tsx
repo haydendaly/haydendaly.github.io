@@ -91,7 +91,7 @@ export const StyleProvider: FC = ({ children }) => {
         height,
         width,
         nextTheme,
-        init
+        init,
       }}
     >
       {init || theme !== "light" ? (

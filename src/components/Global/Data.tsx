@@ -18,7 +18,7 @@ const projects = [
     key: "testbed",
     name: "NOS-T Simulation Infrastructure",
     category: ["Web", "Systems", "Management"],
-    text: "NOS-T:  distributed space-mission simulation infrastructure \n",
+    text: "NOS-T:  Distributed space-mission simulation infrastructure \n",
     description:
       "Built implementation-agnostic, event-driven architecture for executing space mission simulations. Managed a team of 4 engineers to support 7 teams from NASA, MIT, UIUC, and USC. \n",
     stack: ["React", "Docker", "Flask", "MQTT", "Python", "Nginx"],
@@ -29,18 +29,18 @@ const projects = [
     key: "minitorch",
     name: "Minitorch",
     category: ["Systems"],
-    text: "Minitorch:  implementation of the Torch API. \n",
+    text: "Minitorch:  Implementation of the Torch API. \n",
     description:
       "Built Python tensor library including CUDA optimized tensor operations. Was course project for CS 5781: Machine Learning Engineering at Cornell Tech. \n",
     stack: ["Python", "CUDA"],
-    link: "https://github.com/haydendaly/experiments/minitorch",
+    link: "https://github.com/haydendaly/experiments/tree/761a86f6f50907eefed56a5e1b4242e8fe883ed9/minitorch",
     aspect_ratio: 1500 / 819,
   },
   {
     key: "babbio",
     name: "babb.io",
     category: ["Mobile", "Design"],
-    text: "babb.io:  university-oriented group chats \n",
+    text: "babb.io:  University-oriented group chats \n",
     description:
       "Deployed platform for university-oriented group chats currently starting pilot at Stevens with support for over 2,200 courses. Published React Native mobile application to Apple/Google Play App Stores and pushing out updates in weekly sprints. \n",
     stack: ["React Native", "React", "Node", "Firebase"],
@@ -51,7 +51,7 @@ const projects = [
     key: "lilypad",
     name: "LilyPad",
     category: ["Mobile", "Design", "Management"],
-    text: "LilyPad:  mental health smart-journaling \n",
+    text: "LilyPad:  Mental health smart-journaling \n",
     description:
       "Led team of seven to develop journaling application focused on accessibility and mood tracking. The goal is to gameify the process of journaling by having a visual reward system with flowers growing. The app uses sentiment and semantic analysis to create a cohesive narrative of a user's mood over time. \n",
     stack: ["Node", "React", "React Native", "Firebase"],
@@ -107,7 +107,7 @@ const projects = [
     key: "atticus",
     name: "Atticus",
     category: ["Mobile", "Systems", "Design", "Management"],
-    text: "Atticus:  book clubs simplified \n",
+    text: "Atticus:  Book clubs \n",
     description:
       "Created full-stack mobile app for iOS/Android that for people to orchestrate reading in groups and deployed on Testflight. Led 4 others through Node and React Native development guiding them to build the application. \n",
     stack: ["React Native", "Node", "MongoDB"],
@@ -138,7 +138,7 @@ const projects = [
     key: "exire",
     name: "Exire.ai",
     category: ["Mobile", "Systems", "Design", "Management"],
-    text: "Exire.ai:  itinerary creation startup \n",
+    text: "Exire.ai:  Itinerary creation for groups \n",
     description:
       "Built mobile app for iOS/Android that helps groups make plans with conversational AI. Used chatbot micro-service for group communication to help users build plans. \n",
     stack: [
@@ -164,17 +164,17 @@ const projects = [
     link: "https://stopthespread.info",
     aspect_ratio: 1500 / 829,
   },
-  {
-    key: "songshare",
-    name: "Songshare",
-    category: ["Web", "Design"],
-    text: "Songshare: social media for music \n",
-    description:
-      "Worked with Spotify API to create fullstack Twitter clone for users to share music. \n",
-    stack: ["React", "Node", "MongoDB", "Docker", "Redis"],
-    link: "https://github.com/haydendaly/cs554-music-platform",
-    aspect_ratio: 1500 / 829,
-  },
+  // {
+  //   key: "songshare",
+  //   name: "Songshare",
+  //   category: ["Web", "Design"],
+  //   text: " \n",
+  //   description:
+  //     "Worked with Spotify API to create fullstack Twitter clone for users to share music. \n",
+  //   stack: ["React", "Node", "MongoDB", "Docker", "Redis"],
+  //   link: "https://github.com/haydendaly/cs554-music-platform",
+  //   aspect_ratio: 1500 / 829,
+  // },
   {
     key: "2019",
     category: ["year"],
@@ -205,7 +205,7 @@ const projects = [
     key: "tatckb",
     name: "Tradespace Analysis Tool for Constellations Knowledge Base",
     category: ["Systems", "Web"],
-    text: "tatckb.org:  model-based satellite information system \n",
+    text: "tatckb.org:  Model-based satellite information system \n",
     description:
       "Developed backend for model-based satellite information system. Worked with other research labs from institutions such as NASA Goddard, Texas A&M, and MIT to build component for larger architecture of the tradespace analysis tool for constellations. \n",
     stack: ["Node", "JavaScript", "Docker", "MongoDB"],
@@ -257,17 +257,20 @@ function CMTooltip() {
 
 const Experience = ({ name, dates, role, link }) => {
   return (
-    <div className='experience'>
-      <a target="_blank"
+    <div className="experience">
+      <a
+        target="_blank"
         rel="noreferrer"
-        href={link} className='link experience-title'>
+        href={link}
+        className="link experience-title"
+      >
         {name}
       </a>
-      <p className='experience-role'>{role}</p>
-      <p className='experience-dates'>{dates}</p>
-    </div >
+      <p className="experience-role">{role}</p>
+      <p className="experience-dates">{dates}</p>
+    </div>
   );
-}
+};
 
 const about = [
   {
@@ -285,11 +288,31 @@ const about = [
     component: (
       <div className="section" style={{ whiteSpace: "pre-wrap" }}>
         {/* <Experience role='Software Engineer Intern' name='Stripe' dates='May - Aug 2022' link='https://stripe.com/' /> */}
-        <Experience role='Freelance Software Developer' name='Kanopy Labs' dates='2021 - Present' link='mailto:hayden@kanopylabs.com' />
-        <Experience role='Software Engineer Intern' name='Expo' dates='May - Aug 2021' link='https://expo.dev/' />
-        <Experience role='Contract Software Engineer' name='NASA' dates='2020 - 2021' link='https://esto.nasa.gov/' />
-        <Experience role='Research Assistant' name='Collective-Design Lab' dates='2019 - 2021' link='https://code-lab.org/' />
-        <Experience role='Software Developer Intern' name='Disney' dates='May - Aug 2020' link='https://disney.com/' />
+        <Experience
+          role="Freelance Software Developer"
+          name="Kanopy Labs"
+          dates="2021 - Present"
+          link="mailto:hayden@kanopylabs.com"
+        />
+        <Experience
+          role="Software Engineer Intern"
+          name="Expo"
+          dates="May - Aug 2021"
+          link="https://expo.dev/"
+        />
+        {/* <Experience role='Contract Software Engineer' name='NASA' dates='2020 - 2021' link='https://esto.nasa.gov/' /> */}
+        <Experience
+          role="Research Assistant"
+          name="Collective-Design Lab"
+          dates="2019 - 2021"
+          link="https://code-lab.org/"
+        />
+        <Experience
+          role="Software Developer Intern"
+          name="Disney"
+          dates="May - Aug 2020"
+          link="https://disney.com/"
+        />
       </div>
     ),
   },

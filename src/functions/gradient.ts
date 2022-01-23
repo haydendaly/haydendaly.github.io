@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 /**
- * All credits go to https://codepen.io/smitpatelx/pen/GRZayyO!
+ * All credits go to https://codepen.io/smitpatelx/pen/GRZayyO !!!
  */
 
 function normalizeColor(hexCode) {

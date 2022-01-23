@@ -31,28 +31,52 @@
     text-decoration: underline !important;
 }
 
+.rainbow-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@-webkit-keyframes rainbowTextAni {
+    0% {background-position:0% 14%}
+    50% {background-position:100% 87%}
+    100% {background-position:0% 14%}
+}
+@-moz-keyframes rainbowTextAni {
+    0% {background-position:0% 14%}
+    50% {background-position:100% 87%}
+    100% {background-position:0% 14%}
+}
+@keyframes rainbowTextAni {
+    0% {background-position:0% 14%}
+    50% {background-position:100% 87%}
+    100% {background-position:0% 14%}
+}
+
 // Credit goes to https://github.com/wrongakram/react-happytext/blob/master/src/Happy/styles.css
 .rainbow-text {
     background: linear-gradient(270deg, #FF5F6D, #FFC371, #c34dbf, #ff4b1f, #ff9068, #16BFFD, #a84dc3, #CB3066, #4CA1AF, #C4E0E5);
     background-size: 2000% 2000%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-animation: rainbowTextAni 30s ease infinite;
     -moz-animation: rainbowTextAni 30s ease infinite;
     animation: rainbowTextAni 30s ease infinite;
   } 
-  @-webkit-keyframes rainbowTextAni {
-      0% {background-position:0% 14%}
-      50% {background-position:100% 87%}
-      100% {background-position:0% 14%}
-  }
-  @-moz-keyframes rainbowTextAni {
-      0% {background-position:0% 14%}
-      50% {background-position:100% 87%}
-      100% {background-position:0% 14%}
-  }
-  @keyframes rainbowTextAni {
-      0% {background-position:0% 14%}
-      50% {background-position:100% 87%}
-      100% {background-position:0% 14%}
-  }
+
+.rainbow {
+    background: linear-gradient(270deg, #FF5F6D, #FFC371, #c34dbf, #ff4b1f, #ff9068, #16BFFD, #a84dc3, #CB3066, #4CA1AF, #C4E0E5);
+    background-size: 2000% 2000%;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: rainbowTextAni 30s ease infinite;
+    -moz-animation: rainbowTextAni 30s ease infinite;
+    animation: rainbowTextAni 30s ease infinite;
+}
+
+  // need to make this bs component bc .rainbow-text doesn't support background on underline text decoration
+.rainbow-text-underline {
+    height: 2px;
+    width: 85px;
+    margin-top: -7px;
+}

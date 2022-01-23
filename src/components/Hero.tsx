@@ -22,16 +22,24 @@ function Hero() {
       </h1>
       <div className="hero-sub-text-container">
         <p className={"hero-sub-text"}>Interested in working together?</p>
-        <a
-          href="https://calendly.com/haydencdaly"
-          target="_blank"
-          rel="noreferrer"
-          className={
-            "hero-sub-link-text" + (theme !== "rainbow" ? " rainbow-text" : "")
-          }
-        >
-          Let's chat.
-        </a>
+        <div className="rainbow-text-container">
+          <a
+            href="https://calendly.com/haydencdaly"
+            target="_blank"
+            rel="noreferrer"
+            className={
+              "hero-sub-link-text" +
+              (theme !== "rainbow" ? " rainbow-text" : "")
+            }
+          >
+            Let's chat.
+          </a>
+          {theme !== "rainbow" ? (
+            <div className="rainbow rainbow-text-underline" />
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

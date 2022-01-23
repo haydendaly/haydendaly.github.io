@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Headroom from "react-headroom";
 import { FaMoon } from "@react-icons/all-files/fa/FaMoon";
 import { FiSun } from "@react-icons/all-files/fi/FiSun";
@@ -31,8 +31,9 @@ function Header() {
         styles={
           show && {
             backgroundColor: theme === "dark" ? "#121212" : "#fff",
-            boxShadow: `1px 0px 1px ${theme === "dark" ? "#77abb7" : "#393e46"
-              }`,
+            boxShadow: `1px 0px 1px ${
+              theme === "dark" ? "#77abb7" : "#393e46"
+            }`,
           }
         }
       >
@@ -45,14 +46,30 @@ function Header() {
             paddingBottom: 15,
           }}
         >
-          <div style={{ width: isMobile ? "35%" : "20%" }}>
+          <div
+            style={{
+              width: isMobile ? "35%" : "20%",
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
             <Link
               onClick={() => setPage("/")}
               to="/"
               className={`header-text current name`}
             >
-              Hayden Daly 🏃🏻‍♂️
+              Hayden Daly
             </Link>
+            <p
+              style={{
+                textDecoration: "none",
+                paddingTop: 1,
+                paddingLeft: 4,
+                fontSize: 18,
+              }}
+            >
+              🏃🏻‍♂️
+            </p>
           </div>
           <div
             style={{
@@ -74,14 +91,15 @@ function Header() {
               <Link
                 onClick={() => setPage("/projects")}
                 to="/projects"
-                className={`header-text${page === "/projects" ? " current" : ""
-                  }`}
+                className={`header-text${
+                  page === "/projects" ? " current" : ""
+                }`}
                 style={{ ...mobileStyles, paddingLeft: 16 }}
               >
                 Projects
               </Link>
             </div>
-            <a
+            <div
               className="unselectable current header-text header-icon"
               style={{ fontSize: 20 }}
               onClick={nextTheme}
@@ -95,8 +113,7 @@ function Header() {
                   <FaMoon />
                 )}
               </Wiggle>
-
-            </a>
+            </div>
           </div>
         </div>
       </FD>
