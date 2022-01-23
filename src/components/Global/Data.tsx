@@ -29,7 +29,7 @@ const projects = [
     key: "minitorch",
     name: "Minitorch",
     category: ["Systems"],
-    text: "Minitorch:  Implementation of the Torch API. \n",
+    text: "Minitorch:  Implementation of the Torch API \n",
     description:
       "Built Python tensor library including CUDA optimized tensor operations. Was course project for CS 5781: Machine Learning Engineering at Cornell Tech. \n",
     stack: ["Python", "CUDA"],

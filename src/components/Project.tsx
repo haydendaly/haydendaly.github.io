@@ -10,7 +10,7 @@ import { useStyle } from "~/functions/Style";
 
 function Project() {
   const { setPage, setTitle, track } = usePage();
-  const { height, width, isMobile, theme } = useStyle();
+  const { height, width, isMobile, theme, checkTheme } = useStyle();
   const location = useLocation();
 
   const [data, setData] = useState<any>({
@@ -31,6 +31,7 @@ function Project() {
     );
     if (project.length !== 0) {
       setData(project[0]);
+      checkTheme(project[0].key);
       setTitle(project[0].name + " - Hayden Daly");
       track(window.location.pathname);
     } else {

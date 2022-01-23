@@ -85,7 +85,7 @@ module.exports = (env, argv) => ({
   devServer: {
     port: 8000,
     historyApiFallback: true,
-    public: "hcdaly.test",
+    public: "localhost:8000",
   },
   resolve: {
     alias: {

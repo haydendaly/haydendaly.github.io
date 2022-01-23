@@ -1,4 +1,4 @@
-import React, { useContext, lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -9,8 +9,7 @@ import {
 import Loading from "~/components/Global/Loading";
 import Header from "~/components/Global/Header";
 import FD from "~/components/Global/FormattedDiv";
-import { PageContext } from "~/functions/Page";
-import { StyleContext } from "~/functions/Style";
+import { useStyle } from "~/functions/Style";
 
 const Projects = lazy(() => import("./Projects"));
 const About = lazy(() => import("./About"));
@@ -18,8 +17,7 @@ const Hero = lazy(() => import("./Hero"));
 const Project = lazy(() => import("./Project"));
 
 function App() {
-  const { height } = useContext(StyleContext);
-  const { track } = useContext(PageContext);
+  const { height } = useStyle();
 
   return (
     <Router basename={process.env.PUBLIC_URL || "/"}>

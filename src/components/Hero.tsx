@@ -5,10 +5,11 @@ import { useStyle } from "~/functions/Style";
 
 function Hero() {
   const { track } = usePage();
-  const { isMobile, theme } = useStyle();
+  const { isMobile, theme, checkTheme } = useStyle();
 
   useEffect(() => {
     track(window.location.pathname);
+    checkTheme("hero");
   }, []);
 
   return (

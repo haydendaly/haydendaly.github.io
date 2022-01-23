@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import FD from "~/components/Global/FormattedDiv";
 import Wiggle from "~/components/Global/Wiggle";
 import { usePage } from "~/functions/Page";
-import { useStyle } from "~/functions/Style";
+import { toggleThemes, useStyle } from "~/functions/Style";
 
 function Header() {
   const [show, setShow] = useState(false);
@@ -99,21 +99,23 @@ function Header() {
                 Projects
               </Link>
             </div>
-            <div
-              className="unselectable current header-text header-icon"
-              style={{ fontSize: 20 }}
-              onClick={nextTheme}
-            >
-              <Wiggle angleRange={25} isRotating={init}>
-                {theme === "dark" ? (
-                  <p className="rainbow-emoji">🌈</p>
-                ) : theme === "rainbow" ? (
-                  <FiSun />
-                ) : (
-                  <FaMoon />
-                )}
-              </Wiggle>
-            </div>
+            {toggleThemes.includes(theme) ? (
+              <div
+                className="unselectable current header-text header-icon"
+                style={{ fontSize: 20 }}
+                onClick={nextTheme}
+              >
+                <Wiggle angleRange={25} isRotating={init}>
+                  {theme === "dark" ? (
+                    <p className="rainbow-emoji">🌈</p>
+                  ) : theme === "rainbow" ? (
+                    <FiSun />
+                  ) : (
+                    <FaMoon />
+                  )}
+                </Wiggle>
+              </div>
+            ) : null}
           </div>
         </div>
       </FD>

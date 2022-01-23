@@ -10,11 +10,12 @@ function Projects() {
   const categories = useCategories();
   const [content, setContent] = useState(projects);
   const { track } = usePage();
-  const { isMobile } = useStyle();
+  const { isMobile, checkTheme } = useStyle();
   document.title = "Projects - Hayden Daly";
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    checkTheme("projects");
     track("Projects");
   }, []);
 

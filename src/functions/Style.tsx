@@ -8,11 +8,11 @@ import React, {
 } from "react";
 import { isMobile } from "react-device-detect";
 
-import { useWindowDimensions } from "~/functions/helper";
+import { useWindowDimensions, usePrevious } from "~/functions/helper";
 import { PageContext } from "~/functions/Page";
 import Gradient from "~/functions/gradient";
 
-export type Theme = "light" | "dark" | "rainbow";
+export type Theme = "light" | "dark" | "rainbow" | "space" | string; // temp
 
 export type StyleContextType = {
   theme: Theme;
@@ -20,6 +20,7 @@ export type StyleContextType = {
   height: number;
   width: number;
   nextTheme: () => void;
+  checkTheme: (t: string) => void;
   init: boolean;
 };
 
@@ -29,26 +30,41 @@ export const StyleContext = createContext<StyleContextType>({
   height: 100,
   width: 100,
   nextTheme: () => null,
+  checkTheme: (t: string) => null,
   init: true,
 });
 
-const themes = ["light", "dark", "rainbow"];
+export const toggleThemes = ["light", "dark", "rainbow"];
+export const allThemes = [...toggleThemes, "space"];
+
+export const themeTable = {
+  // "testbed": "space",
+  // "tatckb": "space"
+};
 
 export const StyleProvider: FC = ({ children }) => {
   const gradient = useRef(null);
+  const [toggleIdx, setToggleIdx] = useState(0);
   const [init, setInit] = useState(true);
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState("light");
   const { height, width } = useWindowDimensions();
   const { track } = useContext(PageContext);
+  const prev = usePrevious(theme);
 
   const nextTheme = () => {
-    const newTheme = themes[(themes.indexOf(theme) + 1) % themes.length];
+    const new_idx = (toggleIdx + 1) % toggleThemes.length;
+    const newTheme = toggleThemes[new_idx];
     // @ts-ignore
     changeTheme(newTheme);
+    setToggleIdx(new_idx);
     track("Toggled theme");
   };
 
   const changeTheme = (newTheme: Theme) => {
+    if (toggleThemes.includes(newTheme)) {
+      setToggleIdx(toggleThemes.indexOf(newTheme));
+    }
+
     setTheme(newTheme);
     if (newTheme === "light") {
       // @ts-ignore
@@ -58,7 +74,10 @@ export const StyleProvider: FC = ({ children }) => {
     } else if (newTheme === "dark") {
       // @ts-ignore
       document.body.style = "background: #121212";
-    } else {
+    } else if (newTheme === "space") {
+      // @ts-ignore
+      document.body.style = "background: #000";
+    } else if (newTheme === "rainbow") {
       // @ts-ignore
       document.body.style = "background: rgb(0, 0, 0, 0)";
       // @ts-ignore
@@ -70,13 +89,25 @@ export const StyleProvider: FC = ({ children }) => {
     localStorage.setItem("theme", newTheme);
   };
 
+  const checkTheme = (page: string) => {
+    if (themeTable[page]) {
+      changeTheme(themeTable[page]);
+      return;
+    }
+    const newTheme = toggleThemes[toggleIdx];
+    if (newTheme === theme) {
+      return;
+    }
+    changeTheme(newTheme);
+  };
+
   useEffect(() => {
     const G = new Gradient();
     // @ts-ignore
     gradient.current = G;
     const storedTheme = localStorage.getItem("theme");
     // @ts-ignore
-    if (storedTheme && themes.includes(storedTheme)) {
+    if (storedTheme && toggleThemes.includes(storedTheme)) {
       // @ts-ignore
       changeTheme(storedTheme);
     }
@@ -91,10 +122,11 @@ export const StyleProvider: FC = ({ children }) => {
         height,
         width,
         nextTheme,
+        checkTheme,
         init,
       }}
     >
-      {init || theme !== "light" ? (
+      {theme === "rainbow" || init || prev !== "rainbow" ? (
         <canvas id="gradient-canvas"></canvas>
       ) : null}
       <div

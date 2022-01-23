@@ -6,61 +6,43 @@ $dark-text: "dark-text";
 $light: "light";
 $selection: "selection";
 
-// Reguler color scheme
-$bg-reg: #ffffff;
-$highlight-reg: #2b7be3;
-$hover-highlight-reg: #00204a;
-$text-reg: #77abb7;
-$dark-text-reg: #3a3a3a;
-$light-reg: #dddddd;
-$selection-reg: #fff;
-
-// Dark color scheme
-$bg-dark: #121212;
-$highlight-dark: #3a82e0;
-$hover-highlight-dark: #444;
-$text-dark: #707070;
-$dark-text-dark: #cfcfcf;
-$light-dark: #111111;
-$selection-dark: #fff;
-
-// Rainbow color scheme
-$bg-rainbow: #fff;
-$highlight-rainbow: #444;
-$hover-highlight-rainbow: rgba(64, 64, 64, 0.5);
-$text-rainbow: #555;
-$dark-text-rainbow: #333;
-$light-rainbow: #111111;
-$selection-rainbow: rgba(0, 0, 0, 0.5);
-
 $themes: (
     light: (
-        bg: $bg-reg,
-        highlight: $highlight-reg,
-        hover-highlight: $hover-highlight-reg,
-        text: $text-reg,
-        dark-text: $dark-text-reg,
-        light: $light-reg,
-        selection: $selection-reg
+        bg: #ffffff,
+        highlight: #2b7be3,
+        hover-highlight: #00204a,
+        text: #77abb7,
+        dark-text: #3a3a3a,
+        light: #dddddd,
+        selection: #fff
     ),
     dark: (
-        bg: $bg-dark,
-        highlight: $highlight-dark,
-        hover-highlight: $hover-highlight-dark,
-        text: $text-dark,
-        dark-text: $dark-text-dark,
-        light: $light-dark,
-        selection: $selection-dark
+        bg: #121212,
+        highlight: #3a82e0,
+        hover-highlight: #444,
+        text: #707070,
+        dark-text: #cfcfcf,
+        light: #111111,
+        selection: #fff
     ),
     rainbow: (
-        bg: $bg-rainbow,
-        highlight: $highlight-rainbow,
-        hover-highlight: $hover-highlight-rainbow,
-        text: $text-rainbow,
-        dark-text: $dark-text-rainbow,
-        light: $light-rainbow,
-        selection: $selection-rainbow
+        bg: #fff,
+        highlight: #444,
+        hover-highlight: rgba(64, 64, 64, 0.5),
+        text: #555,
+        dark-text: #333,
+        light: #111111,
+        selection: rgba(0, 0, 0, 0.5)
     ),
+    space: (
+      bg: #000,
+      highlight: #3a82e0,
+      hover-highlight: #444,
+      text: #707070,
+      dark-text: #cfcfcf,
+      light: #111111,
+      selection: #fff
+    )
 );
 
 @mixin themed() {

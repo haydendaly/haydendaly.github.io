@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const getTitle = (path: string): string => {
   const titles: { [key: string]: string } = {
@@ -64,4 +64,12 @@ const useCategories = () => {
   };
 };
 
-export { getTitle, useWindowDimensions, useCategories };
+function usePrevious(value) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+
+export { getTitle, useWindowDimensions, useCategories, usePrevious };

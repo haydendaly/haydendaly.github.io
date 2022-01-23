@@ -7,10 +7,11 @@ import { useStyle } from "~/functions/Style";
 
 function About() {
   const { track } = usePage();
-  const { isMobile } = useStyle();
+  const { isMobile, checkTheme } = useStyle();
 
   useEffect(() => {
     track(window.location.pathname);
+    checkTheme("about");
   }, []);
 
   const items = about.map((o) => <TextRow key={o.key} data={o} />);
