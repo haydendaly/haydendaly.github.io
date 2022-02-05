@@ -289,7 +289,7 @@ const about = [
       <div className="section" style={{ whiteSpace: "pre-wrap" }}>
         {/* <Experience role='Software Engineer Intern' name='Stripe' dates='May - Aug 2022' link='https://stripe.com/' /> */}
         <Experience
-          role="Freelance Software Developer"
+          role="Software Developer Contractor"
           name="Kanopy Labs"
           dates="2021 - Present"
           link="mailto:hayden@kanopylabs.com"
