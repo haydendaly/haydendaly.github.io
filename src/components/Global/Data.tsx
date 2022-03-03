@@ -280,7 +280,7 @@ const about = [
           role="Software Engineer Manager"
           name="Kanopy Labs"
           dates="2021 - Present"
-          link="mailto:hayden@kanopylabs.com"
+          link="https://kanopylabs.com"
         />
         <Experience
           role="Software Engineer Intern"
