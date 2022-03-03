@@ -277,7 +277,7 @@ const about = [
           link="https://sutro.xyz"
         />
         <Experience
-          role="Software Engineer Manager"
+          role="Software Engineering Manager"
           name="Kanopy Labs"
           dates="2021 - Present"
           link="https://kanopylabs.com"
