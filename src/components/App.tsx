@@ -1,34 +1,28 @@
-import React, { lazy, Suspense } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect, useLocation } from 'react-router-dom';
 
-import Loading from "~/components/Global/Loading";
-import Header from "~/components/Global/Header";
-import FD from "~/components/Global/FormattedDiv";
-import { useStyle } from "~/functions/Style";
+import Loading from '~/components/Global/Loading';
+import Header from '~/components/Global/Header';
+import FD from '~/components/Global/FormattedDiv';
+import { useStyle } from '~/functions/Style';
 
-const Projects = lazy(() => import("./Projects"));
-const About = lazy(() => import("./About"));
-const Hero = lazy(() => import("./Hero"));
-const Project = lazy(() => import("./Project"));
+const Projects = lazy(() => import('./Projects'));
+const About = lazy(() => import('./About'));
+const Hero = lazy(() => import('./Hero'));
+const Project = lazy(() => import('./Project'));
 
 function App() {
   const { height } = useStyle();
-
   return (
-    <Router basename={process.env.PUBLIC_URL || "/"}>
+    <Router basename={process.env.PUBLIC_URL || '/'}>
       <Header />
       <Suspense fallback={<Loading />}>
         <FD height={height}>
           <Switch>
-            <Route path={"/projects/:project"}>
+            <Route path={'/projects/:project'}>
               <Project />
             </Route>
-            <Route path={"/projects"}>
+            <Route path={'/projects'}>
               <Projects />
             </Route>
             {/* <Route
@@ -43,6 +37,16 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
+            <Route
+              path="/redirect"
+              component={() => {
+                const to = window.location.search.substring(4);
+                if (to) {
+                  window.location.href = to;
+                }
+                return <p>Redirecting...</p>;
+              }}
+            />
             <Route exact path="/">
               <Hero />
             </Route>
