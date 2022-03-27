@@ -1,90 +1,90 @@
-@import "color-theme";
+@import 'color-theme';
 
 @font-face {
-    font-family: "Haas";
-    src: url("../static/fonts/NeueHaasGroteskRegular.otf");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Haas';
+  src: url('../static/fonts/NeueHaasGroteskRegular.otf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "HaasMd";
-    src: url("../static/fonts/NeueHaasGroteskMedium.otf");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'HaasMd';
+  src: url('../static/fonts/NeueHaasGroteskMedium.otf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "HaasIt";
-    src: url("../static/fonts/NeueHaasDisplayRomanItalic.ttf");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'HaasIt';
+  src: url('../static/fonts/NeueHaasDisplayRomanItalic.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 ::selection {
-    @include themed() {
-        color: t($bg);
-        background: t($selection);
-        opacity: 0.5;
-    }
+  @include themed() {
+    color: t($bg);
+    background: t($selection);
+    opacity: 0.5;
+  }
 }
 
 .unselectable {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .selectable {
-    -webkit-user-drag: none;
+  -webkit-user-drag: none;
 }
 
 html,
 body {
-    // scroll-behavior: smooth
-    overflow: hidden;
-    background-color: $bg;
-    position: relative;
-    min-height: 100vh;
-    max-width: 100vw;
+  scroll-behavior: smooth;
+  // overflow: hidden;
+  background-color: $bg;
+  position: relative;
+  min-height: 100vh;
+  max-width: 100vw;
 
-    @include themed() {
-        color: t($dark-text);
-    }
+  @include themed() {
+    color: t($dark-text);
+  }
 
-    font-family: "Haas", "Helvetica Neue", "Arial", "sans-serif";
-    z-index: 1;
+  font-family: 'Haas', 'Helvetica Neue', 'Arial', 'sans-serif';
+  z-index: 1;
 }
 
 #gradient-canvas {
-    width: 100vw;
-    height: 100vh;
-    --gradient-color-1: #ff71ce;
-    --gradient-color-2: #01cdfe;
-    --gradient-color-3: #fffb96;
-    --gradient-color-4: #b967ff;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: fixed;
-    top: 0;
+  width: 100vw;
+  height: 100vh;
+  --gradient-color-1: #ff71ce;
+  --gradient-color-2: #01cdfe;
+  --gradient-color-3: #fffb96;
+  --gradient-color-4: #b967ff;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
 }
 
 .transparent-bg {
-    background: transparent;
+  background: transparent;
 }
 
 .translucent-text {
-    mix-blend-mode: difference;
+  mix-blend-mode: difference;
 }
 
 div:focus {
-    @include themed() {
-        outline: t($hover-highlight) solid 2px;
-    }
+  @include themed() {
+    outline: t($hover-highlight) solid 2px;
+  }
 }

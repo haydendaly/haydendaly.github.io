@@ -2,14 +2,15 @@ import React, { useContext } from 'react';
 import { Tooltip } from 'react-tippy';
 
 import { StyleContext } from '~/functions/Style';
+import HindsightBody from '~/components/Global/blog/HindsightBody';
 
 import 'react-tippy/dist/tippy.css';
 
 const projects = [
-  // {
-  //   key: "Current",
-  //   category: ["year"]
-  // },
+  {
+    key: 'Current',
+    category: ['year'],
+  },
   {
     key: '2021',
     category: ['year'],
@@ -58,9 +59,48 @@ const projects = [
     link: 'https://github.com/LilyPad-Journaling/mobile',
     aspect_ratio: 1500 / 985,
   },
+  // {
+  //   key: 'hindsightml',
+  //   name: 'Hindsight Bias in ML Study',
+  //   category: ['Management'],
+  //   text: 'Hindsight Bias in ML Study\n',
+  //   description: HindsightBody,
+  //   aspect_ratio: 1500 / 825,
+  //   no_image: true,
+  // },
   {
     key: '2020',
     category: ['year'],
+  },
+  {
+    key: '2&20',
+    name: 'Two and Twenty LLP',
+    category: ['Systems'],
+    text: 'Market making in HFT \n',
+    description: (
+      <p style={{ marginBottom: 0 }}>
+        Competed in a high frequency trading competition hosted by Capco and the financial
+        engineering department of Stevens. Worked in a VM of a simulated trading environment and
+        initially lost a good deal of money using traditional HFT algorithms like MACD. Noticed
+        market making in the simulation wasn't effective and created a market maker in combination
+        with Garman's inventory model making over 130% profit in the final two days of competition
+        and winning.
+      </p>
+    ),
+    stack: ['Python', 'Pandas'],
+    link: 'https://github.com/haydendaly/experiments/tree/main/algo-trading-contest',
+    aspect_ratio: 964 / 629,
+  },
+  {
+    key: 'exire',
+    name: 'Exire.ai',
+    category: ['Mobile', 'Systems', 'Design', 'Management'],
+    text: 'Exire.ai:  Itinerary creation for groups \n',
+    description:
+      'Built mobile app for iOS/Android that helps groups make plans with conversational AI. Used chatbot micro-service for group communication to help users build plans. \n',
+    stack: ['Node', 'React', 'React Native', 'Swift', 'MongoDB', 'TensorFlow', 'Redis'],
+    link: 'https://exire.ai',
+    aspect_ratio: 1500 / 771,
   },
   {
     key: 'covidhealthhack',
@@ -110,36 +150,6 @@ const projects = [
     stack: ['React Native', 'Node', 'MongoDB'],
     link: 'https://github.com/haydendaly/atticus',
     aspect_ratio: 1500 / 813,
-  },
-  {
-    key: '2&20',
-    name: 'Two and Twenty LLP',
-    category: ['Systems'],
-    text: 'High frequency trading competition \n',
-    description: (
-      <p style={{ marginBottom: 0 }}>
-        Competed in a high frequency trading competition hosted by Capco and the financial
-        engineering department of Stevens. Worked in a VM of a simulated trading environment and
-        initially lost a good deal of money using traditional HFT algorithms like MACD. Noticed
-        market making in the simulation wasn't effective and created a market maker in combination
-        with Garman's inventory model making over 130% profit in the final two days of competition
-        and winning.
-      </p>
-    ),
-    stack: ['Python', 'Pandas'],
-    link: 'https://github.com/haydendaly/experiments/tree/main/algo-trading-contest',
-    aspect_ratio: 964 / 629,
-  },
-  {
-    key: 'exire',
-    name: 'Exire.ai',
-    category: ['Mobile', 'Systems', 'Design', 'Management'],
-    text: 'Exire.ai:  Itinerary creation for groups \n',
-    description:
-      'Built mobile app for iOS/Android that helps groups make plans with conversational AI. Used chatbot micro-service for group communication to help users build plans. \n',
-    stack: ['Node', 'React', 'React Native', 'Swift', 'MongoDB', 'TensorFlow', 'Redis'],
-    link: 'https://exire.ai',
-    aspect_ratio: 1500 / 771,
   },
   {
     key: 'stopthespread',
