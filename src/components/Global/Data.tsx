@@ -7,10 +7,10 @@ import HindsightBody from '~/components/Global/blog/HindsightBody';
 import 'react-tippy/dist/tippy.css';
 
 const projects = [
-  {
-    key: 'Current',
-    category: ['year'],
-  },
+  // {
+  //   key: 'Current',
+  //   category: ['year'],
+  // },
   {
     key: '2021',
     category: ['year'],
