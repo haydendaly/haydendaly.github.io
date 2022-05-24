@@ -279,17 +279,22 @@ const about = [
     key: 'Experience',
     component: (
       <div className="section" style={{ whiteSpace: 'pre-wrap' }}>
-        {/* <Experience role='Software Engineer Intern' name='Stripe' dates='May - Aug 2022' link='https://stripe.com/' /> */}
+        <Experience
+          role="Software Engineer Intern"
+          name="Stripe"
+          dates="May - Aug 2022"
+          link="https://stripe.com/"
+        />
         <Experience
           role="Software Engineer"
           name="Sutro"
-          dates="2022 - Present"
+          dates="Feb - May 2022"
           link="https://sutro.xyz"
         />
         <Experience
           role="Software Engineering Manager"
           name="Kanopy Labs"
-          dates="2021 - Present"
+          dates="December 2021 - May 2022"
           link="https://kanopylabs.com"
         />
         <Experience
@@ -302,7 +307,7 @@ const about = [
         <Experience
           role="Research Assistant"
           name="Collective-Design Lab"
-          dates="2019 - 2021"
+          dates="May 2019 - May 2021"
           link="https://code-lab.org/"
         />
         <Experience
