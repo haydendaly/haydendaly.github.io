@@ -88,7 +88,7 @@ const projects = [
       </p>
     ),
     stack: ['Python', 'Pandas'],
-    link: 'https://github.com/haydendaly/experiments/tree/main/algo-trading-contest',
+    // link: 'https://github.com/haydendaly/experiments/tree/main/algo-trading-contest',
     aspect_ratio: 964 / 629,
   },
   {
