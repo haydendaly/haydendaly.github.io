@@ -5,6 +5,7 @@ import Loading from '~/components/Global/Loading';
 import Header from '~/components/Global/Header';
 import FD from '~/components/Global/FormattedDiv';
 import { useStyle } from '~/functions/Style';
+import { track } from 'mixpanel-browser';
 
 const Projects = lazy(() => import('./Projects'));
 const About = lazy(() => import('./About'));
@@ -12,7 +13,7 @@ const Hero = lazy(() => import('./Hero'));
 const Project = lazy(() => import('./Project'));
 
 function App() {
-  const { height } = useStyle();
+  const { height, setTheme } = useStyle();
   return (
     <Router basename={process.env.PUBLIC_URL || '/'}>
       <Header />
@@ -50,9 +51,16 @@ function App() {
             <Route exact path="/">
               <Hero />
             </Route>
-            <Route path="/">
-              <Redirect to="/" />
-            </Route>
+            <Route
+              path="/:tag"
+              component={() => {
+                const tag = window.location.pathname.slice(1);
+                if (tag === 'hrt') {
+                  setTheme(tag);
+                }
+                return <Redirect to="/" />;
+              }}
+            />
           </Switch>
         </FD>
       </Suspense>

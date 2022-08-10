@@ -216,7 +216,7 @@ const projects = [
     category: ['Web', 'Systems', 'Mobile'],
     text: 'securemeeting.org: WebRTC chat platform \n',
     description:
-      'Worked with fullstack WebRTC platform to improve backend performance, develop frontend features, and start/lead development on a mobile application. \n',
+      'Worked with fullstack WebRTC platform to improve backend performance, develop frontend features, and led development on a mobile application. \n',
     stack: ['React', 'React Native', 'WebRTC'],
     link: 'https://securemeeting.org',
     aspect_ratio: 1500 / 937,
@@ -269,9 +269,9 @@ const about = [
     key: 'Info',
     component: (
       <p className="section" style={{ whiteSpace: 'pre-wrap' }}>
-        {`I am an NYC-based developer pursuing a masters at Cornell Tech in `}
+        {`I am currently pursuing a masters at Cornell Tech in `}
         <CMTooltip />
-        {`.  I did my bachelors in software engineering at Stevens Institue of Tech.  In my free time, I am an avid runner, reader, and mountain biker.`}
+        {`.  I am a systems/compilers aficionado who loves building (and often breaking) things.  When I'm not coding, I enjoy trail running, mountain biking, cooking, and reading.`}
       </p>
     ),
   },

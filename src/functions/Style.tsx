@@ -1,18 +1,11 @@
-import React, {
-  FC,
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { isMobile } from "react-device-detect";
+import React, { FC, createContext, useContext, useEffect, useRef, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 
-import { useWindowDimensions, usePrevious } from "~/functions/helper";
-import { PageContext } from "~/functions/Page";
-import Gradient from "~/functions/gradient";
+import { useWindowDimensions, usePrevious } from '~/functions/helper';
+import { PageContext } from '~/functions/Page';
+import Gradient from '~/functions/gradient';
 
-export type Theme = "light" | "dark" | "rainbow" | "space" | string; // temp
+export type Theme = 'light' | 'dark' | 'rainbow' | 'space' | string; // temp
 
 export type StyleContextType = {
   theme: Theme;
@@ -20,22 +13,24 @@ export type StyleContextType = {
   height: number;
   width: number;
   nextTheme: () => void;
+  setTheme: (_: string) => void;
   checkTheme: (t: string) => void;
   init: boolean;
 };
 
 export const StyleContext = createContext<StyleContextType>({
-  theme: "light",
+  theme: 'light',
   isMobile,
   height: 100,
   width: 100,
   nextTheme: () => null,
+  setTheme: (_: string) => null,
   checkTheme: (t: string) => null,
   init: true,
 });
 
-export const toggleThemes = ["light", "dark", "rainbow"];
-export const allThemes = [...toggleThemes, "space"];
+export const toggleThemes = ['light', 'dark', 'rainbow'];
+export const allThemes = [...toggleThemes, 'space'];
 
 export const themeTable = {
   // "testbed": "space",
@@ -46,7 +41,7 @@ export const StyleProvider: FC = ({ children }) => {
   const gradient = useRef(null);
   const [toggleIdx, setToggleIdx] = useState(0);
   const [init, setInit] = useState(true);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState('light');
   const { height, width } = useWindowDimensions();
   const { track } = useContext(PageContext);
   const prev = usePrevious(theme);
@@ -57,7 +52,7 @@ export const StyleProvider: FC = ({ children }) => {
     // @ts-ignore
     changeTheme(newTheme);
     setToggleIdx(new_idx);
-    track("Toggled theme");
+    track('Toggled theme');
   };
 
   const changeTheme = (newTheme: Theme) => {
@@ -66,27 +61,27 @@ export const StyleProvider: FC = ({ children }) => {
     }
 
     setTheme(newTheme);
-    if (newTheme === "light") {
+    if (newTheme === 'light') {
       // @ts-ignore
       gradient.current.disconnect();
       // @ts-ignore
-      document.body.style = "background: #ffffff";
-    } else if (newTheme === "dark") {
+      document.body.style = 'background: #ffffff';
+    } else if (newTheme === 'dark') {
       // @ts-ignore
-      document.body.style = "background: #121212";
-    } else if (newTheme === "space") {
+      document.body.style = 'background: #121212';
+    } else if (newTheme === 'space') {
       // @ts-ignore
-      document.body.style = "background: #000";
-    } else if (newTheme === "rainbow") {
+      document.body.style = 'background: #000';
+    } else if (newTheme === 'rainbow') {
       // @ts-ignore
-      document.body.style = "background: rgb(0, 0, 0, 0)";
+      document.body.style = 'background: rgb(0, 0, 0, 0)';
       // @ts-ignore
-      gradient.current.initGradient("#gradient-canvas");
+      gradient.current.initGradient('#gradient-canvas');
       if (init) {
         setInit(false);
       }
     }
-    localStorage.setItem("theme", newTheme);
+    localStorage.setItem('theme', newTheme);
   };
 
   const checkTheme = (page: string) => {
@@ -105,7 +100,7 @@ export const StyleProvider: FC = ({ children }) => {
     const G = new Gradient();
     // @ts-ignore
     gradient.current = G;
-    const storedTheme = localStorage.getItem("theme");
+    const storedTheme = localStorage.getItem('theme');
     // @ts-ignore
     if (storedTheme && toggleThemes.includes(storedTheme)) {
       // @ts-ignore
@@ -118,22 +113,18 @@ export const StyleProvider: FC = ({ children }) => {
     <StyleContext.Provider
       value={{
         theme,
+        setTheme,
         isMobile,
         height,
         width,
         nextTheme,
         checkTheme,
         init,
-      }}
-    >
-      {theme === "rainbow" || init || prev !== "rainbow" ? (
+      }}>
+      {theme === 'rainbow' || init || prev !== 'rainbow' ? (
         <canvas id="gradient-canvas"></canvas>
       ) : null}
-      <div
-        className={`theme theme--${theme}`}
-        id="main"
-        style={{ height, width }}
-      >
+      <div className={`theme theme--${theme}`} id="main" style={{ height, width }}>
         {children}
       </div>
     </StyleContext.Provider>
@@ -147,12 +138,12 @@ export const useStyle = () => {
 const logDeveloperMessage = () => {
   console.log(
     `%c
-${" ".repeat(33)}
-${" ".repeat(7)}Made by Hayden Daly${" ".repeat(7)}
-${" ".repeat(33)}
-${" ".repeat(2)}Want to see the source code?${" ".repeat(3)}
-${" ".repeat(33)}\n`,
-    "background: #007aff; color: white"
+${' '.repeat(33)}
+${' '.repeat(7)}Made by Hayden Daly${' '.repeat(7)}
+${' '.repeat(33)}
+${' '.repeat(2)}Want to see the source code?${' '.repeat(3)}
+${' '.repeat(33)}\n`,
+    'background: #007aff; color: white'
   );
-  console.log("\nhttps://github.com/haydendaly/haydendaly.github.io\n ");
+  console.log('\nhttps://github.com/haydendaly/haydendaly.github.io\n ');
 };
