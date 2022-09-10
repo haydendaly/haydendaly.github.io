@@ -11,6 +11,17 @@ const projects = [
   //   key: 'Current',
   //   category: ['year'],
   // },
+  // {
+  //   key: 'ipv-iot',
+  //   name: 'IPV IoT',
+  //   category: ['Web', 'Systems', 'Management'],
+  //   text: 'NOS-T:  Distributed space-mission simulation infrastructure \n',
+  //   description:
+  //     'Built implementation-agnostic, event-driven architecture for executing space mission simulations. Managed a team of 4 engineers to support 7 teams from NASA, MIT, UIUC, and USC. \n',
+  //   stack: ['React', 'Docker', 'Flask', 'MQTT', 'Python', 'Nginx'],
+  //   link: 'https://esto.nasa.gov/forums/estf2021/Presentations/June10/Grogan_NOST_ESTF2021.pdf',
+  //   aspect_ratio: 1500 / 819,
+  // },
   {
     key: '2021',
     category: ['year'],
@@ -280,21 +291,21 @@ const about = [
     component: (
       <div className="section" style={{ whiteSpace: 'pre-wrap' }}>
         <Experience
+          role="Software Engineer"
+          name="Sutro"
+          dates="Feb 2022 - Present"
+          link="https://sutro.xyz"
+        />
+        <Experience
           role="Software Engineer Intern"
           name="Stripe"
           dates="May - Aug 2022"
           link="https://stripe.com/"
         />
         <Experience
-          role="Software Engineer"
-          name="Sutro"
-          dates="Feb - May 2022"
-          link="https://sutro.xyz"
-        />
-        <Experience
           role="Software Engineering Manager"
           name="Kanopy Labs"
-          dates="Dec 2021 - May 2022"
+          dates="Dec 2021 - Aug 2022"
           link="https://kanopylabs.com"
         />
         <Experience
