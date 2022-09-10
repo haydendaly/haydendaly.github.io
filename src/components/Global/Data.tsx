@@ -294,7 +294,7 @@ const about = [
         <Experience
           role="Software Engineering Manager"
           name="Kanopy Labs"
-          dates="December 2021 - May 2022"
+          dates="Dec 2021 - May 2022"
           link="https://kanopylabs.com"
         />
         <Experience
@@ -303,7 +303,6 @@ const about = [
           dates="May - Aug 2021"
           link="https://expo.dev/"
         />
-        {/* <Experience role='Contract Software Engineer' name='NASA' dates='2020 - 2021' link='https://esto.nasa.gov/' /> */}
         <Experience
           role="Research Assistant"
           name="Collective-Design Lab"
