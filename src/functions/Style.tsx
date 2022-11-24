@@ -2,10 +2,9 @@ import React, { FC, createContext, useContext, useEffect, useRef, useState } fro
 import { isMobile } from 'react-device-detect';
 
 import { useWindowDimensions, usePrevious } from '~/functions/helper';
-import { PageContext } from '~/functions/Page';
 import Gradient from '~/functions/gradient';
 
-export type Theme = 'light' | 'dark' | 'rainbow' | 'space' | string; // temp
+export type Theme = 'light' | 'dark' | 'rainbow' | 'space' | string;
 
 export type StyleContextType = {
   theme: Theme;
@@ -43,7 +42,6 @@ export const StyleProvider: FC = ({ children }) => {
   const [init, setInit] = useState(true);
   const [theme, setTheme] = useState('light');
   const { height, width } = useWindowDimensions();
-  const { track } = useContext(PageContext);
   const prev = usePrevious(theme);
 
   const nextTheme = () => {
@@ -52,7 +50,6 @@ export const StyleProvider: FC = ({ children }) => {
     // @ts-ignore
     changeTheme(newTheme);
     setToggleIdx(new_idx);
-    track('Toggled theme');
   };
 
   const changeTheme = (newTheme: Theme) => {

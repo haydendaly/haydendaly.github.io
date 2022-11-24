@@ -1,16 +1,11 @@
 import React, { useEffect } from 'react';
 
-import { usePage } from '~/functions/Page';
 import { useStyle } from '~/functions/Style';
 
 function Hero() {
-  const { track } = usePage();
-  const { isMobile, theme, checkTheme, setTheme } = useStyle();
+  const { isMobile, theme, checkTheme } = useStyle();
 
-  useEffect(() => {
-    track(window.location.pathname);
-    checkTheme('hero');
-  }, []);
+  useEffect(() => checkTheme('hero'), []);
 
   return (
     <div style={{ width: '100%', paddingTop: isMobile ? 10 : 15 }}>
