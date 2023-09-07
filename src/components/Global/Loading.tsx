@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Spinner from "react-spinkit";
+// import Spinner from "react-spinkit";
 
 import { StyleContext } from "~/functions/Style";
 
@@ -20,7 +20,7 @@ const Loading = () => {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <Spinner name="cube-grid" />
+        {/* <Spinner name="cube-grid" /> */}
       </div>
     </div>
   );

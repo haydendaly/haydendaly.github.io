@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Tooltip } from 'react-tippy';
+// import { Tooltip } from 'react-tippy';
 
 import { StyleContext } from '~/functions/Style';
 import HindsightBody from '~/components/Global/blog/HindsightBody';
@@ -247,21 +247,21 @@ const projects = [
   },
 ];
 
-function CMTooltip() {
-  const { theme } = useContext(StyleContext);
-  return (
-    <Tooltip
-      title="A mixture of computer science, product, and design under an
-          information science/systems degree."
-      position="bottom"
-      size="small"
-      animation="fade"
-      distance={4}
-      theme={theme === 'dark' ? 'dark' : 'light'}>
-      <a className="italic">Connective Media</a>
-    </Tooltip>
-  );
-}
+// function CMTooltip() {
+//   const { theme } = useContext(StyleContext);
+//   return (
+//     <Tooltip
+//       title="A mixture of computer science, product, and design under an
+//           information science/systems degree."
+//       position="bottom"
+//       size="small"
+//       animation="fade"
+//       distance={4}
+//       theme={theme === 'dark' ? 'dark' : 'light'}>
+//       <a className="italic">Connective Media</a>
+//     </Tooltip>
+//   );
+// }
 
 const Experience = ({ name, dates, role, link }) => {
   return (
