@@ -280,9 +280,7 @@ const about = [
     key: 'Info',
     component: (
       <p className="section" style={{ whiteSpace: 'pre-wrap' }}>
-        {`I am currently pursuing a masters at Cornell Tech in `}
-        <CMTooltip />
-        {`.  I am a systems/compilers aficionado who loves building (and often breaking) things.  When I'm not coding, I enjoy trail running, mountain biking, cooking, and reading.`}
+        {`I am a systems/compilers aficionado who loves building (and often breaking) things.  When I'm not coding, I enjoy trail running, mountain biking, cooking, and reading. I'm currently based in Jersey City.  `}
       </p>
     ),
   },
@@ -292,8 +290,14 @@ const about = [
       <div className="section" style={{ whiteSpace: 'pre-wrap' }}>
         <Experience
           role="Software Engineer"
+          name="Stripe"
+          dates="June 2023 - Present"
+          link="https://stripe.com"
+        />
+        <Experience
+          role="Software Engineer"
           name="Sutro"
-          dates="Feb 2022 - Present"
+          dates="Feb 2022 - June 2023"
           link="https://sutro.xyz"
         />
         <Experience
