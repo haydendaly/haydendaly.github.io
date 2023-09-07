@@ -33,6 +33,13 @@ function App() {
                 return null;
               }}
             /> */}
+            <Route
+              path="/buylist"
+              component={() => {
+                window.location.href = "https://docs.google.com/spreadsheets/d/1hllNOBiNTgMw52fugrbO0vXEDUIS6pHFno13vXDEcz8/edit?usp=sharing";
+                return null;
+              }}
+            />
             <Route path="/about">
               <About />
             </Route>

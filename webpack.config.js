@@ -85,7 +85,7 @@ module.exports = (env, argv) => ({
   devServer: {
     port: 8000,
     historyApiFallback: true,
-    public: "localhost:8000",
+    host: "127.0.0.1",
   },
   resolve: {
     alias: {
