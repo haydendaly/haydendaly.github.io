@@ -23,9 +23,7 @@ function Hero() {
         </p>
         <div className="rainbow-text-container">
           <a
-            href="https://calendly.com/haydencdaly"
-            target="_blank"
-            rel="noreferrer"
+            href="mailto:haydencdaly@gmail.com"
             className={
               'hero-sub-link-text' +
               (theme !== 'rainbow' ? ' rainbow-text' : '') +

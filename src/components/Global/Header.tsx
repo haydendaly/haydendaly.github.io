@@ -30,8 +30,8 @@ function Header() {
               theme === 'dark'
                 ? '#121212'
                 : theme === 'rainbow'
-                ? 'rgb(256, 256, 256, .65)'
-                : '#fff',
+                  ? 'rgb(256, 256, 256, .65)'
+                  : '#fff',
             boxShadow: `1px 0px 1px ${theme === 'dark' ? '#77abb7' : '#393e46'}`,
           }
         }>
@@ -52,15 +52,6 @@ function Header() {
             <Link onClick={() => setPage('/')} to="/" className={`header-text current name`}>
               Hayden Daly
             </Link>
-            <p
-              style={{
-                textDecoration: 'none',
-                paddingTop: 1,
-                paddingLeft: 4,
-                fontSize: 18,
-              }}>
-              🏃🏻‍♂️
-            </p>
           </div>
           <div
             style={{
@@ -77,26 +68,17 @@ function Header() {
                 style={{ ...mobileStyles, paddingLeft: 0 }}>
                 About
               </Link>
-              <Link
-                onClick={() => setPage('/projects')}
-                to="/projects"
-                className={`header-text${page === '/projects' ? ' current' : ''}`}
-                style={{ ...mobileStyles, paddingLeft: 16 }}>
-                Projects
-              </Link>
             </div>
             {toggleThemes.includes(theme) ? (
               <div
                 className="unselectable current header-text header-icon"
                 style={{ fontSize: 20 }}
                 onClick={nextTheme}>
-                <Wiggle angleRange={25} isRotating={init}>
-                  {theme === 'dark' ? (
-                    <p className="rainbow-emoji">🌈</p>
-                  ) : theme === 'rainbow' ? (
-                    <FiSun />
-                  ) : (
+                <Wiggle angleRange={6} isRotating={init} rotationFreq={10000}>
+                  {theme === 'light' ? (
                     <FaMoon />
+                  ) : (
+                    <FiSun />
                   )}
                 </Wiggle>
               </div>

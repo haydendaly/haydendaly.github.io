@@ -263,14 +263,31 @@ const projects = [
 //   );
 // }
 
-const Experience = ({ name, dates, role, link }) => {
+const Experience = ({
+  name,
+  dates,
+  role,
+  link,
+  experiences,
+}: {
+  name: string;
+  link: string;
+  role?: string;
+  dates?: string;
+  experiences?: { role: string; dates: string }[];
+}) => {
+  const items = experiences ?? (role != null && dates != null ? [{ role, dates }] : []);
   return (
     <div className="experience">
       <a target="_blank" rel="noreferrer" href={link} className="link experience-title">
         {name}
       </a>
-      <p className="experience-role">{role}</p>
-      <p className="experience-dates">{dates}</p>
+      {items.map(({ role: r, dates: d }, i) => (
+        <div key={`${r}-${d}`} style={{ marginTop: i > 0 ? 8 : 0 }}>
+          <p className="experience-role">{r}</p>
+          <p className="experience-dates">{d}</p>
+        </div>
+      ))}
     </div>
   );
 };
@@ -289,22 +306,18 @@ const about = [
     component: (
       <div className="section" style={{ whiteSpace: 'pre-wrap' }}>
         <Experience
-          role="Software Engineer"
           name="Stripe"
-          dates="June 2023 - Present"
           link="https://stripe.com"
+          experiences={[
+            { role: 'Software Engineer', dates: 'June 2023 - Present' },
+            { role: 'Software Engineer Intern', dates: 'May - Aug 2022' },
+          ]}
         />
         <Experience
           role="Software Engineer"
           name="Sutro"
           dates="Feb 2022 - June 2023"
           link="https://sutro.xyz"
-        />
-        <Experience
-          role="Software Engineer Intern"
-          name="Stripe"
-          dates="May - Aug 2022"
-          link="https://stripe.com/"
         />
         <Experience
           role="Software Engineering Manager"
@@ -352,18 +365,9 @@ const about = [
           haydendaly
         </a>
         <br />
-        Strava:{'  '}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          className="link"
-          href="https://www.strava.com/athletes/54285809">
-          haydendaly
-        </a>
-        <br />
         Email:{'  '}
-        <a target="_blank" rel="noreferrer" className="link" href="mailto:hcd36@cornell.edu">
-          hcd36@cornell.edu
+        <a target="_blank" rel="noreferrer" className="link" href="mailto:haydencdaly@gmail.com">
+          haydencdaly@gmail.com
         </a>
       </p>
     ),
